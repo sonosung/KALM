@@ -1,4 +1,4 @@
-![image](https://github.com/sonosung/KEAM/assets/163802761/4247f220-66cf-4621-9e8a-194eeecfb482)# KEAM
+# KEAM
 JSP &amp; DB 를 이용한 게시판 구현 프로젝트!<br/>
 주제 : 정보게시판<br/>
 팀원 : 문승호(팀장), 김별, 안상환, 이진규
