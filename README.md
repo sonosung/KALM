@@ -11,5 +11,5 @@ JSP &amp; DB 를 이용한 게시판 구현 프로젝트!<br/>
 
 주제 선정 이유 : 서울은 한국의 수도로서 접근성이 뛰어나며, 서울에 방문하는 많은 관광객을 대상으로 서울의 축제 및 행사 정보에 쉽게 접근할 수 있는 프로그램의 필요성이 있다고 느껴, 이번 프로젝트 주제로 선정했습니다.
 
-PPT Wbe Page : https://keam.my.canva.site/original-size-2-project-keam
+PPT Website : https://keam.my.canva.site/original-size-2-project-keam<br/>
 Notion URL: https://www.notion.so/sonosung/2-PROJECT_KEAM-97155e93bb074222bea02b38052a2a36?pvs=4
