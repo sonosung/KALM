@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>	
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -19,7 +20,7 @@
         <link href="./resources/css/styles.css" rel="stylesheet" />
     </head>
     <body id="page-top">
-        <!-- Navigation-->
+        <!--------------------------------------------------------- Navigation --------------------------------------------------------->
         <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
             <div class="container">
                 <a class="navbar-brand" href="#page-top">SEOULMATE</a>
@@ -36,8 +37,13 @@
                 </div>
             </div>
         </nav>
-        <!-- Masthead-->
+        
+        <!--------------------------------------------------------- 헤드 영역 --------------------------------------------------------->
+       
         <header class="masthead bg-primary text-white text-center">
+        
+        <!--------------------------------------------------------- 메인 상단 대표행사 위치 --------------------------------------------------------->
+        
             <div class="container d-flex align-items-center flex-column">
                 <!-- Masthead Avatar Image-->
                 <img class="masthead-avatar mb-5" src="./resources/assets/img/avataaars.svg" alt="..." />
@@ -52,8 +58,13 @@
                 <!-- Masthead Subheading-->
                 <p class="masthead-subheading font-weight-light mb-0">너와 나의 SEOULMATE!</p>
             </div>
+            
+        <!--------------------------------------------------------- 메인 상단 대표행사 위치 --------------------------------------------------------->     
+            
         </header>
-        <!-- 중앙 이미지 섹션 -->
+        
+        <!------------------------------------------------ 중앙 이미지 섹션 ---------------------------------------------------------->
+        
         <section class="page-section portfolio" id="portfolio">
             <div class="container">
                 <!-- Portfolio Section Heading-->
@@ -64,9 +75,11 @@
                     <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
                     <div class="divider-custom-line"></div>
                 </div>
-                <!--  Grid Items-->
+                <!--------------------------------------------------------- 행사 섹션 --------------------------------------------------------->
                 <div class="row justify-content-center">
-                    <!-- 메인 중앙 첫번째 이미지 -->
+                
+                	<!--------------------------------------------------------- 메인 중앙 첫번째 이미지 --------------------------------------------------------->
+                
                     <div class="col-md-6 col-lg-4 mb-5">
                         <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal1">
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
@@ -77,7 +90,9 @@
                             <img class="img-fluid" src="./resources/assets/img/portfolio/cabin.png" alt="..." />
                         </div>
                     </div>
-                    <!-- 메인 중앙 두번째 이미지 -->
+                    
+                    <!--------------------------------------------------------- 메인 중앙 두번째 이미지 --------------------------------------------------------->
+                    
                     <div class="col-md-6 col-lg-4 mb-5">
                         <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal2">
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
@@ -86,7 +101,9 @@
                             <img class="img-fluid" src="./resources/assets/img/portfolio/cake.png" alt="..." />
                         </div>
                     </div>
-                    <!-- 메인 중앙 3번째 이미지 -->
+                    
+                    <!--------------------------------------------------------- 메인 중앙 세번째 이미지 --------------------------------------------------------->
+                   
                     <div class="col-md-6 col-lg-4 mb-5">
                         <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal3">
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
@@ -95,7 +112,9 @@
                             <img class="img-fluid" src="./resources/assets/img/portfolio/circus.png" alt="..." />
                         </div>
                     </div>
-                    <!-- 메인 중앙 4번째 이미지 -->
+                    
+                    <!--------------------------------------------------------- 메인 중앙 네번째 이미지 --------------------------------------------------------->
+                   
                     <div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
                         <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal4">
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
@@ -104,7 +123,9 @@
                             <img class="img-fluid" src="./resources/assets/img/portfolio/game.png" alt="..." />
                         </div>
                     </div>
-                    <!-- 메인 중앙 5번째 이미지 -->
+                    
+                    <!--------------------------------------------------------- 메인 중앙 다섯번째 이미지 --------------------------------------------------------->
+                    
                     <div class="col-md-6 col-lg-4 mb-5 mb-md-0">
                         <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal5">
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
@@ -113,7 +134,9 @@
                             <img class="img-fluid" src="./resources/assets/img/portfolio/safe.png" alt="..." />
                         </div>
                     </div>
-                    <!-- 메인 중앙 여섯번째 이미지 -->
+                    
+                    <!--------------------------------------------------------- 메인 중앙 여섯번째 이미지 --------------------------------------------------------->
+                    
                     <div class="col-md-6 col-lg-4">
                         <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal6">
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
@@ -125,7 +148,11 @@
                 </div>
             </div>
         </section>
-        <!-- 중앙이미지 세션 끝 -->
+        
+        <!--------------------------------------------------------- 중앙이미지 세션 끝 ------------------------------------------------------------------>
+        
+        <!--------------------------------------------------------- 아래는 행사정보만 볼수있는 리스트 섹션으로 만들지 고민중 ------------------------------------------------------------------>
+        
         <section class="page-section bg-primary text-white mb-0" id="about">
             <div class="container">
                 <!-- About Section Heading-->
@@ -138,14 +165,14 @@
                 </div>
                 <!-- About Section Content-->
                 <div class="row">
-                    <div class="col-lg-4 ms-auto"><p class="lead">Freelancer is a free bootstrap theme created by Start Bootstrap. The download includes the complete source files including HTML, CSS, and JavaScript as well as optional SASS stylesheets for easy customization.</p></div>
-                    <div class="col-lg-4 me-auto"><p class="lead">You can create your own custom avatar for the masthead, change the icon in the dividers, and add your email address to the contact form to make it fully functional!</p></div>
+                    <div class="col-lg-4 ms-auto"><p class="lead">행사 목록들만 한눈에 볼 수 있는</p></div>
+                    <div class="col-lg-4 me-auto"><p class="lead">행사 목록 이동 페이지로 만들어 볼까?</p></div>
                 </div>
                 <!-- About Section Button-->
                 <div class="text-center mt-4">
-                    <a class="btn btn-xl btn-outline-light" href="https://startbootstrap.com/theme/freelancer/">
+                    <a class="btn btn-xl btn-outline-light" href="./mvcboard/list.do">
                         <i class="fas fa-download me-2"></i>
-                        Free Download!
+                        행사목록 모아보기!
                     </a>
                 </div>
             </div>
@@ -153,8 +180,12 @@
         <!-- Contact Section-->
         <section class="page-section" id="contact">
             <div class="container">
-                <!-- Contact Section Heading-->
-                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Contact Me</h2>
+            
+		<!--------------------------------------------------------- 행사정보만 볼수있는 리스트 섹션 끝 ------------------------------------------------------------------>
+            
+                <!--------------------------------------------------------- 행사정보 공유 섹션 --------------------------------------------------------->
+                
+                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">행사정보 공유해요!<br>아래 필드들은 수정해야 할 듯.</h2>
                 <!-- Icon Divider-->
                 <div class="divider-custom">
                     <div class="divider-custom-line"></div>
@@ -221,32 +252,36 @@
                 </div>
             </div>
         </section>
+        
+        <!--------------------------------------------------------- 행사정보 공유 섹션 --------------------------------------------------------->
+        
         <!-- Footer-->
         <footer class="footer text-center">
             <div class="container">
                 <div class="row">
                     <!-- Footer Location-->
                     <div class="col-lg-4 mb-5 mb-lg-0">
-                        <h4 class="text-uppercase mb-4">Location</h4>
+                        <h4 class="text-uppercase mb-4">who made it?</h4><br>
                         <p class="lead mb-0">
-                            2215 John Daniel Drive
+                            문승호, 김별, 이진규, 안상환
                             <br />
-                            Clark, MO 65243
+                             <br />
+                            Started from 2024.06.12<br>to 2024.07.11
                         </p>
                     </div>
                     <!-- Footer Social Icons-->
                     <div class="col-lg-4 mb-5 mb-lg-0">
-                        <h4 class="text-uppercase mb-4">Around the Web</h4>
-                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-facebook-f"></i></a>
-                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-twitter"></i></a>
-                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-linkedin-in"></i></a>
-                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-dribbble"></i></a>
+                        <h4 class="text-uppercase mb-4">visit our github</h4><br>
+                        <a class="btn btn-outline-light btn-social mx-1" href="https://github.com/byeol1286"><i class="fab fa-fw fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social mx-1" href="https://github.com/GOTERCODE"><i class="fab fa-fw fa-twitter"></i></a>
+                        <a class="btn btn-outline-light btn-social mx-1" href="https://github.com/poong1125"><i class="fab fa-fw fa-linkedin-in"></i></a>
+                        <a class="btn btn-outline-light btn-social mx-1" href="https://github.com/sonosung"><i class="fab fa-fw fa-dribbble"></i></a>
                     </div>
                     <!-- Footer About Text-->
                     <div class="col-lg-4">
-                        <h4 class="text-uppercase mb-4">About Freelancer</h4>
+                        <h4 class="text-uppercase mb-4">About Us</h4>
                         <p class="lead mb-0">
-                            Freelance is a free to use, MIT licensed Bootstrap theme created by
+                            SEUOLMATE는<br>JSP & OracleDB 기반 팀 프로젝트입니다.<br><br> MIT licensed Bootstrap theme<br>created by
                             <a href="http://startbootstrap.com">Start Bootstrap</a>
                             .
                         </p>
@@ -256,7 +291,7 @@
         </footer>
         <!-- Copyright Section-->
         <div class="copyright py-4 text-center text-white">
-            <div class="container"><small>Copyright &copy; Your Website 2023</small></div>
+            <div class="container"><small>Copyright &copy; Team_KEAM</small></div>
         </div>
         <!-- Portfolio Modals-->
         <!-- Portfolio Modal 1-->
@@ -270,7 +305,7 @@
                             <div class="row justify-content-center">
                                 <div class="col-lg-8">
                                     <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Log Cabin</h2>
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">1번 행사</h2>
                                     <!-- Icon Divider-->
                                     <div class="divider-custom">
                                         <div class="divider-custom-line"></div>
@@ -280,7 +315,11 @@
                                     <!-- Portfolio Modal - Image-->
                                     <img class="img-fluid rounded mb-5" src="./resources/assets/img/portfolio/cabin.png" alt="..." />
                                     <!-- Portfolio Modal - Text-->
-                                    <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
+                                    <p class="mb-4">
+                                    행사명 : <br> 
+                                    행사기간 : <br>
+                                    위치 :
+                                    </p>                                  
                                     <button class="btn btn-primary" data-bs-dismiss="modal">
                                         <i class="fas fa-xmark fa-fw"></i>
                                         Close Window
@@ -303,7 +342,7 @@
                             <div class="row justify-content-center">
                                 <div class="col-lg-8">
                                     <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Tasty Cake</h2>
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">2번 행사</h2>
                                     <!-- Icon Divider-->
                                     <div class="divider-custom">
                                         <div class="divider-custom-line"></div>
@@ -313,7 +352,11 @@
                                     <!-- Portfolio Modal - Image-->
                                     <img class="img-fluid rounded mb-5" src="./resources/assets/img/portfolio/cake.png" alt="..." />
                                     <!-- Portfolio Modal - Text-->
-                                    <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
+                                    <p class="mb-4">
+                                    행사명 : <br> 
+                                    행사기간 : <br>
+                                    위치 :
+                                    </p>
                                     <button class="btn btn-primary" data-bs-dismiss="modal">
                                         <i class="fas fa-xmark fa-fw"></i>
                                         Close Window
@@ -336,7 +379,7 @@
                             <div class="row justify-content-center">
                                 <div class="col-lg-8">
                                     <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Circus Tent</h2>
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">3번 행사</h2>
                                     <!-- Icon Divider-->
                                     <div class="divider-custom">
                                         <div class="divider-custom-line"></div>
@@ -346,7 +389,11 @@
                                     <!-- Portfolio Modal - Image-->
                                     <img class="img-fluid rounded mb-5" src="./resources/assets/img/portfolio/circus.png" alt="..." />
                                     <!-- Portfolio Modal - Text-->
-                                    <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
+                                    <p class="mb-4">
+                                    행사명 : <br> 
+                                    행사기간 : <br>
+                                    위치 :
+                                    </p>
                                     <button class="btn btn-primary" data-bs-dismiss="modal">
                                         <i class="fas fa-xmark fa-fw"></i>
                                         Close Window
@@ -369,7 +416,7 @@
                             <div class="row justify-content-center">
                                 <div class="col-lg-8">
                                     <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Controller</h2>
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">4번 행사</h2>
                                     <!-- Icon Divider-->
                                     <div class="divider-custom">
                                         <div class="divider-custom-line"></div>
@@ -379,7 +426,11 @@
                                     <!-- Portfolio Modal - Image-->
                                     <img class="img-fluid rounded mb-5" src="./resources/assets/img/portfolio/game.png" alt="..." />
                                     <!-- Portfolio Modal - Text-->
-                                    <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
+                                    <p class="mb-4">
+                                    행사명 : <br> 
+                                    행사기간 : <br>
+                                    위치 :
+                                    </p>
                                     <button class="btn btn-primary" data-bs-dismiss="modal">
                                         <i class="fas fa-xmark fa-fw"></i>
                                         Close Window
@@ -402,7 +453,7 @@
                             <div class="row justify-content-center">
                                 <div class="col-lg-8">
                                     <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Locked Safe</h2>
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">5번 행사</h2>
                                     <!-- Icon Divider-->
                                     <div class="divider-custom">
                                         <div class="divider-custom-line"></div>
@@ -412,7 +463,11 @@
                                     <!-- Portfolio Modal - Image-->
                                     <img class="img-fluid rounded mb-5" src="./resources/assets/img/portfolio/safe.png" alt="..." />
                                     <!-- Portfolio Modal - Text-->
-                                    <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
+                                    <p class="mb-4">
+                                    행사명 : <br> 
+                                    행사기간 : <br>
+                                    위치 :
+                                    </p>
                                     <button class="btn btn-primary" data-bs-dismiss="modal">
                                         <i class="fas fa-xmark fa-fw"></i>
                                         Close Window
@@ -435,7 +490,7 @@
                             <div class="row justify-content-center">
                                 <div class="col-lg-8">
                                     <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Submarine</h2>
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">6번 행사</h2>
                                     <!-- Icon Divider-->
                                     <div class="divider-custom">
                                         <div class="divider-custom-line"></div>
@@ -445,7 +500,11 @@
                                     <!-- Portfolio Modal - Image-->
                                     <img class="img-fluid rounded mb-5" src="./resources/assets/img/portfolio/submarine.png" alt="..." />
                                     <!-- Portfolio Modal - Text-->
-                                    <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
+                                    <p class="mb-4">
+                                    행사명 : <br> 
+                                    행사기간 : <br>
+                                    위치 :
+                                    </p>
                                     <button class="btn btn-primary" data-bs-dismiss="modal">
                                         <i class="fas fa-xmark fa-fw"></i>
                                         Close Window
