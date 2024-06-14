@@ -33,6 +33,8 @@
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#portfolio">행사정보</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">About</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#contact">Contact</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="./06Session/02_LoginForm.jsp">Login</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#Signin">Signin</a></li>
                     </ul>
                 </div>
             </div>
@@ -169,10 +171,16 @@
                     <div class="col-lg-4 me-auto"><p class="lead">행사 목록 이동 페이지로 만들어 볼까?</p></div>
                 </div>
                 <!-- About Section Button-->
-                <div class="text-center mt-4">
+                <!-- <div class="text-center mt-4"> -->
+                <div class="row">
                     <a class="btn btn-xl btn-outline-light" href="./mvcboard/list.do">
                         <i class="fas fa-download me-2"></i>
-                        행사목록 모아보기!
+                        관리자 생성 게시판
+                    </a>
+        
+                    <a class="btn btn-xl btn-outline-light" href="./mvcboard/list.do">
+                        <i class="fas fa-download me-2"></i>
+                        유저 후기 게시판
                     </a>
                 </div>
             </div>
@@ -185,7 +193,7 @@
             
                 <!--------------------------------------------------------- 행사정보 공유 섹션 ---------------------------------------------------------->
                 
-                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">행사정보 공유해요!<br>아래 필드들은 수정해야 할 듯.</h2>
+                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">행사정보 공유해요!<br><br>추후 수정 예정</h2>
                 <!-- Icon Divider-->
                 <div class="divider-custom">
                     <div class="divider-custom-line"></div>
