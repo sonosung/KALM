@@ -95,7 +95,13 @@
 					<td align="center" class="bg-secondary text-white"
 						style="width: 10px" />
 				</tr>
-
+				
+				<tr>
+					<td align="center" class="bg-secondary text-white">제목</td>
+					<td><input type="text" name="title" style="width: 90%;" /><br></td>
+					<td align="center" class="bg-secondary text-white"
+						style="width: 10px" />
+				</tr>
 
 
 				<tr>
@@ -185,5 +191,7 @@
 	<!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
 	<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
 	<script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+
+
 </body>
 </html>
