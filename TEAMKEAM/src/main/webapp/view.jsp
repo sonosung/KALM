@@ -34,7 +34,8 @@
 }
 </style>
 
-
+<script type="text/javascript"
+	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=fdf17bc322ecfe3f9b4123bfebc8ae80"></script>
 </head>
 <body id="page-top">
 
@@ -108,7 +109,7 @@
 
 
 		<div>
-			<table class="header-table" border="0" width="80%" height="100px"
+			<table class="header-table" border="0" width="100%" height="100px"
 				align="center">
 				<tr class="masthead bg-secondary text-white">
 					<td colspan="2" align="center">
@@ -163,27 +164,28 @@
 		</div>
 		<br> <br> <br>
 
-		<table border="0" width="80%" align="center">
+		<table border="0" width="100%" align="center">
 
 			<tr>
 				<td>
-					<h4>행사명 : Board - FestivalName</h4>
-					<h4>주소 : Board - Address</h4>
-					<h4>기간 : Board - Date</h4>
+					<h4 style="margin-left: 200px;">행사명 : Board - FestivalName</h4>
+					<h4 style="margin-left: 200px;">주소 : Board - Address</h4>
+					<h4 style="margin-left: 200px;">기간 : Board - Date</h4> 
+					------- API	날씨 정보 출력
 				</td>
 			</tr>
 			<tr>
 				<td><br>
-					<h4>Board - Content</h4></td>
+					<h4 style="margin-left: 200px;">Board - Content</h4></td>
 			</tr>
 
 
 			<tr class="masthead bg-secondary">
-				<td align="right">
-					<button type="button" class="btn btn-secondary">추천</button>
-				</td>
-				<td colspan="2" align="right">
 
+
+
+				<td colspan="2" align="right">
+					<button type="button" class="btn btn-secondary">추천</button>
 					<button type="button" class="btn btn-secondary">수정</button>
 					<button type="reset" class="btn btn-secondary">삭제</button>
 					<button type="button" class="btn btn-secondary"
@@ -210,40 +212,35 @@
 
 
 		<!-- 중앙이미지 세션 끝 -->
-		<section class="page-section bg-primary text-white mb-0" id="about">
+		<section class="page-section bg-warning text-black mb-0" id="about">
 			<div class="container">
 				<!-- About Section Heading-->
 				<h2
-					class="page-section-heading text-center text-uppercase text-white">길찾기</h2>
+					class="page-section-heading text-center text-uppercase text-secondary mb-0">KAKAO 길찾기</h2>
 				<!-- Icon Divider-->
-				<div class="divider-custom divider-light">
+				<div class="divider-custom">
 					<div class="divider-custom-line"></div>
 					<div class="divider-custom-icon">
 						<i class="fas fa-star"></i>
 					</div>
 					<div class="divider-custom-line"></div>
+
 				</div>
-				<!-- About Section Content-->
-				<div class="row">
-					<div class="col-lg-4 ms-auto">
-						<p class="lead">Freelancer is a free bootstrap theme created
-							by Start Bootstrap. The download includes the complete source
-							files including HTML, CSS, and JavaScript as well as optional
-							SASS stylesheets for easy customization.</p>
-					</div>
-					<div class="col-lg-4 me-auto">
-						<p class="lead">You can create your own custom avatar for the
-							masthead, change the icon in the dividers, and add your email
-							address to the contact form to make it fully functional!</p>
-					</div>
-				</div>
-				<!-- About Section Button-->
-				<div class="text-center mt-4">
-					<a class="btn btn-xl btn-outline-light"
-						href="https://startbootstrap.com/theme/freelancer/"> <i
-						class="fas fa-download me-2"></i> Free Download!
-					</a>
-				</div>
+
+				<br>
+				<!-- Icon Divider-->
+				<div id="map" style="width: 100%; height: 700px;"></div>
+				<script type="text/javascript"
+					src="//dapi.kakao.com/v2/maps/sdk.js?appkey=fdf17bc322ecfe3f9b4123bfebc8ae80fdf17bc322ecfe3f9b4123bfebc8ae80"></script>
+				<script>
+					var container = document.getElementById('map');
+					var options = {
+						center : new kakao.maps.LatLng(33.450701, 126.570667),
+						level : 3
+					};
+
+					var map = new kakao.maps.Map(container, options);
+				</script>
 			</div>
 		</section>
 		<!-- Contact Section-->

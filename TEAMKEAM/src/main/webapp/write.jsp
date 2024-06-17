@@ -62,7 +62,7 @@
 
 
 
-	<div class="masthead bg-primary text-black">
+	<div class="masthead bg-white text-black">
 		<form name="writeFrm" method="post" enctype="multipart/form-data"
 			action="../mvcboard/write.do" onsubmit="return validateForm(this);">
 
