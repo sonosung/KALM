@@ -43,7 +43,7 @@
 
 	<!-- Masthead-->
 
-	<header class="masthead bg-primary text-white text-center">
+	<header class="masthead bg-black text-white text-center">
 		<div class="container d-flex align-items-center flex-column">
 
 
