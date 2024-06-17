@@ -229,7 +229,7 @@
 
 				<br>
 				<!-- Icon Divider-->
-				<div id="map" style="width: 100%; height: 700px;"></div>
+				<div id="map" style="width: 100%; height: 500px;"></div>
 				<script type="text/javascript"
 					src="//dapi.kakao.com/v2/maps/sdk.js?appkey=fdf17bc322ecfe3f9b4123bfebc8ae80fdf17bc322ecfe3f9b4123bfebc8ae80"></script>
 				<script>
@@ -243,6 +243,7 @@
 				</script>
 			</div>
 		</section>
+		
 		<!-- Contact Section-->
 		<section class="page-section" id="contact">
 			<div class="container">
