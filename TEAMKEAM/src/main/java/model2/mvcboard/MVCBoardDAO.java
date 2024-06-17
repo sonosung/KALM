@@ -46,7 +46,7 @@ public class MVCBoardDAO extends DBConnPool {
 			query += " WHERE " + map.get("searchField") + " LIKE '%" + map.get("searchWord") + "%' ";
 		}
 
-		query += " 		ORDER BY idx DESC " + " 	) Tb " + " ) " + " WHERE rNum BETWEEN ? AND ?";
+		query += " 		ORDER by idx DESC " + " 	) Tb " + " ) " + " WHERE rNum BETWEEN ? AND ?";
 
 		try {
 			psmt = con.prepareStatement(query);
@@ -149,7 +149,7 @@ public class MVCBoardDAO extends DBConnPool {
 
 	// 다운로드 횟수를 1 증가시킵니다.
 	public void downCountPlus(String idx) {
-		String sql = "UPDATE mvcboard SET " + " downcount=downcount+1 " + " WHERE idx=? ";
+		String sql = "UPDATE mvcboard SET " + " downcount=downcount+1 " + " WHERE idx=?";
 		try {
 			psmt = con.prepareStatement(sql);
 			psmt.setString(1, idx);

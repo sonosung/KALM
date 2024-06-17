@@ -21,7 +21,7 @@
 	
 		
 		
-			<meta property="og:image" content="./resources/img.night.jpg">
+			<meta property="og:image" content="./resources/img/night.jpg">
 		
 	
 
@@ -30,10 +30,10 @@
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="format-detection" content="telephone=no">
 	<title>경산자인단오제 | 지역축제 | 대한민국 구석구석 축제</title>
-	<link rel="shortcut icon" href="/kfes/resources/img/og_logo.png">
-	<link rel="stylesheet" href="/kfes/resources/css/reset.css?v=20231121">
-	<link rel="stylesheet" href="/kfes/resources/css/style.css?v=20231121">
-	<link rel="stylesheet" href="/kfes/resources/css/common.css?v=20240307">
+	<link rel="shortcut icon" href="./resources/assets/img/user.seungho.jpg">
+	<link rel="stylesheet" href="./resources/css/reset.css">
+	<link rel="stylesheet" href="./resources/css/detailStyle.css">
+	<link rel="stylesheet" href="./resources/css/common.css">
 	
 	<link rel="stylesheet" href="https://kfescdn.visitkorea.or.kr/kfes/resources/css/swiper-bundle@7.css">
 	<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick.min.css'>
@@ -119,9 +119,9 @@
 		<nav role="navigation" class="sub_nav">
 			<ul class="sub_menu">
 				<li>
-							<a class="home" href="/kfes/"> 축제메인</a>
+							<a class="home" href="./index.jsp#portfolio"> 축제메인</a>
 						<li>
-							<a href="/kfes/list/clturTursmFstvlList.do">
+							<a href="./mvcboard/list.do">
 								<!-- 노티 -->
 								<!-- <div class="ico_lottie_title2">
                                 <lottie-player
@@ -131,14 +131,14 @@
                                     loop
                                 ></lottie-player>
                                 </div> -->
-								문화관광축제
+								관리자추천축제
 							</a>
 						</li>
 						<li>
-							<a href="/kfes/list/wntyFstvlList.do"> 전국축제 </a>
+							<a href="./mvcboard/list.do"> 유저추천축제 </a>
 						</li>
 						<li>
-							<a href="/kfes/list/festivalCalendar.do">축제달력</a>
+							<a href="./calendar.jsp">축제달력</a>
 						</li>
 					 </ul>
 					<button class="main_search" aria-label="검색버튼"></button>
