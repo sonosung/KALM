@@ -56,8 +56,7 @@
 
 			</div>
 			<!-- Masthead Subheading-->
-			<p class="masthead-subheading font-weight-light mb-0">공유할 축제 정보를
-				작성합니다.</p>
+			<p class="masthead-subheading font-weight-light mb-0">Board Write Page</p>
 		</div>
 	</header>
 
