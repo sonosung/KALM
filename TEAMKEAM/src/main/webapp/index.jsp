@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>	
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -19,7 +18,8 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="./resources/css/styles.css" rel="stylesheet" />
         
-            <!-- 달력 Required meta tags -->
+     	<!------------------------------------------------- 달력 Required meta tags ------------------------------------------------->
+     	
 <!--     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
@@ -40,7 +40,9 @@
     <link rel="stylesheet" href="./calendar/css/style.css">
 
     <title>Calendar #9</title>
-        <!-- 달력 메타 태그 -->
+    
+        <!------------------------------------------------- 달력 메타 태그 --------------------------------------------------->
+        
     </head>
     <body id="page-top">
     
@@ -56,6 +58,7 @@
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#portfolio">행사정보</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">게시판</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#calendar">행사달력</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="./userPage/contact.jsp">Contact</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="./06Session/02_LoginForm.jsp">Login</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#Signin">Signin</a></li>
@@ -90,94 +93,243 @@
         <!--------------------------------------------------------- 메인 상단 대표행사 위치 --------------------------------------------------------->     
             
         </header>
-        
-        <!------------------------------------------------ 중앙 이미지 섹션 ---------------------------------------------------------->
-        
-        <section class="page-section portfolio" id="portfolio">
-            <div class="container">
-                <!-- Portfolio Section Heading-->
-                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">행사정보</h2>
-                <!-- Icon Divider-->
-                <div class="divider-custom">
-                    <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                    <div class="divider-custom-line"></div>
-                </div>
-                <!--------------------------------------------------------- 행사 섹션 --------------------------------------------------------->
-                <div class="row justify-content-center">
-                
-                	<!--------------------------------------------------------- 메인 중앙 첫번째 이미지 --------------------------------------------------------->
-                
-                    <div class="col-md-6 col-lg-4 mb-5">
-                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal1">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            
-                            
-                            <img class="img-fluid" src="./resources/assets/img/portfolio/cabin.png" alt="..." />
-                        </div>
-                    </div>
-                    
-                    <!--------------------------------------------------------- 메인 중앙 두번째 이미지 --------------------------------------------------------->
-                    
-                    <div class="col-md-6 col-lg-4 mb-5">
-                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal2">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="./resources/assets/img/portfolio/cake.png" alt="..." />
-                        </div>
-                    </div>
-                    
-                    <!--------------------------------------------------------- 메인 중앙 세번째 이미지 --------------------------------------------------------->
-                   
-                    <div class="col-md-6 col-lg-4 mb-5">
-                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal3">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="./resources/assets/img/portfolio/circus.png" alt="..." />
-                        </div>
-                    </div>
-                    
-                    <!--------------------------------------------------------- 메인 중앙 네번째 이미지 --------------------------------------------------------->
-                   
-                    <div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
-                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal4">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="./resources/assets/img/portfolio/game.png" alt="..." />
-                        </div>
-                    </div>
-                    
-                    <!--------------------------------------------------------- 메인 중앙 다섯번째 이미지 --------------------------------------------------------->
-                    
-                    <div class="col-md-6 col-lg-4 mb-5 mb-md-0">
-                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal5">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="./resources/assets/img/portfolio/safe.png" alt="..." />
-                        </div>
-                    </div>
-                    
-                    <!--------------------------------------------------------- 메인 중앙 여섯번째 이미지 --------------------------------------------------------->
-                    
-                    <div class="col-md-6 col-lg-4">
-                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal6">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="./resources/assets/img/portfolio/submarine.png" alt="..." />
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!--------------------------------------------------------- 중앙이미지 세션 끝 ------------------------------------------------------------------>
+
+	<!------------------------------------------------ 중앙 이미지 섹션 ---------------------------------------------------------->
+
+	<section class="page-section portfolio" id="portfolio">
+		<div class="container">
+			<!-- Portfolio Section Heading-->
+			<h2
+				class="page-section-heading text-center text-uppercase text-secondary mb-0">행사정보</h2>
+			<!-- Icon Divider-->
+			<div class="divider-custom">
+				<div class="divider-custom-line"></div>
+				<div class="divider-custom-icon">
+					<i class="fas fa-star"></i>
+				</div>
+				<div class="divider-custom-line"></div>
+
+			</div>
+			<!--------------------------------------------------------- 행사 섹션 --------------------------------------------------------->
+
+			<div class="container y mandatory-scroll-snapping" dir="ltr">
+				<div class="row justify-content-center">
+
+
+
+					<!--------------------------------------------------------- 메인 중앙 첫번째 이미지 --------------------------------------------------------->
+
+					<div class="col-md-6 col-lg-4 mb-5">
+						<div class="portfolio-item mx-auto" data-bs-toggle="modal"
+							data-bs-target="#portfolioModal1">
+							<div
+								class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+								<div
+									class="portfolio-item-caption-content text-center text-white">
+									<i class="fas fa-plus fa-3x"></i>
+								</div>
+							</div>
+
+
+							<img class="img-fluid"
+								src="./resources/assets/img/portfolio/cabin.png" alt="..." />
+						</div>
+					</div>
+
+					<!--------------------------------------------------------- 메인 중앙 두번째 이미지 --------------------------------------------------------->
+
+					<div class="col-md-6 col-lg-4 mb-5">
+						<div class="portfolio-item mx-auto" data-bs-toggle="modal"
+							data-bs-target="#portfolioModal2">
+							<div
+								class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+								<div
+									class="portfolio-item-caption-content text-center text-white">
+									<i class="fas fa-plus fa-3x"></i>
+								</div>
+							</div>
+							<img class="img-fluid"
+								src="./resources/assets/img/portfolio/cake.png" alt="..." />
+						</div>
+					</div>
+
+					<!--------------------------------------------------------- 메인 중앙 세번째 이미지 --------------------------------------------------------->
+
+					<div class="col-md-6 col-lg-4 mb-5">
+						<div class="portfolio-item mx-auto" data-bs-toggle="modal"
+							data-bs-target="#portfolioModal3">
+							<div
+								class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+								<div
+									class="portfolio-item-caption-content text-center text-white">
+									<i class="fas fa-plus fa-3x"></i>
+								</div>
+							</div>
+							<img class="img-fluid"
+								src="./resources/assets/img/portfolio/circus.png" alt="..." />
+						</div>
+					</div>
+
+					<!--------------------------------------------------------- 메인 중앙 네번째 이미지 --------------------------------------------------------->
+
+					<div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
+						<div class="portfolio-item mx-auto" data-bs-toggle="modal"
+							data-bs-target="#portfolioModal4">
+							<div
+								class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+								<div
+									class="portfolio-item-caption-content text-center text-white">
+									<i class="fas fa-plus fa-3x"></i>
+								</div>
+							</div>
+							<img class="img-fluid"
+								src="./resources/assets/img/portfolio/game.png" alt="..." />
+						</div>
+					</div>
+
+					<!--------------------------------------------------------- 메인 중앙 다섯번째 이미지 --------------------------------------------------------->
+
+					<div class="col-md-6 col-lg-4 mb-5 mb-md-0">
+						<div class="portfolio-item mx-auto" data-bs-toggle="modal"
+							data-bs-target="#portfolioModal5">
+							<div
+								class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+								<div
+									class="portfolio-item-caption-content text-center text-white">
+									<i class="fas fa-plus fa-3x"></i>
+								</div>
+							</div>
+							<img class="img-fluid"
+								src="./resources/assets/img/portfolio/safe.png" alt="..." />
+						</div>
+					</div>
+
+					<!--------------------------------------------------------- 메인 중앙 여섯번째 이미지 --------------------------------------------------------->
+
+					<div class="col-md-6 col-lg-4">
+						<div class="portfolio-item mx-auto" data-bs-toggle="modal"
+							data-bs-target="#portfolioModal6">
+							<div
+								class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+								<div
+									class="portfolio-item-caption-content text-center text-white">
+									<i class="fas fa-plus fa-3x"></i>
+								</div>
+							</div>
+							<img class="img-fluid"
+								src="./resources/assets/img/portfolio/submarine.png" alt="..." />
+						</div>
+					</div>
+
+					<!--------------------------------------------------------- 메인 중앙 일곱번째 이미지 --------------------------------------------------------->
+					<div class="divider-custom"></div>
+
+					<div class="col-md-6 col-lg-4 mb-5">
+						<div class="portfolio-item mx-auto" data-bs-toggle="modal"
+							data-bs-target="#portfolioModal3">
+							<div
+								class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+								<div
+									class="portfolio-item-caption-content text-center text-white">
+									<i class="fas fa-plus fa-3x"></i>
+								</div>
+							</div>
+							<img class="img-fluid"
+								src="./resources/assets/img/portfolio/circus.png" alt="..." />
+						</div>
+					</div>
+
+					<!--------------------------------------------------------- 메인 중앙 여덞번째 이미지 --------------------------------------------------------->
+
+					<div class="col-md-6 col-lg-4">
+						<div class="portfolio-item mx-auto" data-bs-toggle="modal"
+							data-bs-target="#portfolioModal6">
+							<div
+								class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+								<div
+									class="portfolio-item-caption-content text-center text-white">
+									<i class="fas fa-plus fa-3x"></i>
+								</div>
+							</div>
+							<img class="img-fluid"
+								src="./resources/assets/img/portfolio/submarine.png" alt="..." />
+						</div>
+					</div>
+
+					<!--------------------------------------------------------- 메인 중앙 아홉번째 이미지 --------------------------------------------------------->
+					
+					<div class="col-md-6 col-lg-4">
+						<div class="portfolio-item mx-auto" data-bs-toggle="modal"
+							data-bs-target="#portfolioModal6">
+							<div
+								class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+								<div
+									class="portfolio-item-caption-content text-center text-white">
+									<i class="fas fa-plus fa-3x"></i>
+								</div>
+							</div>
+							<img class="img-fluid"
+								src="./resources/assets/img/portfolio/submarine.png" alt="..." />
+						</div>
+					</div>
+					
+					<!--------------------------------------------------------- 메인 중앙 열번째 이미지 --------------------------------------------------------->
+
+					<div class="col-md-6 col-lg-4 mb-5">
+						<div class="portfolio-item mx-auto" data-bs-toggle="modal"
+							data-bs-target="#portfolioModal3">
+							<div
+								class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+								<div
+									class="portfolio-item-caption-content text-center text-white">
+									<i class="fas fa-plus fa-3x"></i>
+								</div>
+							</div>
+							<img class="img-fluid"
+								src="./resources/assets/img/portfolio/circus.png" alt="..." />
+						</div>
+					</div>
+
+					<!--------------------------------------------------------- 메인 중앙 열한번째 이미지 --------------------------------------------------------->	
+						
+					<div class="col-md-6 col-lg-4">
+						<div class="portfolio-item mx-auto" data-bs-toggle="modal"
+							data-bs-target="#portfolioModal6">
+							<div
+								class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+								<div
+									class="portfolio-item-caption-content text-center text-white">
+									<i class="fas fa-plus fa-3x"></i>
+								</div>
+							</div>
+							<img class="img-fluid"
+								src="./resources/assets/img/portfolio/submarine.png" alt="..." />
+						</div>
+					</div>
+
+					<!--------------------------------------------------------- 메인 중앙 열두번째 이미지 --------------------------------------------------------->
+
+					<div class="col-md-6 col-lg-4">
+						<div class="portfolio-item mx-auto" data-bs-toggle="modal"
+							data-bs-target="#portfolioModal6">
+							<div
+								class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+								<div
+									class="portfolio-item-caption-content text-center text-white">
+									<i class="fas fa-plus fa-3x"></i>
+								</div>
+							</div>
+							<img class="img-fluid"
+								src="./resources/assets/img/portfolio/submarine.png" alt="..." />
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!--------------------------------------------------------- 중앙이미지 세션 끝 ------------------------------------------------------------------>
         
         <!--------------------------------------------------------- 아래는 행사정보만 볼수있는 리스트 섹션으로 만들지 고민중 ------------------------------------------------------------------>
         
@@ -186,12 +338,14 @@
                 <!-- About Section Heading-->
                 <h2 class="page-section-heading text-center text-uppercase text-white">About</h2>
                 <!-- Icon Divider-->
-                <div class="divider-custom divider-light">
-                    <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                    <div class="divider-custom-line"></div>
-                </div>
-                <!-- About Section Content-->
+			<div class="divider-custom divider-light">
+				<div class="divider-custom-line"></div>
+				<div class="divider-custom-icon">
+					<i class="fas fa-star"></i>
+				</div>
+				<div class="divider-custom-line"></div>
+			</div>
+			<!-- About Section Content-->
                 <div class="row">
                     <div class="col-lg-4 ms-auto"><p class="lead">행사 목록들만 한눈에 볼 수 있는</p></div>
                     <div class="col-lg-4 me-auto"><p class="lead">행사 목록 이동 페이지로 만들어 볼까?</p></div>
@@ -287,93 +441,11 @@
             </div>
         </section>
          -->
-           <div class="content">
-    <div id='calendar'></div>
-  </div>
-    
-    
-
-    <script src="./calendar/js/jquery-3.3.1.min.js"></script>
-    <script src="./calendar/js/popper.min.js"></script>
-    <script src="./calendar/js/bootstrap.min.js"></script>
-
-    <script src='./calendar/fullcalendar/packages/core/main.js'></script>
-    <script src='./calendar/fullcalendar/packages/interaction/main.js'></script>
-    <script src='./calendar/fullcalendar/packages/daygrid/main.js'></script>
-
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-    var calendarEl = document.getElementById('calendar');
-
-    var calendar = new FullCalendar.Calendar(calendarEl, {
-      plugins: [ 'interaction', 'dayGrid' ],
-      defaultDate: '2020-02-12',
-      editable: true,
-      eventLimit: true, // allow "more" link when too many events
-      events: [
-        {
-          title: 'All Day Event',
-          start: '2020-02-01'
-        },
-        {
-          title: 'Long Event',
-          start: '2020-02-07',
-          end: '2020-02-10'
-        },
-        {
-          groupId: 999,
-          title: 'Repeating Event',
-          start: '2020-02-09T16:00:00'
-        },
-        {
-          groupId: 999,
-          title: 'Repeating Event',
-          start: '2020-02-16T16:00:00'
-        },
-        {
-          title: 'Conference',
-          start: '2020-02-11',
-          end: '2020-02-13'
-        },
-        {
-          title: 'Meeting',
-          start: '2020-02-12T10:30:00',
-          end: '2020-02-12T12:30:00'
-        },
-        {
-          title: 'Lunch',
-          start: '2020-02-12T12:00:00'
-        },
-        {
-          title: 'Meeting',
-          start: '2020-02-12T14:30:00'
-        },
-        {
-          title: 'Happy Hour',
-          start: '2020-02-12T17:30:00'
-        },
-        {
-          title: 'Dinner',
-          start: '2020-02-12T20:00:00'
-        },
-        {
-          title: 'Birthday Party',
-          start: '2020-02-13T07:00:00'
-        },
-        {
-          title: 'Click for Google',
-          url: 'http://google.com/',
-          start: '2020-02-28'
-        }
-      ]
-    });
-
-    calendar.render();
-  });
-
-    </script>
-
-    <script src="./calendar/js/main.js"></script>
+         <!---------------------------------------------------- 행사 달력  ------------------------------------------------>
+         
+ 		<%-- <%@ include file="/adminIndex.jsp" %> --%>
+ 		<jsp:include page="/calendar/index.jsp"></jsp:include>
+ 		
         <!--------------------------------------------------------- 행사정보 공유 섹션 --------------------------------------------------------->
         
         <!-- Footer-->
