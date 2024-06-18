@@ -13,4 +13,4 @@ JSP &amp; DB 를 이용한 게시판 구현 프로젝트!<br/>
 이런 이유로 서울에 방문하는 많은 관광객을 대상으로 축제 및 행사 정보에 쉽게 접근할 수 있는 웹페이지를 개발하기로 하였습니다.
 
 PPT Website : https://keam.my.canva.site/original-size-2-project-keam<br/>
-Notion URL : https://www.notion.so/sonosung/2-PROJECT_KEAM-97155e93bb074222bea02b38052a2a36?pvs=4
+Notion URL : https://sonosung.notion.site/97155e93bb074222bea02b38052a2a36?v=8c89407c5cd4423a9c707bed226a8a21
