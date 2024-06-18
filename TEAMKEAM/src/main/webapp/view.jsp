@@ -8,7 +8,7 @@
 	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 <meta name="description" content="" />
 <meta name="author" content="" />
-<title>Freelancer - Start Bootstrap Theme</title>
+<title>게시글 열람 페이지</title>
 <!-- Favicon-->
 <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
 <!-- Font Awesome icons (free version)-->
@@ -34,7 +34,7 @@
 }
 </style>
 
-<script type="text/javascript"
+
 	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=fdf17bc322ecfe3f9b4123bfebc8ae80"></script>
 </head>
 <body id="page-top">
@@ -188,7 +188,7 @@
 					<button type="button" class="btn btn-secondary">수정</button>
 					<button type="reset" class="btn btn-secondary">삭제</button>
 					<button type="button" class="btn btn-secondary"
-						onclick="location.href='../mvcboard/list.do';">목록 바로가기</button>
+						onclick="location.href='list.jsp';">목록 바로가기</button>
 				</td>
 				<td align="center" class="bg-secondary text-white"
 					style="width: 10px;"></td>
