@@ -23,7 +23,7 @@ if (memberDTO.getId() != null) {
 	//로그인 성공
 	session.setAttribute("UserId", memberDTO.getId());
 	session.setAttribute("UserName", memberDTO.getName());
-	response.sendRedirect("02_LoginForm.jsp");
+	response.sendRedirect("../index.jsp");
 } else {
 	//로그인 실패
 	request.setAttribute("LoginErrMsg", "로그인 오류입니다.");

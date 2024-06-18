@@ -100,4 +100,14 @@
     <servlet-name>MVCBoardWrite</servlet-name>
     <url-pattern>/mvcboard/write.do</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ProfileEditController</display-name>
+    <servlet-name>ProfileEditController</servlet-name>
+    <servlet-class>member.ProfileEditController</servlet-class>
+  </servlet>
+<!--   <servlet-mapping>
+    <servlet-name>ProfileEditController</servlet-name>
+    <url-pattern>/ProfileEditController</url-pattern>
+  </servlet-mapping> -->
 </web-app>

@@ -29,13 +29,13 @@
     <link rel="stylesheet" href="./resources/css/common.css">
     
     <link rel="stylesheet" href="https://kfescdn.visitkorea.or.kr/kfes/resources/css/swiper-bundle@7.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick.min.css"/>
+    <link rel="stylesheet" href="./resources/js/slick.min.css"/>
     <link rel="stylesheet" href="./recourses/css/video-js.min.css"/>
 
     <script src="./resources/js/jquery-3.3.1.min.js"></script>
     <script src="./resources/js/greensock/gsap.min.js"></script>
     <script src="./resources/css/video.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick.min.js"></script>
+    <script src="./resources/js/slick.min.js"></script>
     <script src="./resources/js/lottie-player.js"></script>
     <script src="./resources/js/common.js"></script>
     <script src="./resources/js/lib/comm.js"></script>
@@ -163,118 +163,6 @@
     </div>
 </header>
 
-<!-- main -->
-<!-- <main role="main" id="mainTab">
-    <div class="wrap">
-        <section class="poster_slide" role="region">
-            <div class="inner_full">
-                <div class="inner theme_detail">
-                    좋아요, 공유하기, 조회수  com.ktovisitkorea.kfes.framework.model ResultCamelMap
-                    //좋아요, 공유하기, 조회수
-                </div>
-            </div>
-
-           
-            <div class="inner_full">
-                <div class="editor">
-                    <div class="editor_box">
-                        [D] 에디터에 넣을 부분 - (start)
-
-                        start calendar
-                        <div class="editor_inner">
-                            <script src="./resources/js/jquery.rwdImageMaps.min.js"></script>
-
-                            <div class="festival_calendar">
-                                <section class="calendar_wrap">
-                                    <div class="inner">
-                                        <h3>월별 축제 달력</h3>
-                                        <div class="month_btn">
-                                            <span id="currentYearMonth"></span>
-                                            <div class="arrowbtn">
-                                                <button type="button" class="prev" onclick="fetchPrevMonth();">이전</button>
-                                                <button type="button" class="next" onclick="fetchNextMonth();">다음</button>
-                                            </div>
-                                        </div>
-                                        <div class="calendar">
-                                            <table>
-                                                <caption>
-                                                    문화관광축제 - 축제 캘린더
-                                                </caption>
-                                                <colgroup>
-                                                    <col style="width: calc(100% / 7)" />
-                                                    <col style="width: calc(100% / 7)" />
-                                                    <col style="width: calc(100% / 7)" />
-                                                    <col style="width: calc(100% / 7)" />
-                                                    <col style="width: calc(100% / 7)" />
-                                                    <col style="width: calc(100% / 7)" />
-                                                    <col style="width: calc(100% / 7)" />
-                                                </colgroup>
-                                                <thead>
-                                                <tr>
-                                                    <th scope="col" class="holiday">일<span></span></th>
-                                                    <th scope="col">월<span></span></th>
-                                                    <th scope="col">화<span></span></th>
-                                                    <th scope="col">수<span></span></th>
-                                                    <th scope="col">목<span></span></th>
-                                                    <th scope="col">금<span></span></th>
-                                                    <th scope="col" class="saturday">토<span></span></th>
-                                                </tr>
-                                                </thead>
-                                                <tbody id="calendar">
-                                                <tr>
-
-                                                </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </section>
-                                end calendar 
-
-
-                                start 축제 리스트
-                                <section class="other_list type2" role="region">
-                                    <div class="inner">
-                                        <div class="other_festival" role="application">
-                                            <div class="tab_cont_area" style="display: none;" id="list_container">
-                                                <h4>축제 리스트</h4>
-                                                <ul class="other_festival_ul" id="list">
-                                                </ul>
-                                                더보기 button
-                                                <button class="list_more_btn" onclick="javascript:;">더보기 (0/0)</button>
-                                                <button class="list_more_btn" id="btnMore" onclick="javascript:;">더보기 (0/0)</button>
-                                                //더보기 button
-                                            </div>
-                                            2023cal 축제 없을 때 display:block
-                                            <div class="tab_cont_area list_none" style="display: none;" id="list_default">
-                                                <img src="/kfes/resources/img/calendar/img_mnocal.png" alt="">
-                                                <p>달력에서 날짜를 선택해주세요.</p>
-                                                <span>선택한 날짜에 개최 중인 축제 정보를 보여드립니다.</span>
-                                            </div>
-                                            <div class="tab_cont_area list_none" style="display: none;" id="list_empty">
-                                                <img src="/kfes/resources/img/calendar/img_mnocal.png" alt="">
-                                                <p>선택한 일자에 진행하는 축제가 없습니다.</p>
-                                                <span>다른 일자를 선택해주세요.</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </section>
-                            </div> end festival_calendar  todo : 위치 관련해서 에러날 수 있음
-                        </div> end edit inner
-
-                        <script>
-                            $(document).ready(function () {
-                                $("img[usemap]").rwdImageMaps();
-                            });
-                        </script>
-                        [D] 에디터에 넣을 부분 - (end)
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
-</main> -->
-
 <main role="main" id="mainTab">
     <div class="wrap">
         <section class="poster_slide" role="region">
@@ -293,14 +181,14 @@
 
                         <!-- start calendar -->
                         <div class="editor_inner">
-                            <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-rwdImageMaps/1.6/jquery.rwdImageMaps.min.js"></script>
+                            <script src="jquery.rwdImageMaps.min.js"></script><!--img-map 반응형소스-->
 
                             <div class="festival_calendar">
                                 <section class="calendar_wrap">
                                     <div class="inner">
                                         <h3>월별 축제 달력</h3>
                                         <div class="month_btn">
-                                            <span id="currentYearMonth">2024.6</span>
+                                            <span id="currentYearMonth">2024.8</span>
                                             <div class="arrowbtn">
                                                 <button type="button" class="prev" onclick="fetchPrevMonth();">이전</button>
                                                 <button type="button" class="next" onclick="fetchNextMonth();">다음</button>
@@ -331,8 +219,124 @@
                                                     <th scope="col" class="saturday">토<span></span></th>
                                                 </tr>
                                                 </thead>
-                                                <tbody id="calendar"><tr>  <td>&nbsp;</td>  <td>&nbsp;</td>  <td>&nbsp;</td>  <td>&nbsp;</td>  <td>&nbsp;</td>  <td>&nbsp;</td>  <td class="saturday calendar_day" data-day="1">		<a href="javascript:;">			<strong>1</strong>			<span><em>33개</em></span>		</a>  </td></tr><tr>  <td class="holiday calendar_day" data-day="2">		<a href="javascript:;">			<strong>2</strong>			<span><em>33개</em></span>		</a>  </td>  <td class="calendar_day" data-day="3">		<a href="javascript:;">			<strong>3</strong>			<span><em>33개</em></span>		</a>  </td>  <td class="calendar_day" data-day="4">		<a href="javascript:;">			<strong>4</strong>			<span><em>33개</em></span>		</a>  </td>  <td class="calendar_day" data-day="5">		<a href="javascript:;">			<strong>5</strong>			<span><em>35개</em></span>		</a>  </td>  <td class="calendar_day" data-day="6">		<a href="javascript:;">			<strong>6</strong>			<span><em>35개</em></span>		</a>  </td>  <td class="calendar_day" data-day="7">		<a href="javascript:;">			<strong>7</strong>			<span><em>35개</em></span>		</a>  </td>  <td class="saturday calendar_day" data-day="8">		<a href="javascript:;">			<strong>8</strong>			<span><em>36개</em></span>		</a>  </td></tr><tr>  <td class="holiday calendar_day" data-day="9">		<a href="javascript:;">			<strong>9</strong>			<span><em>36개</em></span>		</a>  </td>  <td class="calendar_day" data-day="10">		<a href="javascript:;">			<strong>10</strong>			<span><em>36개</em></span>		</a>  </td>  <td class="calendar_day" data-day="11">		<a href="javascript:;">			<strong>11</strong>			<span><em>36개</em></span>		</a>  </td>  <td class="calendar_day" data-day="12">		<a href="javascript:;">			<strong>12</strong>			<span><em>36개</em></span>		</a>  </td>  <td class="calendar_day" data-day="13">		<a href="javascript:;">			<strong>13</strong>			<span><em>36개</em></span>		</a>  </td>  <td class="calendar_day" data-day="14">		<a href="javascript:;">			<strong>14</strong>			<span><em>37개</em></span>		</a>  </td>  <td class="saturday calendar_day" data-day="15">		<a href="javascript:;">			<strong>15</strong>			<span><em>40개</em></span>		</a>  </td></tr><tr>  <td class="holiday calendar_day" data-day="16">		<a href="javascript:;">			<strong>16</strong>			<span><em>40개</em></span>		</a>  </td>  <td class="calendar_day on" data-day="17">		<a href="javascript:;" title="선택됨">			<strong>17</strong>			<span><em>41개</em></span>		</a>  </td>  <td class="calendar_day" data-day="18">		<a href="javascript:;">			<strong>18</strong>			<span><em>42개</em></span>		</a>  </td>  <td class="calendar_day" data-day="19">		<a href="javascript:;">			<strong>19</strong>			<span><em>42개</em></span>		</a>  </td>  <td class="calendar_day" data-day="20">		<a href="javascript:;">			<strong>20</strong>			<span><em>43개</em></span>		</a>  </td>  <td class="calendar_day" data-day="21">		<a href="javascript:;">			<strong>21</strong>			<span><em>50개</em></span>		</a>  </td>  <td class="saturday calendar_day" data-day="22">		<a href="javascript:;">			<strong>22</strong>			<span><em>53개</em></span>		</a>  </td></tr><tr>  <td class="holiday calendar_day" data-day="23">		<a href="javascript:;">			<strong>23</strong>			<span><em>50개</em></span>		</a>  </td>  <td class="calendar_day" data-day="24">		<a href="javascript:;">			<strong>24</strong>			<span><em>35개</em></span>		</a>  </td>  <td class="calendar_day" data-day="25">		<a href="javascript:;">			<strong>25</strong>			<span><em>34개</em></span>		</a>  </td>  <td class="calendar_day" data-day="26">		<a href="javascript:;">			<strong>26</strong>			<span><em>36개</em></span>		</a>  </td>  <td class="calendar_day" data-day="27">		<a href="javascript:;">			<strong>27</strong>			<span><em>36개</em></span>		</a>  </td>  <td class="calendar_day" data-day="28">		<a href="javascript:;">			<strong>28</strong>			<span><em>38개</em></span>		</a>  </td>  <td class="saturday calendar_day" data-day="29">		<a href="javascript:;">			<strong>29</strong>			<span><em>39개</em></span>		</a>  </td></tr><tr>  <td class="holiday calendar_day" data-day="30">		<a href="javascript:;">			<strong>30</strong>			<span><em>38개</em></span>		</a>  </td>  <td>&nbsp;</td>  <td>&nbsp;</td>  <td>&nbsp;</td>  <td>&nbsp;</td>  <td>&nbsp;</td>  <td>&nbsp;</td></tr></tbody>
-                                            </table>
+													<tbody id="calendar">
+														<tr>
+															<td>&nbsp;</td>
+															<td>&nbsp;</td>
+															<td>&nbsp;</td>
+															<td>&nbsp;</td>
+															<td>&nbsp;</td>
+															<td>&nbsp;</td>
+															<td class="saturday calendar_day" data-day="1"><a
+																href="javascript:;"> <strong>1</strong> <span><em>33개</em></span>
+															</a></td>
+														</tr>
+														<tr>
+															<td class="holiday calendar_day" data-day="2"><a
+																href="javascript:;"> <strong>2</strong> <span><em>33개</em></span>
+															</a></td>
+															<td class="calendar_day" data-day="3"><a
+																href="javascript:;"> <strong>3</strong> <span><em>33개</em></span>
+															</a></td>
+															<td class="calendar_day" data-day="4"><a
+																href="javascript:;"> <strong>4</strong> <span><em>33개</em></span>
+															</a></td>
+															<td class="calendar_day" data-day="5"><a
+																href="javascript:;"> <strong>5</strong> <span><em>35개</em></span>
+															</a></td>
+															<td class="calendar_day" data-day="6"><a
+																href="javascript:;"> <strong>6</strong> <span><em>35개</em></span>
+															</a></td>
+															<td class="calendar_day" data-day="7"><a
+																href="javascript:;"> <strong>7</strong> <span><em>35개</em></span>
+															</a></td>
+															<td class="saturday calendar_day" data-day="8"><a
+																href="javascript:;"> <strong>8</strong> <span><em>36개</em></span>
+															</a></td>
+														</tr>
+														<tr>
+															<td class="holiday calendar_day" data-day="9"><a
+																href="javascript:;"> <strong>9</strong> <span><em>36개</em></span>
+															</a></td>
+															<td class="calendar_day" data-day="10"><a
+																href="javascript:;"> <strong>10</strong> <span><em>36개</em></span>
+															</a></td>
+															<td class="calendar_day" data-day="11"><a
+																href="javascript:;"> <strong>11</strong> <span><em>36개</em></span>
+															</a></td>
+															<td class="calendar_day" data-day="12"><a
+																href="javascript:;"> <strong>12</strong> <span><em>36개</em></span>
+															</a></td>
+															<td class="calendar_day" data-day="13"><a
+																href="javascript:;"> <strong>13</strong> <span><em>36개</em></span>
+															</a></td>
+															<td class="calendar_day" data-day="14"><a
+																href="javascript:;"> <strong>14</strong> <span><em>37개</em></span>
+															</a></td>
+															<td class="saturday calendar_day" data-day="15"><a
+																href="javascript:;"> <strong>15</strong> <span><em>40개</em></span>
+															</a></td>
+														</tr>
+														<tr>
+															<td class="holiday calendar_day" data-day="16"><a
+																href="javascript:;"> <strong>16</strong> <span><em>40개</em></span>
+															</a></td>
+															<td class="calendar_day on" data-day="17"><a
+																href="javascript:;" title="선택됨"> <strong>17</strong>
+																	<span><em>41개</em></span>
+															</a></td>
+															<td class="calendar_day" data-day="18"><a
+																href="javascript:;"> <strong>18</strong> <span><em>42개</em></span>
+															</a></td>
+															<td class="calendar_day" data-day="19"><a
+																href="javascript:;"> <strong>19</strong> <span><em>42개</em></span>
+															</a></td>
+															<td class="calendar_day" data-day="20"><a
+																href="javascript:;"> <strong>20</strong> <span><em>43개</em></span>
+															</a></td>
+															<td class="calendar_day" data-day="21"><a
+																href="javascript:;"> <strong>21</strong> <span><em>50개</em></span>
+															</a></td>
+															<td class="saturday calendar_day" data-day="22"><a
+																href="javascript:;"> <strong>22</strong> <span><em>53개</em></span>
+															</a></td>
+														</tr>
+														<tr>
+															<td class="holiday calendar_day" data-day="23"><a
+																href="javascript:;"> <strong>23</strong> <span><em>50개</em></span>
+															</a></td>
+															<td class="calendar_day" data-day="24"><a
+																href="javascript:;"> <strong>24</strong> <span><em>35개</em></span>
+															</a></td>
+															<td class="calendar_day" data-day="25"><a
+																href="javascript:;"> <strong>25</strong> <span><em>34개</em></span>
+															</a></td>
+															<td class="calendar_day" data-day="26"><a
+																href="javascript:;"> <strong>26</strong> <span><em>36개</em></span>
+															</a></td>
+															<td class="calendar_day" data-day="27"><a
+																href="javascript:;"> <strong>27</strong> <span><em>36개</em></span>
+															</a></td>
+															<td class="calendar_day" data-day="28"><a
+																href="javascript:;"> <strong>28</strong> <span><em>38개</em></span>
+															</a></td>
+															<td class="saturday calendar_day" data-day="29"><a
+																href="javascript:;"> <strong>29</strong> <span><em>39개</em></span>
+															</a></td>
+														</tr>
+														<tr>
+															<td class="holiday calendar_day" data-day="30"><a
+																href="javascript:;"> <strong>30</strong> <span><em>38개</em></span>
+															</a></td>
+															<td>&nbsp;</td>
+															<td>&nbsp;</td>
+															<td>&nbsp;</td>
+															<td>&nbsp;</td>
+															<td>&nbsp;</td>
+															<td>&nbsp;</td>
+														</tr>
+													</tbody>
+												</table>
                                         </div>
                                     </div>
                                 </section>
@@ -353,7 +357,7 @@
                                             </div>
                                             <!--2023cal 축제 없을 때 display:block-->
                                             <div class="tab_cont_area list_none" style="display: none;" id="list_default">
-                                                <img src="/kfes/resources/img/calendar/img_mnocal.png" alt="">
+                                                <img src="./resources/assets/img/calendar/img_mnocal.png" alt="">
                                                 <p>달력에서 날짜를 선택해주세요.</p>
                                                 <span>선택한 날짜에 개최 중인 축제 정보를 보여드립니다.</span>
                                             </div>

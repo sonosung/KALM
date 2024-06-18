@@ -31,7 +31,7 @@
                             <li class="nav-item"><a class="nav-link" href="../index.jsp#portfolio">행사정보</a></li>
                             <li class="nav-item"><a class="nav-link" href="../mvcboard/list.do">관리자 생성 게시판</a></li>
                             <li class="nav-item"><a class="nav-link" href="../mvcboard/list.do">유저 게시판</a></li>
-                            <li class="nav-item"><a class="nav-link" href="./resources/admin/contact.html">Contact</a></li>
+                            <li class="nav-item"><a class="nav-link" href="../index.jsp">Logout</a></li>
                         </ul>
                     </div>
                 </div>

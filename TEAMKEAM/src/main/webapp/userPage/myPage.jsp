@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>  
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +15,7 @@
     margin-top:20px;
     color: #1a202c;
     text-align: left;
-    background-color: #e2e8f0;    
+    background-color: /* #e2e8f0; */ #2c3e50;    
 }
 .main-body {
     padding: 15px;
@@ -74,7 +74,6 @@
 <nav aria-label="breadcrumb" class="main-breadcrumb">
 <ol class="breadcrumb">
 <li class="breadcrumb-item"><a href="../index.jsp">Home</a></li>
-<li class="breadcrumb-item"><a href="javascript:void(0)">User</a></li>
 <li class="breadcrumb-item active" aria-current="page">User Profile</li>
 </ol>
 </nav>
@@ -90,10 +89,43 @@
 <p class="text-secondary mb-1">Full Stack Developer</p>
 <p class="text-muted font-size-sm">그린컴퓨터</p>
 <button class="btn btn-primary">Follow</button>
-<button class="btn btn-outline-primary">Message</button>
+<a class="btn btn-info bs-link-color" target="__blank" href="./contact.jsp">문의하기</a>
 </div>
 </div>
 </div>
+<div class="card-body">
+									<h5 class="d-flex align-items-center mb-3">내글 보기</h5>
+									<p>게시글 수</p>
+									<div class="progress mb-3" style="height: 5px">
+										<div class="progress-bar bg-primary" role="progressbar"
+											style="width: 80%" aria-valuenow="80" aria-valuemin="0"
+											aria-valuemax="100"></div>
+									</div>
+									<p>댓글 수</p>
+									<div class="progress mb-3" style="height: 5px">
+										<div class="progress-bar bg-info" role="progressbar"
+											style="width: 72%" aria-valuenow="72" aria-valuemin="0"
+											aria-valuemax="100"></div>
+									</div>
+									<p>추천수</p>
+									<div class="progress mb-3" style="height: 5px">
+										<div class="progress-bar bg-success" role="progressbar"
+											style="width: 89%" aria-valuenow="89" aria-valuemin="0"
+											aria-valuemax="100"></div>
+									</div>
+									<p>조회수</p>
+									<div class="progress mb-3" style="height: 5px">
+										<div class="progress-bar bg-warning" role="progressbar"
+											style="width: 55%" aria-valuenow="55" aria-valuemin="0"
+											aria-valuemax="100"></div>
+									</div>
+									<p>패널티 현황</p>
+									<div class="progress" style="height: 5px">
+										<div class="progress-bar bg-danger" role="progressbar"
+											style="width: 66%" aria-valuenow="66" aria-valuemin="0"
+											aria-valuemax="100"></div>
+									</div>
+								</div>
 </div>
 <!-- <div class="card mt-3">
 <ul class="list-group list-group-flush">
@@ -174,7 +206,10 @@ msh071@naver.com
 <h6 class="mb-0">찜한 축제</h6>
 </div>
 <div class="col-sm-9 text-secondary">
-수국 정원 꽃축제
+<tr>
+<!-- 수국 정원 꽃축제 -->
+<td>${ dto.content }</td>
+</tr>
 </div>
 </div>
 <hr>

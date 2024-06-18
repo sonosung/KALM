@@ -9,5 +9,5 @@ session.removeAttribute("UserName");
 session.invalidate();
 
 //속성 삭제 후 페이지 이동
-response.sendRedirect("02_LoginForm.jsp");
+response.sendRedirect("../index.jsp");
 %>

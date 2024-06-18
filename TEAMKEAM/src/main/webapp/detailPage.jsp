@@ -31,21 +31,20 @@
 	<meta name="format-detection" content="telephone=no">
 	<title>경산자인단오제 | 지역축제 | 대한민국 구석구석 축제</title>
 	<link rel="shortcut icon" href="./resources/assets/img/user.seungho.jpg">
-	<link rel="stylesheet" href="./resources/css/reset.css">
-	<link rel="stylesheet" href="./resources/css/detailStyle.css">
-	<link rel="stylesheet" href="./resources/css/common.css">
+	<link rel="stylesheet" href="./resources/css/reset.css?v=20231121">
+	<link rel="stylesheet" href="./resources/css/detailStyle.css?v=20231121">
+	<link rel="stylesheet" href="./resources/css/common.css?v=20240307">
 	
 	<link rel="stylesheet" href="https://kfescdn.visitkorea.or.kr/kfes/resources/css/swiper-bundle@7.css">
 	<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick.min.css'>
 	<link rel='stylesheet' href='./resources/css/video-js.min.css'>
-	<!-- <link rel='stylesheet' href='https://fastly.jsdelivr.net/npm/video.js/dist/video-js.min.css'> -->
 	<link rel="stylesheet" href="/kfes/resources/css/scroll.css">
 	<script src="./resources/js/jquery-3.3.1.min.js"></script> <!-- 성공 -->
-	<script src="/kfes/resources/js/greensock/gsap.min.js"></script>
+	<script src="./resources/js/greensock/gsap.min.js"></script>
 	<script src="./resources/js/slick.min.js"></script> <!-- 성공? -->
-	<script src="/kfes/resources/js/lottie-player.js?v=20231121"></script>
-	<script src="/kfes/resources/js/common.js?v=20231121"></script>
-	<script src="/kfes/resources/js/lib/comm.js"></script>
+	<script src="./resources/js/lottie-player.js?v=20231121"></script>
+	<script src="./resources/js/common.js?v=20231121"></script>
+	<script src="./resources/js/lib/comm.js"></script>
 
 	
 			
@@ -256,6 +255,8 @@
 		<section class="visual" role="region" aria-labelledby="festival_head">
 			<div class="inner_full visual_height">
 				<!-- [D] visula_bg class에 mark 추가시 문화관광축제 로고 노출  -->
+				<!-- 행사 배경이미지 넣는 곳 -->
+				
 				<div class="visula_bg "
 					 style="background:url(https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/f0befac7-5908-4003-9d8f-5869748dff8e_2.jpg),url('/kfes/resources/img/default_detail_pc2.png') no-repeat center; background-size: cover;" >
 					<span class="blind">경산자인단오제</span>
@@ -408,6 +409,7 @@
 
 								<button class="more_pc_btn">더보기</button>
 							</div>
+							
 						</div>
 						<!-- 축제개요 -->
 
@@ -453,6 +455,9 @@
 							
 							<div class="img_info_box" >
 								<ul>
+								
+								<!-- 행사 기간 -->
+								
 									<li>
 										<div class="info_ico data">
 											<div class="blind">날짜</div>
@@ -467,7 +472,7 @@
 											<p class="info_content">경상북도 경산시 자인면 계정길 68&nbsp;계정숲</p>
 										</li>
 									
-
+									<!-- 행사 가격 -->
 									
 										<li>
 											<div class="info_ico price">
@@ -476,7 +481,7 @@
 											<p class="info_content">무료</p>
 										</li>
 									
-
+									<!-- 행사 주최 -->
 									
 										<li>
 											<div class="info_ico partner">
@@ -486,7 +491,7 @@
 										</li>
 									
 
-									
+									<!-- 행사 관리 사무실 전화번호 -->
 										<li>
 											<div class="info_ico tell">
 												<div class="blind">전화번호</div>
@@ -501,10 +506,12 @@
 									<!-- food 먹거리 추가  -->
 								
 								</ul>
-								
-									<a class="homepage_link_btn" target="_blank" href="http://jaindano.or.kr" title="경산자인단오제 - 새창 열림"><span class="fst">공식 홈페이지</span><span class="lst"></span></a>
-								
-							</div>
+
+									<a class="homepage_link_btn" target="_blank"
+										href="http://jaindano.or.kr" title="경산자인단오제 - 새창 열림"><span
+										class="fst">각 행사별로 공식 홈페이지 링크 걸어주면 됨.</span><span class="lst"></span></a>
+
+								</div>
 						</div>
 					</div>
 					<!-- //상세정보 -->

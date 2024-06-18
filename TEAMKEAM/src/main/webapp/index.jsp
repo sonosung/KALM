@@ -18,6 +18,29 @@
         <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="./resources/css/styles.css" rel="stylesheet" />
+        
+            <!-- 달력 Required meta tags -->
+<!--     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500&display=swap" rel="stylesheet">
+
+    
+    <link rel="stylesheet" href="./calendar/fonts/icomoon/style.css">
+  
+    <link href='./calendar/fullcalendar/packages/core/main.css' rel='stylesheet' />
+    <link href='./calendar/fullcalendar/packages/daygrid/main.css' rel='stylesheet' />
+    
+    
+    <!-- Bootstrap CSS -->
+    <!-- <link rel="stylesheet" href="./calendar/css/bootstrap.min.css"> -->
+    
+    <!-- Style -->
+    <link rel="stylesheet" href="./calendar/css/style.css">
+
+    <title>Calendar #9</title>
+        <!-- 달력 메타 태그 -->
     </head>
     <body id="page-top">
     
@@ -36,6 +59,8 @@
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="./userPage/contact.jsp">Contact</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="./06Session/02_LoginForm.jsp">Login</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#Signin">Signin</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="./06Session/04_Logout.jsp">Logout</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="./userPage/myPage.jsp">MyPage</a></li>
                     </ul>
                 </div>
             </div>
@@ -49,7 +74,7 @@
         
             <div class="container d-flex align-items-center flex-column">
                 <!-- Masthead Avatar Image-->
-                <img class="masthead-avatar mb-5" src="./resources/assets/img/avataaars.svg" alt="..." />
+                <img class="masthead-avatar mb-5" src="./resources/img/Logo.png" alt="..." />
                 <!-- Masthead Heading-->
                 <h1 class="masthead-heading text-uppercase mb-0">SEOULMATE</h1>
                 <!-- Icon Divider-->
@@ -187,60 +212,60 @@
             </div>
         </section>
         <!-- Contact Section-->
-        <section class="page-section" id="contact">
+        <!-- <section class="page-section" id="contact">
             <div class="container">
             
-		<!--------------------------------------------------------- 행사정보만 볼수있는 리스트 섹션 끝 ------------------------------------------------------------------>
+		------------------------------------------------------- 행사정보만 볼수있는 리스트 섹션 끝 ----------------------------------------------------------------
             
-                <!--------------------------------------------------------- 행사정보 공유 섹션 ---------------------------------------------------------->
+                ------------------------------------------------------- 행사정보 공유 섹션 --------------------------------------------------------
                 
                 <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">행사정보 공유해요!<br><br>추후 수정 예정</h2>
-                <!-- Icon Divider-->
+                Icon Divider
                 <div class="divider-custom">
                     <div class="divider-custom-line"></div>
                     <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
                     <div class="divider-custom-line"></div>
                 </div>
-                <!-- Contact Section Form-->
+                Contact Section Form
                 <div class="row justify-content-center">
                     <div class="col-lg-8 col-xl-7">
-                        <!-- * * * * * * * * * * * * * * *-->
-                        <!-- * * SB Forms Contact Form * *-->
-                        <!-- * * * * * * * * * * * * * * *-->
-                        <!-- This form is pre-integrated with SB Forms.-->
-                        <!-- To make this form functional, sign up at-->
-                        <!-- https://startbootstrap.com/solution/contact-forms-->
-                        <!-- to get an API token!-->
+                        * * * * * * * * * * * * * * *
+                        * * SB Forms Contact Form * *
+                        * * * * * * * * * * * * * * *
+                        This form is pre-integrated with SB Forms.
+                        To make this form functional, sign up at
+                        https://startbootstrap.com/solution/contact-forms
+                        to get an API token!
                         <form id="contactForm" data-sb-form-api-token="API_TOKEN">
-                            <!-- Name input-->
+                            Name input
                             <div class="form-floating mb-3">
                                 <input class="form-control" id="name" type="text" placeholder="Enter your name..." data-sb-validations="required" />
                                 <label for="name">Full name</label>
                                 <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
                             </div>
-                            <!-- Email address input-->
+                            Email address input
                             <div class="form-floating mb-3">
                                 <input class="form-control" id="email" type="email" placeholder="name@example.com" data-sb-validations="required,email" />
                                 <label for="email">Email address</label>
                                 <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
                                 <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
                             </div>
-                            <!-- Phone number input-->
+                            Phone number input
                             <div class="form-floating mb-3">
                                 <input class="form-control" id="phone" type="tel" placeholder="(123) 456-7890" data-sb-validations="required" />
                                 <label for="phone">Phone number</label>
                                 <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
                             </div>
-                            <!-- Message input-->
+                            Message input
                             <div class="form-floating mb-3">
                                 <textarea class="form-control" id="message" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required"></textarea>
                                 <label for="message">Message</label>
                                 <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
                             </div>
-                            <!-- Submit success message-->
-                            <!---->
-                            <!-- This is what your users will see when the form-->
-                            <!-- has successfully submitted-->
+                            Submit success message
+                           
+                            This is what your users will see when the form
+                            has successfully submitted
                             <div class="d-none" id="submitSuccessMessage">
                                 <div class="text-center mb-3">
                                     <div class="fw-bolder">Form submission successful!</div>
@@ -249,19 +274,106 @@
                                     <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
                                 </div>
                             </div>
-                            <!-- Submit error message-->
-                            <!---->
-                            <!-- This is what your users will see when there is-->
-                            <!-- an error submitting the form-->
+                            Submit error message
+                           
+                            This is what your users will see when there is
+                            an error submitting the form
                             <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
-                            <!-- Submit Button-->
+                            Submit Button
                             <button class="btn btn-primary btn-xl disabled" id="submitButton" type="submit">Send</button>
                         </form>
                     </div>
                 </div>
             </div>
         </section>
-        
+         -->
+           <div class="content">
+    <div id='calendar'></div>
+  </div>
+    
+    
+
+    <script src="./calendar/js/jquery-3.3.1.min.js"></script>
+    <script src="./calendar/js/popper.min.js"></script>
+    <script src="./calendar/js/bootstrap.min.js"></script>
+
+    <script src='./calendar/fullcalendar/packages/core/main.js'></script>
+    <script src='./calendar/fullcalendar/packages/interaction/main.js'></script>
+    <script src='./calendar/fullcalendar/packages/daygrid/main.js'></script>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+    var calendarEl = document.getElementById('calendar');
+
+    var calendar = new FullCalendar.Calendar(calendarEl, {
+      plugins: [ 'interaction', 'dayGrid' ],
+      defaultDate: '2020-02-12',
+      editable: true,
+      eventLimit: true, // allow "more" link when too many events
+      events: [
+        {
+          title: 'All Day Event',
+          start: '2020-02-01'
+        },
+        {
+          title: 'Long Event',
+          start: '2020-02-07',
+          end: '2020-02-10'
+        },
+        {
+          groupId: 999,
+          title: 'Repeating Event',
+          start: '2020-02-09T16:00:00'
+        },
+        {
+          groupId: 999,
+          title: 'Repeating Event',
+          start: '2020-02-16T16:00:00'
+        },
+        {
+          title: 'Conference',
+          start: '2020-02-11',
+          end: '2020-02-13'
+        },
+        {
+          title: 'Meeting',
+          start: '2020-02-12T10:30:00',
+          end: '2020-02-12T12:30:00'
+        },
+        {
+          title: 'Lunch',
+          start: '2020-02-12T12:00:00'
+        },
+        {
+          title: 'Meeting',
+          start: '2020-02-12T14:30:00'
+        },
+        {
+          title: 'Happy Hour',
+          start: '2020-02-12T17:30:00'
+        },
+        {
+          title: 'Dinner',
+          start: '2020-02-12T20:00:00'
+        },
+        {
+          title: 'Birthday Party',
+          start: '2020-02-13T07:00:00'
+        },
+        {
+          title: 'Click for Google',
+          url: 'http://google.com/',
+          start: '2020-02-28'
+        }
+      ]
+    });
+
+    calendar.render();
+  });
+
+    </script>
+
+    <script src="./calendar/js/main.js"></script>
         <!--------------------------------------------------------- 행사정보 공유 섹션 --------------------------------------------------------->
         
         <!-- Footer-->
