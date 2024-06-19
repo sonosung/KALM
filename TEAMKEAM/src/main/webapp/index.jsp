@@ -9,7 +9,7 @@
         <meta name="author" content="" />
         <title>Freelancer - Start Bootstrap Theme</title>
         <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <link rel="icon" type="image/x-icon" href="./resources/assets/img/user/seungho.jpg" />
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
         <!-- Google fonts-->
@@ -19,29 +19,30 @@
         <link href="./resources/css/styles.css" rel="stylesheet" />
         
      	<!------------------------------------------------- 달력 Required meta tags ------------------------------------------------->
-     	
-<!--     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
 
-    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    
-    <link rel="stylesheet" href="./calendar/fonts/icomoon/style.css">
-  
-    <link href='./calendar/fullcalendar/packages/core/main.css' rel='stylesheet' />
-    <link href='./calendar/fullcalendar/packages/daygrid/main.css' rel='stylesheet' />
-    
-    
-    <!-- Bootstrap CSS -->
-    <!-- <link rel="stylesheet" href="./calendar/css/bootstrap.min.css"> -->
-    
-    <!-- Style -->
-    <link rel="stylesheet" href="./calendar/css/style.css">
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
 
-    <title>Calendar #9</title>
-    
-        <!------------------------------------------------- 달력 메타 태그 --------------------------------------------------->
+<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="./calendar/fonts/icomoon/style.css">
+
+<link href='./calendar/fullcalendar/packages/core/main.css'
+	rel='stylesheet' />
+<link href='./calendar/fullcalendar/packages/daygrid/main.css'
+	rel='stylesheet' />
+
+
+<!-- Bootstrap CSS -->
+<!-- <link rel="stylesheet" href="./calendar/css/bootstrap.min.css"> -->
+
+<!-- Style -->
+<link rel="stylesheet" href="./calendar/css/style.css">
+
+<title>Calendar #9</title>
+
+<!------------------------------------------------- 달력 메타 태그 --------------------------------------------------->
         
     </head>
     <body id="page-top">
