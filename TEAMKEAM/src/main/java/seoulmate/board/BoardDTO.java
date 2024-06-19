@@ -2,6 +2,15 @@ package seoulmate.board;
 
 public class BoardDTO {
 	private String num;
+	private String idx;
+
+	public String getIdx() {
+		return idx;
+	}
+
+	public void setIdx(String idx) {
+		this.idx = idx;
+	}
 
 	public String getNum() {
 		return num;
