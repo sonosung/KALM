@@ -35,18 +35,18 @@ public class WriteController extends HttpServlet {
 		// TODO Auto-generated method stub
 		// 1. 파일 업로드 처리====================================================
 		// 업로드 디렉터리의 물리적 경로 확인
-		String saveDirectory = req.getServletContext().getRealPath("/Uploads");
+//		String saveDirectory = req.getServletContext().getRealPath("/Uploads");
 
 		// 파일 업로드
-		String originalFileName = "";
-		try {
-			originalFileName = FileUtil.uploadFile(req, saveDirectory);
-		} catch (Exception e) {
+//		String originalFileName = "";
+//		try {
+//			originalFileName = FileUtil.uploadFile(req, saveDirectory);
+//		} catch (Exception e) {
 			// 파일 업로드 실패
-			e.printStackTrace();
-			JSFunction.alertLocation(resp, "파일 업로드 오류입니다", "/write.do");
-			return;
-		}
+//			e.printStackTrace();
+//			JSFunction.alertLocation(resp, "파일 업로드 오류입니다", "/write.do");
+//			return;
+//		}
 
 		// 2. 파일 업로드 외 처리 ===========================================
 		// 폼값을 DTO에 저장
@@ -54,16 +54,16 @@ public class WriteController extends HttpServlet {
 		dto.setName(req.getParameter("name"));
 		dto.setTitle(req.getParameter("title"));
 		dto.setContent(req.getParameter("content"));
-		dto.setPass(req.getParameter("pass"));
+		
 
 		// 원본 파일명과 저장된 파일 이름 설정
-		if (originalFileName != "") {
+//		if (originalFileName != "") {
 			// 첨부 파일이 있을 경우 파일명 변경
-			String savedFileName = FileUtil.renameFile(saveDirectory, originalFileName);
+//			String savedFileName = FileUtil.renameFile(saveDirectory, originalFileName);
 
-			dto.setOfile(originalFileName); // 원래 파일 이름
-			dto.setSfile(savedFileName); // 서버에 저장된 파일 이름
-		}
+//			dto.setOfile(originalFileName); // 원래 파일 이름
+//			dto.setSfile(savedFileName); // 서버에 저장된 파일 이름
+//		}
 
 		// DAO를 통해 DB에 게시 내용 저장
 		BoardDAO dao = new BoardDAO();

@@ -56,7 +56,7 @@ public class BoardDAO extends DBConnPool {
 			while (rs.next()) {
 				BoardDTO dto = new BoardDTO();
 
-				dto.setNum(rs.getString(1));
+				dto.setIdx(rs.getString(1));
 				dto.setName(rs.getString(2));
 				dto.setTitle(rs.getString(3));
 				dto.setContent(rs.getString(4));
@@ -80,8 +80,8 @@ public class BoardDAO extends DBConnPool {
 		int result = 0;
 
 		try {
-			String query = "INSERT INTO board ( " + " idx, name, title, content, ofile, sfile, pass) " + " VALUES ( "
-					+ " seq_board_num.NEXTVAL,?,?,?,?,?,?)";
+			String query = "INSERT INTO board ( " + " idx, name, title, content,) " + " VALUES ( "
+					+ " seq_board_num.NEXTVAL,?,?,?,?,)";
 
 			psmt = con.prepareStatement(query);
 			psmt.setString(1, dto.getName());
@@ -149,26 +149,26 @@ public class BoardDAO extends DBConnPool {
 	}
 
 	// 입력한 비밀번호가 지정한 일련번호의 게시물의 비밀번호와 일치하는지 확인합니다.
-	public boolean confirmPassword(String pass, String idx) {
-		boolean isCorr = true;
-		try {
-			String sql = "SELECT COUNT(*) FROM board WHERE pass=? AND idx=?";
-			psmt = con.prepareStatement(sql);
-			psmt.setString(1, pass);
-			psmt.setString(2, idx);
-			rs = psmt.executeQuery();
-			rs.next();
-			if (rs.getInt(1) == 0) {
-				isCorr = false;
-			}
-		} catch (Exception e) {
-			isCorr = false;
-			e.printStackTrace();
-		}
+//	public boolean confirmPassword(String pass, String idx) {
+//		boolean isCorr = true;
+//		try {
+//			String sql = "SELECT COUNT(*) FROM board WHERE pass=? AND idx=?";
+//			psmt = con.prepareStatement(sql);
+//			psmt.setString(1, pass);
+//			psmt.setString(2, idx);
+//			rs = psmt.executeQuery();
+//			rs.next();
+//			if (rs.getInt(1) == 0) {
+//				isCorr = false;
+//			}
+//		} catch (Exception e) {
+//			isCorr = false;
+//			e.printStackTrace();
+//		}
 
-		return isCorr;
+//		return isCorr;
 
-	}
+//	}
 
 	public int deletePost(String idx) {
 		int result = 0;
@@ -185,27 +185,27 @@ public class BoardDAO extends DBConnPool {
 		return result;
 	}
 
-	public int updatePost(BoardDTO dto) {
-		int result = 0;
-		try {
+//	public int updatePost(BoardDTO dto) {
+//		int result = 0;
+//		try {
 			// 쿼리문 템플릿 준비
-			String query = "UPDATE board" + " SET title=?, name=?, content=?, ofile=?, sfile=? "
-					+ " WHERE idx=? and pass=?";
+//			String query = "UPDATE board" + " SET title=?, name=?, content=?, ofile=?, sfile=? "
+//					+ " WHERE idx=? and pass=?";
 
 			// 쿼리문 준비
-			psmt = con.prepareStatement(query);
-			psmt.setString(1, dto.getTitle());
-			psmt.setString(2, dto.getName());
-			psmt.setString(3, dto.getContent());
+//			psmt = con.prepareStatement(query);
+//			psmt.setString(1, dto.getTitle());
+//			psmt.setString(2, dto.getName());
+//			psmt.setString(3, dto.getContent());
 
 
 			// 쿼리문 실행
-			result = psmt.executeUpdate();
-		} catch (Exception e) {
-			System.out.println("게시물 수정 중 예외 발생");
-			e.printStackTrace();
-		}
-		return result;
-	}
+//			result = psmt.executeUpdate();
+//		} catch (Exception e) {
+//			System.out.println("게시물 수정 중 예외 발생");
+//			e.printStackTrace();
+//		}
+//		return result;
+//	}
 
 }

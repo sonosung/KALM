@@ -16,7 +16,7 @@
 		<param-name>INIT_PARAM</param-name>
 		<param-value>web.xml에 저장한 초기화 매개변수</param-value>
 	</context-param>
-	<error-page>
+<!-- 	<error-page>
 		<error-code>404</error-code>
 		<location>/02ImplicitObject/10.Exception.jsp</location>
 	</error-page>
@@ -27,7 +27,7 @@
 	<error-page>
 		<error-code>500</error-code>
 		<location>/02ImplicitObject/10.Exception.jsp</location>
-	</error-page>
+	</error-page> -->
 	<context-param>
 		<param-name>OracleDriver</param-name>
 		<param-value>oracle.jdbc.OracleDriver</param-value>
@@ -93,7 +93,7 @@
 	</servlet-mapping> 
   	<servlet>
 		<servlet-name>BoardWrite</servlet-name>
-		<servlet-class>seoulmate.WriteController</servlet-class>
+		<servlet-class>seoulmate.board.WriteController</servlet-class>
 		<multipart-config>
 			<max-file-size>1048576</max-file-size>
 			<max-request-size>10485760</max-request-size>
