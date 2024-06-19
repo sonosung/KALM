@@ -470,7 +470,7 @@
                         <a class="btn btn-outline-light btn-social mx-1" href="https://github.com/poong1125"><i class="fab fa-fw fa-linkedin-in"></i></a>
                         <a class="btn btn-outline-light btn-social mx-1" href="https://github.com/sonosung"><i class="fab fa-fw fa-dribbble"></i></a>
                     </div>
-                    <!-- Footer About Text-->
+                    <!-- Footer About Text--->
                     <div class="col-lg-4">
                         <h4 class="text-uppercase mb-4">About Us</h4>
                         <p class="lead mb-0">
