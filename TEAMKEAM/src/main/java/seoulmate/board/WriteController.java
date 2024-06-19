@@ -1,4 +1,4 @@
-package seoulmate;
+package seoulmate.board;
 
 import java.io.IOException;
 

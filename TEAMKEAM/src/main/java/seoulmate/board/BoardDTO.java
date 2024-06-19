@@ -1,4 +1,4 @@
-package seoulmate;
+package seoulmate.board;
 
 public class BoardDTO {
 	private String num;

@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>  
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -91,6 +92,7 @@
                             <!-- 게시물이 없을 때 -->
                             <tr>
                                 <td colspan="6" align="center">등록된 게시물이 없습니다.</td>
+                                
                             </tr>
                         </c:when>
                         <c:otherwise>

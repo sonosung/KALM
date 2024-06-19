@@ -1,4 +1,4 @@
-package seoulmate;
+package seoulmate.board;
 
 public class FestivalDTO {
 	private int festivalnum;
