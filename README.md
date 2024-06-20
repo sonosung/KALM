@@ -12,5 +12,21 @@ JSP &amp; DB 를 이용한 게시판 구현 프로젝트!<br/>
 주제 선정 이유 : 서울은 한국의 수도로서, 이미 한류를 통해 전 세계에 널리 알려져 있는 한국을 대표하는 도시입니다.<br/>
 이런 이유로 서울에 방문하는 많은 관광객을 대상으로 축제 및 행사 정보에 쉽게 접근할 수 있는 웹페이지를 개발하기로 하였습니다.
 
+SQL
+
+BOARD 테이블 컬럼
+
+IDX 게시글 번호
+TITLE 게시글 제목
+CONTENT 게시글 내용
+NAME 게시글 작성자
+POSTDATE 게시글 작성시간
+VISITCOUNT 게시글 조회수
+LIKECOUNT 게시글 추천수
+FESNAME 축제 이름
+FESLOCATION 축제 주소
+FESSTART 축제 시작일
+FESEND 출제 종료일
+
 PPT Website : https://keam.my.canva.site/original-size-2-project-keam<br/>
 Notion URL : https://www.notion.so/sonosung/2-PROJECT_KEAM-97155e93bb074222bea02b38052a2a36?pvs=4
