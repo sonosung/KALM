@@ -45,6 +45,7 @@ public class MemberAuth extends HttpServlet {
 			else
 				req.setAttribute("authMessage", "귀하는 회원이 아닙니다.");
 		}
+		/* req.getRequestDispatcher("/12Servlet/MemberAuth.jsp").forward(req, resp); */
 		req.getRequestDispatcher("/12Servlet/MemberAuth.jsp").forward(req, resp);
 	}
 	

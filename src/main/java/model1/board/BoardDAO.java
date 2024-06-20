@@ -46,7 +46,7 @@ public class BoardDAO extends JDBConnect {
 		if (map.get("searchWord") != null) {
 			query += " WHERE " + map.get("searchFiled") + " " + " LIKE '%" + map.get("searchWord") + "%' ";
 		}
-		query += " ORDER BY num DESC ";
+		query += " ORDER by num DESC ";
 
 		try {
 			stmt = con.createStatement();

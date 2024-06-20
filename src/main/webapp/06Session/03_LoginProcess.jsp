@@ -27,6 +27,7 @@ if (memberDTO.getId() != null) {
 } else {
 	//로그인 실패
 	request.setAttribute("LoginErrMsg", "로그인 오류입니다.");
+	System.out.println("로그인 에러");
 	request.getRequestDispatcher("02_LoginForm.jsp").forward(request, response);
 }
 %> 

@@ -40,6 +40,11 @@
 <!-- Style -->
 <link rel="stylesheet" href="./calendar/css/style.css">
 
+<!-- Libraries Stylesheet -->
+<link href="./resources/lib/animate/animate.min.css" rel="stylesheet">
+<link href="./resources/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+<link href="./resources/lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
 <title>Calendar #9</title>
 
 <!------------------------------------------------- 달력 메타 태그 --------------------------------------------------->
@@ -61,7 +66,7 @@
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">게시판</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#calendar">행사달력</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="./userPage/contact.jsp">Contact</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="./06Session/02_LoginForm.jsp">Login</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="./userPage/userLogin.jsp">Login</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#Signin">Signin</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="./06Session/04_Logout.jsp">Logout</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="./userPage/myPage.jsp">MyPage</a></li>
@@ -76,20 +81,94 @@
         
         <!--------------------------------------------------------- 메인 상단 대표행사 위치 --------------------------------------------------------->
         
-            <div class="container d-flex align-items-center flex-column">
-                <!-- Masthead Avatar Image-->
+			<div class="container d-flex align-items-center flex-column">
+                <!-- Masthead Avatar Image -->
                 <img class="masthead-avatar mb-5" src="./resources/img/Logo.png" alt="..." />
-                <!-- Masthead Heading-->
+                <!-- Masthead Heading -->
                 <h1 class="masthead-heading text-uppercase mb-0">SEOULMATE</h1>
-                <!-- Icon Divider-->
+                <!-- Icon Divider -->
                 <div class="divider-custom divider-light">
                     <div class="divider-custom-line"></div>
                     <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
                     <div class="divider-custom-line"></div>
                 </div>
-                <!-- Masthead Subheading-->
-                <p class="masthead-subheading font-weight-light mb-0">너와 나의 SEOULMATE!</p>
+                <!-- Masthead Subheading -->
+                <p class="masthead-subheading text-uppercase mb-0">너와 나의 SEOULMATE!</p>
             </div>
+            
+               <!-- Carousel Start -->
+    <!--  <div class="container-fluid p-0 pb-5">
+        <div class="owl-carousel header-carousel position-relative">
+            <div class="owl-carousel-item position-relative">
+            
+            
+             Masthead Avatar Image
+                <img class="masthead-avatar mb-5" src="./resources/img/Logo.png" alt="..." />
+                Masthead Heading
+                <h1 class="masthead-heading text-uppercase mb-0">SEOULMATE</h1>
+                Icon Divider
+                <div class="divider-custom divider-light">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                Masthead Subheading
+                <p class="masthead-subheading font-weight-light mb-0">너와 나의 SEOULMATE!</p>
+            
+            <div class="owl-carousel-item position-relative">
+                <img class="img-fluid" src="img/carousel-1.jpg" alt="">
+                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(53, 53, 53, .7);">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-12 col-lg-8 text-center">
+                                <h5 class="text-white text-uppercase mb-3 animated slideInDown">Welcome To WooDY</h5>
+                                <h1 class="display-3 text-white animated slideInDown mb-4">Best Carpenter & Craftsman Services</h1>
+                                <p class="fs-5 fw-medium text-white mb-4 pb-2">Vero elitr justo clita lorem. Ipsum dolor at sed stet sit diam no. Kasd rebum ipsum et diam justo clita et kasd rebum sea elitr.</p>
+                                <a href="" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Read More</a>
+                                <a href="" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Free Quote</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                
+                
+            </div>
+            <div class="owl-carousel-item position-relative">
+                <img class="img-fluid" src="img/carousel-2.jpg" alt="">
+                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(53, 53, 53, .7);">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-12 col-lg-8 text-center">
+                                <h5 class="text-white text-uppercase mb-3 animated slideInDown">Welcome To WooDY</h5>
+                                <h1 class="display-3 text-white animated slideInDown mb-4">Best Carpenter & Craftsman Services</h1>
+                                <p class="fs-5 fw-medium text-white mb-4 pb-2">Vero elitr justo clita lorem. Ipsum dolor at sed stet sit diam no. Kasd rebum ipsum et diam justo clita et kasd rebum sea elitr.</p>
+                                <a href="" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Read More</a>
+                                <a href="" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Free Quote</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="owl-carousel-item position-relative">
+                <img class="img-fluid" src="img/carousel-3.jpg" alt="">
+                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(53, 53, 53, .7);">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-12 col-lg-8 text-center">
+                                <h5 class="text-white text-uppercase mb-3 animated slideInDown">Welcome To WooDY</h5>
+                                <h1 class="display-3 text-white animated slideInDown mb-4">Best Carpenter & Craftsman Services</h1>
+                                <p class="fs-5 fw-medium text-white mb-4 pb-2">Vero elitr justo clita lorem. Ipsum dolor at sed stet sit diam no. Kasd rebum ipsum et diam justo clita et kasd rebum sea elitr.</p>
+                                <a href="" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Read More</a>
+                                <a href="" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Free Quote</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    Carousel End -->
             
         <!--------------------------------------------------------- 메인 상단 대표행사 위치 --------------------------------------------------------->     
             
@@ -101,7 +180,7 @@
 		<div class="container">
 			<!-- Portfolio Section Heading-->
 			<h2
-				class="page-section-heading text-center text-uppercase text-secondary mb-0">행사정보</h2>
+				class="page-section-heading text-center text-uppercase text-secondary mb-0">추천 행사정보</h2>
 			<!-- Icon Divider-->
 			<div class="divider-custom">
 				<div class="divider-custom-line"></div>
@@ -173,7 +252,7 @@
 
 					<!--------------------------------------------------------- 메인 중앙 네번째 이미지 --------------------------------------------------------->
 
-					<div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
+					<!-- <div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
 						<div class="portfolio-item mx-auto" data-bs-toggle="modal"
 							data-bs-target="#portfolioModal4">
 							<div
@@ -188,7 +267,7 @@
 						</div>
 					</div>
 
-					<!--------------------------------------------------------- 메인 중앙 다섯번째 이미지 --------------------------------------------------------->
+					------------------------------------------------------- 메인 중앙 다섯번째 이미지 -------------------------------------------------------
 
 					<div class="col-md-6 col-lg-4 mb-5 mb-md-0">
 						<div class="portfolio-item mx-auto" data-bs-toggle="modal"
@@ -205,7 +284,7 @@
 						</div>
 					</div>
 
-					<!--------------------------------------------------------- 메인 중앙 여섯번째 이미지 --------------------------------------------------------->
+					------------------------------------------------------- 메인 중앙 여섯번째 이미지 -------------------------------------------------------
 
 					<div class="col-md-6 col-lg-4">
 						<div class="portfolio-item mx-auto" data-bs-toggle="modal"
@@ -222,7 +301,7 @@
 						</div>
 					</div>
 
-					<!--------------------------------------------------------- 메인 중앙 일곱번째 이미지 --------------------------------------------------------->
+					------------------------------------------------------- 메인 중앙 일곱번째 이미지 -------------------------------------------------------
 					<div class="divider-custom"></div>
 
 					<div class="col-md-6 col-lg-4 mb-5">
@@ -240,7 +319,7 @@
 						</div>
 					</div>
 
-					<!--------------------------------------------------------- 메인 중앙 여덞번째 이미지 --------------------------------------------------------->
+					------------------------------------------------------- 메인 중앙 여덞번째 이미지 -------------------------------------------------------
 
 					<div class="col-md-6 col-lg-4">
 						<div class="portfolio-item mx-auto" data-bs-toggle="modal"
@@ -257,7 +336,7 @@
 						</div>
 					</div>
 
-					<!--------------------------------------------------------- 메인 중앙 아홉번째 이미지 --------------------------------------------------------->
+					------------------------------------------------------- 메인 중앙 아홉번째 이미지 -------------------------------------------------------
 					
 					<div class="col-md-6 col-lg-4">
 						<div class="portfolio-item mx-auto" data-bs-toggle="modal"
@@ -274,7 +353,7 @@
 						</div>
 					</div>
 					
-					<!--------------------------------------------------------- 메인 중앙 열번째 이미지 --------------------------------------------------------->
+					------------------------------------------------------- 메인 중앙 열번째 이미지 -------------------------------------------------------
 
 					<div class="col-md-6 col-lg-4 mb-5">
 						<div class="portfolio-item mx-auto" data-bs-toggle="modal"
@@ -291,7 +370,7 @@
 						</div>
 					</div>
 
-					<!--------------------------------------------------------- 메인 중앙 열한번째 이미지 --------------------------------------------------------->	
+					------------------------------------------------------- 메인 중앙 열한번째 이미지 -------------------------------------------------------	
 						
 					<div class="col-md-6 col-lg-4">
 						<div class="portfolio-item mx-auto" data-bs-toggle="modal"
@@ -308,7 +387,7 @@
 						</div>
 					</div>
 
-					<!--------------------------------------------------------- 메인 중앙 열두번째 이미지 --------------------------------------------------------->
+					------------------------------------------------------- 메인 중앙 열두번째 이미지 -------------------------------------------------------
 
 					<div class="col-md-6 col-lg-4">
 						<div class="portfolio-item mx-auto" data-bs-toggle="modal"
@@ -327,17 +406,19 @@
 
 				</div>
 			</div>
-		</div>
+		</div>-->
 	</section>
-
+ 
 	<!--------------------------------------------------------- 중앙이미지 세션 끝 ------------------------------------------------------------------>
         
-        <!--------------------------------------------------------- 아래는 행사정보만 볼수있는 리스트 섹션으로 만들지 고민중 ------------------------------------------------------------------>
+        <!--------------------------------------------------------- 게시판 이동 버튼 ------------------------------------------------------------------>
+        
+        
         
         <section class="page-section bg-primary text-white mb-0" id="about">
             <div class="container">
                 <!-- About Section Heading-->
-                <h2 class="page-section-heading text-center text-uppercase text-white">About</h2>
+                <h2 class="page-section-heading text-center text-uppercase text-white">행사 게시판</h2>
                 <!-- Icon Divider-->
 			<div class="divider-custom divider-light">
 				<div class="divider-custom-line"></div>
@@ -347,10 +428,10 @@
 				<div class="divider-custom-line"></div>
 			</div>
 			<!-- About Section Content-->
-                <div class="row">
+                <!-- <div class="row">
                     <div class="col-lg-4 ms-auto"><p class="lead">행사 목록들만 한눈에 볼 수 있는</p></div>
                     <div class="col-lg-4 me-auto"><p class="lead">행사 목록 이동 페이지로 만들어 볼까?</p></div>
-                </div>
+                </div> -->
                 <!-- About Section Button-->
                 <!-- <div class="text-center mt-4"> -->
                 <div class="row">
@@ -358,12 +439,16 @@
                         <i class="fas fa-download me-2"></i>
                         관리자 생성 게시판
                     </a>
-        
+        <hr>
                     <a class="btn btn-xl btn-outline-light" href="./mvcboard/list.do">
                         <i class="fas fa-download me-2"></i>
                         유저 후기 게시판
                     </a>
                 </div>
+                <!-- <div>
+                <a href="" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Read More</a>
+                                <a href="" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Free Quote</a>
+                </div> -->
             </div>
         </section>
         <!-- Contact Section-->

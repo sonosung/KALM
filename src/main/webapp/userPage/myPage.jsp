@@ -220,7 +220,7 @@ body {
 			</div>
 
 			<!---------------------------------------- 나의 링크 ---------------------------------------->
-
+<%-- 
 			<div class="card mt-3">
 				<ul class="list-group list-group-flush">
 					<li
@@ -331,7 +331,7 @@ body {
 										</div>
 									</div>
 								</div>
-							</div>
+							</div> --%>
 
 							<!-- <div class="col-sm-5 mb-3">
 					<div class="card h-100">

@@ -9,6 +9,9 @@
 
 <title>회원정보 변경 페이지</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="../resources/assets/img/user/seungho.jpg"" />
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css"
 	rel="stylesheet">
@@ -119,9 +122,9 @@ body {
 									<h6 class="mb-0">이름</h6>
 								</div>
 								<div class="col-sm-9 text-secondary">
-									<!-- <input type="text" class="form-control" value="user_name"> -->
-									<input type="text" class="form-control" name="name"
-										value="${ dto.name }" />
+									<input type="text" class="form-control" value="user_name">
+									<%-- <input type="text" class="form-control" name="name"
+										value="${ dto.name }" /> --%>
 								</div>
 							</div>
 							<div class="row mb-3">
@@ -142,7 +145,7 @@ body {
 							</div>
 							<div class="row mb-3">
 								<div class="col-sm-3">
-									<h6 class="mb-0">Mobile</h6>
+									<h6 class="mb-0">핸드폰</h6>
 								</div>
 								<div class="col-sm-9 text-secondary">
 									<input type="text" class="form-control" value="user_phone">
@@ -150,7 +153,7 @@ body {
 							</div>
 							<div class="row mb-3">
 								<div class="col-sm-3">
-									<h6 class="mb-0">Address</h6>
+									<h6 class="mb-0">주소</h6>
 								</div>
 								<div class="col-sm-9 text-secondary">
 									<input type="text" class="form-control" value="user_address">

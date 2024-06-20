@@ -5,7 +5,8 @@
 		<td align="center">
 		<!-- 로그인 여부에 따른 메뉴 변화 -->
 		<% if(session.getAttribute("UserId") == null) { %>
-			<a href="../06Session/02_LoginForm.jsp">로그인</a>
+			<!-- <a href="../06Session/02_LoginForm.jsp">로그인</a> -->
+			<a href="../adminIndex.jsp">로그인</a>
 		<% } else { %>
 			<a href="../06Session/04_Logout.jsp">로그아웃</a>
 		<% } %>

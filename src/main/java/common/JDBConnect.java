@@ -55,8 +55,12 @@ public class JDBConnect {
 			Class.forName(driver);
 			
 			// DB에 연결
-			String url = "jdbc:oracle:thin:@14.42.124.21:1521:xe";
-			String id = "C##KEAM";
+			/*
+			 * String url = "jdbc:oracle:thin:@14.42.124.21:1521:xe"; String id = "C##KEAM";
+			 */
+			
+			String url = "jdbc:oracle:thin:@localhost:1521:xe";
+			String id = "C##musthave";
 			String pwd = "1234";
 			con = DriverManager.getConnection(url, id, pwd);
 
