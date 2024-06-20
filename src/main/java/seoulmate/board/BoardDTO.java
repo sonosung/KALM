@@ -13,6 +13,7 @@ public class BoardDTO {
 	private String feslocation;
 	private String fesstart;
 	private String fesend;
+	private String fescate;
 
 	public String getFesname() {
 		return fesname;
@@ -100,6 +101,14 @@ public class BoardDTO {
 
 	public void setVisitcount(int visitcount) {
 		this.visitcount = visitcount;
+	}
+
+	public String getFescate() {
+		return fescate;
+	}
+
+	public void setFescate(String fescate) {
+		this.fescate = fescate;
 	}
 
 }

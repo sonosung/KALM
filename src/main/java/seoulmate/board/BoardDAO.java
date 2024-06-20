@@ -81,27 +81,32 @@ public class BoardDAO extends DBConnPool {
 
 	// 게시글 데이터를 받아 DB에 추가합니다.
 	public int insertWrite(BoardDTO dto) {
-		int result = 0;
+	    int result = 0;
 
-		try {
-			String query = "INSERT INTO board ( " + " idx, name, title, content,) " + " VALUES ( "
-					+ " seq_board_num.NEXTVAL,?,?,?,?,)";
+	    try {
+	        String query = "INSERT INTO board ( " + " idx, title, content, name, fesname, feslocation, fesstart, fesend, fescate, postdate) " + " VALUES ( " + " seq_board_num.NEXTVAL,?, ?, ?, ?, ?, ?, ?, ?, SYSDATE)";
 
-			psmt = con.prepareStatement(query);
-			psmt.setString(1, dto.getName());
-			psmt.setString(2, dto.getTitle());
-			psmt.setString(3, dto.getContent());
+	        psmt = con.prepareStatement(query);
+	        psmt.setString(1, dto.getTitle());
+	        psmt.setString(2, dto.getContent());
+	        psmt.setString(3, dto.getName());
+	        psmt.setString(4, dto.getFesname());
+	        psmt.setString(5, dto.getFeslocation());
+	        psmt.setString(6, dto.getFesstart());
+	        psmt.setString(7, dto.getFesend());
+	        psmt.setString(8, dto.getFescate());
 
-			result = psmt.executeUpdate();
+	        result = psmt.executeUpdate();
 
-		} catch (Exception e) {
-			System.out.println("게시물 입력 중 예외 발생");
-			e.printStackTrace();
-		}
+	    } catch (Exception e) {
+	        System.out.println("게시물 입력 중 예외 발생");
+	        e.printStackTrace();
+	    } finally {
+	        // PreparedStatement, Connection 등의 자원을 반납하는 코드가 필요합니다.
+	    }
 
-		return result;
+	    return result;
 	}
-
 	public BoardDTO selectView(String idx) {
 		BoardDTO dto = new BoardDTO();
 		String query = "SELECT * FROM board WHERE idx=?";
@@ -122,6 +127,7 @@ public class BoardDAO extends DBConnPool {
 				dto.setFeslocation(rs.getString(9));
 				dto.setFesstart(rs.getString(10));
 				dto.setFesend(rs.getString(11));
+				dto.setFescate(rs.getString(12));
 			}
 		} catch (Exception e) {
 			System.out.println("게시물 상세보기 중 예외 발생");

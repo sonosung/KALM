@@ -95,13 +95,13 @@ th {
 				</tr>
 				<tr>
 					<td align="center" class="bg-secondary text-white">카테고리</td>
-					<td colspan="2"><select name="category" class="btn btn-secondary">
+					<td colspan="2"><select name="fescate" class="btn btn-secondary">
 							<option value="sel">=== 선택 ===</option>
-							<option value="cate1">나들이</option>
-							<option value="cate2">공연</option>
-							<option value="cate3">먹거리</option>
-							<option value="cate4">친구와 함께</option>
-							<option value="cate4">전통</option>
+							<option value="나들이">나들이</option>
+							<option value="공연">공연</option>
+							<option value="먹거리">먹거리</option>
+							<option value="친구와 함께">친구와 함께</option>
+							<option value="전통">전통</option>
 					</select></td>
 				</tr>
 				<tr>
@@ -111,7 +111,7 @@ th {
 				</tr>
 				<tr>
 					<td align="center" class="bg-secondary text-white">행사명</td>
-					<td colspan="2"><input type="text" name="festivalname"
+					<td colspan="2"><input type="text" name="fesname"
 						style="width: 90%;" /><br></td>
 				</tr>
 				<tr>
@@ -131,14 +131,14 @@ th {
 				</tr>
 				<tr>
 					<td align="center" class="bg-secondary text-white">행사 주소</td>
-					<td colspan="2"><input type="text" name="location"
+					<td colspan="2"><input type="text" name="feslocation"
 						style="width: 42%;" /></td>
 				</tr>
 				<tr>
 					<td align="center" class="bg-secondary text-white">행사 기간</td>
-					<td colspan="2"><input type="date" name="start"
+					<td colspan="2"><input type="date" name="fesstart"
 						style="width: 20%;" class="btn btn-secondary" /> - <input
-						type="date" name="end" style="width: 20%;"
+						type="date" name="fesend" style="width: 20%;"
 						class="btn btn-secondary" /></td>
 				</tr>
 				<tr class="masthead bg-secondary">
@@ -146,7 +146,7 @@ th {
 						<button type="submit" class="btn btn-secondary">작성 완료</button>
 						<button type="reset" class="btn btn-secondary">RESET</button>
 						<button type="button" class="btn btn-secondary"
-							onclick="location.href='list.jsp';">목록 바로가기</button>
+							onclick="location.href='list.do';">목록 바로가기</button>
 					</td>
 				</tr>
 			</table>

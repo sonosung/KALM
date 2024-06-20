@@ -35,7 +35,8 @@
 </style>
 
 
-	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=fdf17bc322ecfe3f9b4123bfebc8ae80"></script>
+<script type="text/javascript"
+	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=fdf17bc322ecfe3f9b4123bfebc8ae80"></script>
 </head>
 <body id="page-top">
 
@@ -81,7 +82,7 @@
 	<header class="masthead bg-black text-white text-center">
 		<div class="container d-flex align-items-center flex-column">
 			<!-- Masthead Avatar Image-->
-			
+
 			<!-- Masthead Heading-->
 			<h1 class="masthead-heading text-uppercase mb-0">SEOULMATE</h1>
 			<!-- Icon Divider-->
@@ -116,6 +117,10 @@
 					</td>
 				</tr>
 				<tr>
+					<td colspan="2" align="right"><h4>작성자 : ${ dto.name}</h4></td>
+
+				</tr>
+				<tr>
 					<td colspan="2" align="right"><h4>조회수 : ${ dto.visitcount }</h4></td>
 				</tr>
 
@@ -124,6 +129,7 @@
 					<td colspan="2" align="right"><h4>추천수 : ${ dto.likecount }</h4></td>
 
 				</tr>
+
 			</table>
 		</div>
 		<br> <br> <br>
@@ -168,9 +174,10 @@
 			<tr>
 				<td>
 					<h4 style="margin-left: 200px;">행사명 : ${ dto.fesname }</h4>
+					<h4 style="margin-left: 200px;">행사종류 : ${ dto.fescate }</h4>
 					<h4 style="margin-left: 200px;">주소 : ${ dto.feslocation }</h4>
-					<h4 style="margin-left: 200px;">기간 : ${ dto.fesstart } ~ ${ dto.fesend }</h4> 
-					------- API	날씨 정보 출력
+					<h4 style="margin-left: 200px;">기간 : ${ dto.fesstart } ~ ${ dto.fesend }</h4>
+					------- API 날씨 정보 출력
 				</td>
 			</tr>
 			<tr>
@@ -215,7 +222,8 @@
 			<div class="container">
 				<!-- About Section Heading-->
 				<h2
-					class="page-section-heading text-center text-uppercase text-secondary mb-0">KAKAO 길찾기</h2>
+					class="page-section-heading text-center text-uppercase text-secondary mb-0">KAKAO
+					길찾기</h2>
 				<!-- Icon Divider-->
 				<div class="divider-custom">
 					<div class="divider-custom-line"></div>
@@ -242,7 +250,7 @@
 				</script>
 			</div>
 		</section>
-		
+
 		<!-- Contact Section-->
 		<section class="page-section" id="contact">
 			<div class="container">

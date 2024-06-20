@@ -8,6 +8,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import utils.JSFunction;
+
 /**
  * Servlet implementation class WriteController
  */
@@ -42,7 +43,7 @@ public class WriteController extends HttpServlet {
 //		try {
 //			originalFileName = FileUtil.uploadFile(req, saveDirectory);
 //		} catch (Exception e) {
-			// 파일 업로드 실패
+		// 파일 업로드 실패
 //			e.printStackTrace();
 //			JSFunction.alertLocation(resp, "파일 업로드 오류입니다", "/write.do");
 //			return;
@@ -54,11 +55,15 @@ public class WriteController extends HttpServlet {
 		dto.setName(req.getParameter("name"));
 		dto.setTitle(req.getParameter("title"));
 		dto.setContent(req.getParameter("content"));
-		
+		dto.setFescate(req.getParameter("fescate"));
+		dto.setFeslocation(req.getParameter("feslocation"));
+		dto.setFesname(req.getParameter("fesname"));
+		dto.setFesstart(req.getParameter("fesstart"));
+		dto.setFesend(req.getParameter("fesend"));
 
 		// 원본 파일명과 저장된 파일 이름 설정
 //		if (originalFileName != "") {
-			// 첨부 파일이 있을 경우 파일명 변경
+		// 첨부 파일이 있을 경우 파일명 변경
 //			String savedFileName = FileUtil.renameFile(saveDirectory, originalFileName);
 
 //			dto.setOfile(originalFileName); // 원래 파일 이름
@@ -72,10 +77,10 @@ public class WriteController extends HttpServlet {
 
 		// 성공 or 실패?
 		if (result == 1) { // 글쓰기 성공
-			resp.sendRedirect("/list.do");
+			resp.sendRedirect("list.do");
 
 		} else {// 글쓰기 실패
-			JSFunction.alertLocation(resp, "글쓰기에 실패했습니다", "/write.do");
+			JSFunction.alertLocation(resp, "글쓰기에 실패했습니다", "write.do");
 		}
 
 //		request.getRequestDispatcher("/14MVCBoard/Write.jsp").forward(request, response);
