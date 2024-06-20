@@ -112,16 +112,16 @@
 				align="center">
 				<tr class="masthead bg-secondary text-white">
 					<td colspan="2" align="center">
-						<h1>Board - Title</h1>
+						<h1>${ dto.title }</h1>
 					</td>
 				</tr>
 				<tr>
-					<td colspan="2" align="right">조회수 : Board - ViewCount</td>
+					<td colspan="2" align="right"><h4>조회수 : ${ dto.visitcount }</h4></td>
 				</tr>
 
 
 				<tr>
-					<td colspan="2" align="right">추천수 : Board - LikeCount</td>
+					<td colspan="2" align="right"><h4>추천수 : ${ dto.likecount }</h4></td>
 
 				</tr>
 			</table>
@@ -167,15 +167,15 @@
 
 			<tr>
 				<td>
-					<h4 style="margin-left: 200px;">행사명 : Board - FestivalName</h4>
-					<h4 style="margin-left: 200px;">주소 : Board - Address</h4>
-					<h4 style="margin-left: 200px;">기간 : Board - Date</h4> 
+					<h4 style="margin-left: 200px;">행사명 : ${ dto.fesname }</h4>
+					<h4 style="margin-left: 200px;">주소 : ${ dto.feslocation }</h4>
+					<h4 style="margin-left: 200px;">기간 : ${ dto.fesstart } ~ ${ dto.fesend }</h4> 
 					------- API	날씨 정보 출력
 				</td>
 			</tr>
 			<tr>
 				<td><br>
-					<h4 style="margin-left: 200px;">Board - Content</h4></td>
+					<h4 style="margin-left: 200px;">내용 : ${ dto.content }</h4></td>
 			</tr>
 
 
@@ -188,7 +188,7 @@
 					<button type="button" class="btn btn-secondary">수정</button>
 					<button type="reset" class="btn btn-secondary">삭제</button>
 					<button type="button" class="btn btn-secondary"
-						onclick="location.href='list.jsp';">목록 바로가기</button>
+						onclick="location.href='list.do';">목록 바로가기</button>
 				</td>
 				<td align="center" class="bg-secondary text-white"
 					style="width: 10px;"></td>

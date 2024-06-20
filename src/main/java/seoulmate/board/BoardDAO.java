@@ -57,12 +57,16 @@ public class BoardDAO extends DBConnPool {
 				BoardDTO dto = new BoardDTO();
 
 				dto.setIdx(rs.getString(1));
-				dto.setName(rs.getString(2));
-				dto.setTitle(rs.getString(3));
-				dto.setContent(rs.getString(4));
+				dto.setTitle(rs.getString(2));
+				dto.setContent(rs.getString(3));
+				dto.setName(rs.getString(4));
 				dto.setPostdate(rs.getDate(5));
-				dto.setLikecount(rs.getInt(6));
-				dto.setVisitcount(rs.getInt(7));
+				dto.setVisitcount(rs.getInt(6));
+				dto.setLikecount(rs.getInt(7));
+				dto.setFesname(rs.getString(8));
+				dto.setFeslocation(rs.getString(9));
+				dto.setFesstart(rs.getString(10));
+				dto.setFesend(rs.getString(11));
 
 				board.add(dto);
 			}
@@ -107,13 +111,17 @@ public class BoardDAO extends DBConnPool {
 			rs = psmt.executeQuery();
 
 			if (rs.next()) {
-				dto.setNum(rs.getString(1));
-				dto.setName(rs.getString(2));
-				dto.setTitle(rs.getString(3));
-				dto.setContent(rs.getString(4));
+				dto.setIdx(rs.getString(1));
+				dto.setTitle(rs.getString(2));
+				dto.setContent(rs.getString(3));
+				dto.setName(rs.getString(4));
 				dto.setPostdate(rs.getDate(5));
-				dto.setLikecount(rs.getInt(6));
-				dto.setVisitcount(rs.getInt(7));
+				dto.setVisitcount(rs.getInt(6));
+				dto.setLikecount(rs.getInt(7));
+				dto.setFesname(rs.getString(8));
+				dto.setFeslocation(rs.getString(9));
+				dto.setFesstart(rs.getString(10));
+				dto.setFesend(rs.getString(11));
 			}
 		} catch (Exception e) {
 			System.out.println("게시물 상세보기 중 예외 발생");
@@ -188,18 +196,17 @@ public class BoardDAO extends DBConnPool {
 //	public int updatePost(BoardDTO dto) {
 //		int result = 0;
 //		try {
-			// 쿼리문 템플릿 준비
+	// 쿼리문 템플릿 준비
 //			String query = "UPDATE board" + " SET title=?, name=?, content=?, ofile=?, sfile=? "
 //					+ " WHERE idx=? and pass=?";
 
-			// 쿼리문 준비
+	// 쿼리문 준비
 //			psmt = con.prepareStatement(query);
 //			psmt.setString(1, dto.getTitle());
 //			psmt.setString(2, dto.getName());
 //			psmt.setString(3, dto.getContent());
 
-
-			// 쿼리문 실행
+	// 쿼리문 실행
 //			result = psmt.executeUpdate();
 //		} catch (Exception e) {
 //			System.out.println("게시물 수정 중 예외 발생");

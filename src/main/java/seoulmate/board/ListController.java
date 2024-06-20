@@ -12,7 +12,9 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import utils.BoardPage;
 
-// @WebServlet("./list.do")
+/**
+ * Servlet implementation class ListController
+ */
 public class ListController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -56,7 +58,7 @@ public class ListController extends HttpServlet {
 		dao.close(); //DB연결 닫기
 		
 		//뷰에 전달할 매개변수 추가
-		String pagingImg = BoardPage.pagingStr(totalCount, pageSize, blockPage, pageNum, "/list.do");
+		String pagingImg = BoardPage.pagingStr(totalCount, pageSize, blockPage, pageNum, "list.do");
 		
 		//바로가기 영역 HTML 문자열
 		map.put("pagingImg", pagingImg);

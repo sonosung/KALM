@@ -1,8 +1,50 @@
 package seoulmate.board;
 
 public class BoardDTO {
-	private String num;
+
 	private String idx;
+	private String name;
+	private String title;
+	private String content;
+	private String fesname;
+	private java.sql.Date postdate;
+	private int likecount;
+	private int visitcount;
+	private String feslocation;
+	private String fesstart;
+	private String fesend;
+
+	public String getFesname() {
+		return fesname;
+	}
+
+	public void setFesname(String fesname) {
+		this.fesname = fesname;
+	}
+
+	public String getFeslocation() {
+		return feslocation;
+	}
+
+	public void setFeslocation(String feslocation) {
+		this.feslocation = feslocation;
+	}
+
+	public String getFesstart() {
+		return fesstart;
+	}
+
+	public void setFesstart(String fesstart) {
+		this.fesstart = fesstart;
+	}
+
+	public String getFesend() {
+		return fesend;
+	}
+
+	public void setFesend(String fesend) {
+		this.fesend = fesend;
+	}
 
 	public String getIdx() {
 		return idx;
@@ -10,14 +52,6 @@ public class BoardDTO {
 
 	public void setIdx(String idx) {
 		this.idx = idx;
-	}
-
-	public String getNum() {
-		return num;
-	}
-
-	public void setNum(String num) {
-		this.num = num;
 	}
 
 	public String getName() {
@@ -67,13 +101,5 @@ public class BoardDTO {
 	public void setVisitcount(int visitcount) {
 		this.visitcount = visitcount;
 	}
-
-	private String name;
-	private String title;
-	private String content;
-	private String festivalname;
-	private java.sql.Date postdate;
-	private int likecount;
-	private int visitcount;
 
 }
