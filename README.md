@@ -14,19 +14,19 @@ JSP &amp; DB 를 이용한 게시판 구현 프로젝트!<br/>
 
 SQL
 
-BOARD 테이블 컬럼
+BOARD 테이블 컬럼<br/>
 
-IDX 게시글 번호
-TITLE 게시글 제목
-CONTENT 게시글 내용
-NAME 게시글 작성자
-POSTDATE 게시글 작성시간
-VISITCOUNT 게시글 조회수
-LIKECOUNT 게시글 추천수
-FESNAME 축제 이름
-FESLOCATION 축제 주소
-FESSTART 축제 시작일
-FESEND 출제 종료일
+IDX 게시글 번호<br/>
+TITLE 게시글 제목<br/>
+CONTENT 게시글 내용<br/>
+NAME 게시글 작성자<br/>
+POSTDATE 게시글 작성시간<br/>
+VISITCOUNT 게시글 조회수<br/>
+LIKECOUNT 게시글 추천수<br/>
+FESNAME 축제 이름<br/>
+FESLOCATION 축제 주소<br/>
+FESSTART 축제 시작일<br/>
+FESEND 출제 종료일<br/>
 
 PPT Website : https://keam.my.canva.site/original-size-2-project-keam<br/>
 Notion URL : https://www.notion.so/sonosung/2-PROJECT_KEAM-97155e93bb074222bea02b38052a2a36?pvs=4
