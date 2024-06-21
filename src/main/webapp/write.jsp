@@ -125,8 +125,13 @@ th {
 							style="width: 90%; height: 500px;"></textarea></td>
 				</tr>
 				<tr>
-					<td align="center" class="bg-secondary text-white">이미지</td>
-					<td colspan="2"><input type="file" name="additionalImage"
+					<td align="center" class="bg-secondary text-white">이미지 1</td>
+					<td colspan="2"><input type="file" name="secimage"
+						class="btn btn-secondary" /></td>
+				</tr>
+				<tr>
+					<td align="center" class="bg-secondary text-white">이미지 2</td>
+					<td colspan="2"><input type="file" name="thiimage"
 						class="btn btn-secondary" /></td>
 				</tr>
 				<tr>

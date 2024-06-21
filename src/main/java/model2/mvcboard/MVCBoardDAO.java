@@ -190,19 +190,18 @@ public class MVCBoardDAO extends DBConnPool {
 			result = psmt.executeUpdate();
 		} catch (Exception e) {
 			System.out.println("게시물 삭제 중 예외 발생");
-			 e.printStackTrace();
+			e.printStackTrace();
 		}
 		return result;
 	}
-	
+
 	public int updatePost(MVCBoardDTO dto) {
 		int result = 0;
 		try {
 			// 쿼리문 템플릿 준비
-			String query = "UPDATE mvcboard"
-						+ " SET title=?, name=?, content=?, ofile=?, sfile=? "
-						+ " WHERE idx=? and pass=?";
-			
+			String query = "UPDATE mvcboard" + " SET title=?, name=?, content=?, ofile=?, sfile=? "
+					+ " WHERE idx=? and pass=?";
+
 			// 쿼리문 준비
 			psmt = con.prepareStatement(query);
 			psmt.setString(1, dto.getTitle());
@@ -212,15 +211,14 @@ public class MVCBoardDAO extends DBConnPool {
 			psmt.setString(5, dto.getSfile());
 			psmt.setString(6, dto.getIdx());
 			psmt.setString(7, dto.getPass());
-			
+
 			// 쿼리문 실행
 			result = psmt.executeUpdate();
-		}
-		catch (Exception e) {
+		} catch (Exception e) {
 			System.out.println("게시물 수정 중 예외 발생");
 			e.printStackTrace();
 		}
 		return result;
 	}
-	
+
 }

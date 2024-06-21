@@ -35,8 +35,50 @@
 </style>
 
 
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $("#likeButton").click(function() {
+            var idx = "${dto.idx}";
+
+            $.ajax({
+                type: "GET", // GET 메소드 사용
+                url: "like.do",
+                data: { idx: idx },
+                success: function(response) {
+                    // 서버에서 'success'를 반환하면 실행됩니다.
+                    if (response.trim() === 'success') {
+                        alert('추천되었습니다.');
+                        location.reload(); // 페이지 새로고침 혹은 적절한 방식으로 UI 업데이트
+                    } else {
+                        alert('추천 요청 실패');
+                    }
+                },
+                error: function(xhr, status, error) {
+                    alert('서버 요청 실패');
+                    console.error(xhr);
+                }
+            });
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
 <script type="text/javascript"
 	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=fdf17bc322ecfe3f9b4123bfebc8ae80"></script>
+
+<%
+// request에서 dto 객체를 가져옵니다.
+seoulmate.board.BoardDTO dto = (seoulmate.board.BoardDTO) request.getAttribute("dto");
+%>
+
 </head>
 <body id="page-top">
 
@@ -116,18 +158,24 @@
 						<h1>${ dto.title }</h1>
 					</td>
 				</tr>
-				<tr>
-					<td colspan="2" align="right"><h4>작성자 : ${ dto.name}</h4></td>
 
+				<td align="center"><br>
+					<h1 class="masthead-heading text-uppercase mb-0">${ dto.fesname }</h1></td>
+
+				<tr>
+					<td colspan="2" align="right">
+						<h4 style="margin-right: 500px;">작성자 : ${ dto.name}</h4>
+					</td>
 				</tr>
 				<tr>
-					<td colspan="2" align="right"><h4>조회수 : ${ dto.visitcount }</h4></td>
+					<td colspan="2" align="right">
+						<h4 style="margin-right: 500px;">조회수 : ${ dto.visitcount }</h4>
+					</td>
 				</tr>
-
-
 				<tr>
-					<td colspan="2" align="right"><h4>추천수 : ${ dto.likecount }</h4></td>
-
+					<td colspan="2" align="right">
+						<h4 style="margin-right: 500px;">추천수 : ${ dto.likecount }</h4>
+					</td>
 				</tr>
 
 			</table>
@@ -135,7 +183,7 @@
 		<br> <br> <br>
 
 		<div id="carouselExampleIndicators" class="carousel slide"
-			style="width: 50%; margin: auto;">
+			style="width: 55%; margin: auto;">
 			<div class="carousel-indicators">
 				<button type="button" data-bs-target="#carouselExampleIndicators"
 					data-bs-slide-to="0" class="active" aria-current="true"
@@ -147,13 +195,16 @@
 			</div>
 			<div class="carousel-inner">
 				<div class="carousel-item active">
-					<img src="1.jpg" class="d-block w-100">
+					<img src="data:image/jpeg;base64,${ dto.base64MainImage }"
+						class="d-block w-100">
 				</div>
 				<div class="carousel-item">
-					<img src="2.jpg" class="d-block w-100">
+					<img src="data:image/jpeg;base64,${ dto.base64SecImage }"
+						class="d-block w-100">
 				</div>
 				<div class="carousel-item">
-					<img src="3.jpg" class="d-block w-100">
+					<img src="data:image/jpeg;base64,${ dto.base64ThiImage }"
+						class="d-block w-100">
 				</div>
 			</div>
 			<button class="carousel-control-prev" type="button"
@@ -173,16 +224,19 @@
 
 			<tr>
 				<td>
-					<h4 style="margin-left: 200px;">행사명 : ${ dto.fesname }</h4>
-					<h4 style="margin-left: 200px;">행사종류 : ${ dto.fescate }</h4>
-					<h4 style="margin-left: 200px;">주소 : ${ dto.feslocation }</h4>
-					<h4 style="margin-left: 200px;">기간 : ${ dto.fesstart } ~ ${ dto.fesend }</h4>
+					<h4 style="margin-left: 500px;">행사명 : ${ dto.fesname }</h4>
+					<h4 style="margin-left: 500px;">행사종류 : ${ dto.fescate }</h4>
+					<h4 style="margin-left: 500px;">주소 : ${ dto.feslocation }</h4>
+					<h4 style="margin-left: 500px;">기간 : ${ dto.fesstart } ~ ${ dto.fesend }</h4>
 					------- API 날씨 정보 출력
 				</td>
 			</tr>
+
 			<tr>
 				<td><br>
-					<h4 style="margin-left: 200px;">내용 : ${ dto.content }</h4></td>
+					<h4 style="margin-left: 500px; margin-right: 500px;">
+						내용 :
+						<%=dto.getContent().replace("\n", "<br>")%></h4></td>
 			</tr>
 
 
@@ -191,14 +245,16 @@
 
 
 				<td colspan="2" align="right">
-					<button type="button" class="btn btn-secondary">추천</button>
+					<button type="button" class="btn btn-secondary" id="likeButton"
+						onclick="location.href='like.do';">추천</button>
 					<button type="button" class="btn btn-secondary">수정</button>
-					<button type="reset" class="btn btn-secondary">삭제</button>
+					<button type="button" class="btn btn-secondary">삭제</button>
 					<button type="button" class="btn btn-secondary"
 						onclick="location.href='list.do';">목록 바로가기</button>
 				</td>
-				<td align="center" class="bg-secondary text-white"
-					style="width: 10px;"></td>
+
+
+
 			</tr>
 
 

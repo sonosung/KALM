@@ -1,12 +1,13 @@
 package seoulmate.board;
 
 import java.io.IOException;
+import java.io.InputStream;
 
-import fileupload.FileUtil;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.Part;
 import utils.JSFunction;
 
 /**
@@ -60,7 +61,32 @@ public class WriteController extends HttpServlet {
 		dto.setFesname(req.getParameter("fesname"));
 		dto.setFesstart(req.getParameter("fesstart"));
 		dto.setFesend(req.getParameter("fesend"));
+		
+		
+        Part mainimagePart = req.getPart("mainimage");
+        if (mainimagePart != null && mainimagePart.getSize() > 0) {
+            InputStream mainimageInputStream = mainimagePart.getInputStream();
+            byte[] mainimage = mainimageInputStream.readAllBytes();
+            dto.setMainimage(mainimage);
+        }
 
+        // secimage 업로드 처리
+        Part secimagePart = req.getPart("secimage");
+        if (secimagePart != null && secimagePart.getSize() > 0) {
+            InputStream secimageInputStream = secimagePart.getInputStream();
+            byte[] secimage = secimageInputStream.readAllBytes();
+            dto.setSecimage(secimage);
+        }
+        
+        // thiimage 업로드 처리
+        Part thiimagePart = req.getPart("thiimage");
+        if (thiimagePart != null && thiimagePart.getSize() > 0) {
+            InputStream thiimageInputStream = thiimagePart.getInputStream();
+            byte[] thiimage = thiimageInputStream.readAllBytes();
+            dto.setThiimage(thiimage);
+        }
+        
+        
 		// 원본 파일명과 저장된 파일 이름 설정
 //		if (originalFileName != "") {
 		// 첨부 파일이 있을 경우 파일명 변경
