@@ -4,6 +4,16 @@
 <html lang="en">
 
 <head>
+   <style>
+   button {
+      width : 100px;
+      height : 35px;
+      border : 0px;
+      color:white;
+      background:#282A35;
+      margin : 5px;
+   }
+   </style>
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -42,36 +52,47 @@
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
                                         <input type="text" class="form-control form-control-user" id="exampleFirstName"
-                                            placeholder="First Name">
+                                            placeholder="성명 / Full Name">
                                     </div>
-                                    <div class="col-sm-6">
-                                        <input type="text" class="form-control form-control-user" id="exampleLastName"
-                                            placeholder="Last Name">
+                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                       <input type="email" class="form-control form-control-user" id="exampleInputEmail"
+                                        placeholder="이메일 / Email">
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <input type="email" class="form-control form-control-user" id="exampleInputEmail"
-                                        placeholder="Email Address">
+                                <div class="form-group row">
+                                <div class="col-sm-6 mb-3 mb-sm-0">
+                                    <input type="text" class="form-control form-control-user" id="exampleID"
+                                        placeholder="닉네임 / User Name">
+                        </div>
+                        <div class="col-sm-6 mb-3 mb-sm-0">
+                                    <input type="email" class="form-control form-control-user" id="examplebirthday"
+                                        placeholder="전화번호 / Phone">
+                        </div>
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
                                         <input type="password" class="form-control form-control-user"
-                                            id="exampleInputPassword" placeholder="Password">
+                                            id="exampleInputPassword" placeholder="비밀번호 / Password">
                                     </div>
-                                    <div class="col-sm-6">
+                                    <div class="col-sm-6 mb-3 mb-sm-0">
                                         <input type="password" class="form-control form-control-user"
-                                            id="exampleRepeatPassword" placeholder="Repeat Password">
+                                            id="exampleRepeatPassword" placeholder="비밀번호 확인 / Confirm Password ">
                                     </div>
                                 </div>
-                                <a href="./login.jsp" class="btn btn-primary btn-user btn-block">
+                                <div class="form-group row">         
+                        <div class="col-sm-2-An mb-3 mb-sm-0">
+                           <input type="text" name="address" class="form-control form-control-user postcodify_postcode5"
+                              placeholder="Zip">
+                        </div>
+                        <div class="col-sm-8 mb-3 mb-sm-0">
+                           <input type="text" name="address" class="form-control form-control-user postcodify_address"
+                              placeholder="도로명 주소 / Street">
+                        </div>
+                        <!-- <button type="button" class="btn btn-primary btn-user-An-search btn-block" id="postcodify_search_button">검색</button> -->
+                        <button type="button" class="btn btn-primary btn-user-An-search btn-block" id="postcodify_search_button">검색</button>
+                                </div>
+                                <a href="./login.jsp" class="btn btn-primary btn-user-An-Register-Account btn-block">
                                     Register Account
-                                </a>
-                                <hr>
-                                <a href="../adminIndex.jsp" class="btn btn-google btn-user btn-block">
-                                    <i class="fab fa-google fa-fw"></i> Register with Google
-                                </a>
-                                <a href="../adminIndex.jsp" class="btn btn-facebook btn-user btn-block">
-                                    <i class="fab fa-facebook-f fa-fw"></i> Register with Facebook
                                 </a>
                             </form>
                             <hr>
@@ -79,7 +100,7 @@
                                 <a class="small" href="forgot-password.html">Forgot Password?</a>
                             </div>
                             <div class="text-center">
-                                <a class="small" href="login.html">Already have an account? Login!</a>
+                                <a class="small" href="login.jsp">Already have an account? Login!</a>
                             </div>
                         </div>
                     </div>
@@ -98,6 +119,14 @@
 
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
+    
+       <!-- 주소 API 스크립트 -->
+   <!-- jQuery와 Postcodify를 로딩한다 -->
+   <script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+   <script src="//d1p7wdleee1q2z.cloudfront.net/post/search.min.js"></script>
+   
+   <!-- "검색" 단추를 누르면 팝업 레이어가 열리도록 설정한다 -->
+   <script> $(function() { $("#postcodify_search_button").postcodifyPopUp(); }); </script>
 
 </body>
 </html>
