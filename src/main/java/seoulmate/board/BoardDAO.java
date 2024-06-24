@@ -83,41 +83,42 @@ public class BoardDAO extends DBConnPool {
 	public int insertWrite(BoardDTO dto) {
 		int result = 0;
 
-		 try {
-		        String query = "INSERT INTO board ( "
-		                + " idx, title, content, name, fesname, feslocation, fesstart, fesend, fescate, postdate, mainimage, secimage, thiimage) "
-		                + " VALUES ( " + " seq_board_num.NEXTVAL, ?, ?, ?, ?, ?, ?, ?, ?, SYSDATE, ?, ?, ?)";
+		try {
+			String query = "INSERT INTO board ( "
+					+ " idx, title, content, name, fesname, feslocation, fesstart, fesend, fescate, postdate, mainimage, secimage, thiimage) "
+					+ " VALUES ( " + " seq_board_num.NEXTVAL, ?, ?, ?, ?, ?, ?, ?, ?, SYSDATE, ?, ?, ?)";
 
-		        psmt = con.prepareStatement(query);
-		        psmt.setString(1, dto.getTitle());
-		        psmt.setString(2, dto.getContent());
-		        psmt.setString(3, dto.getName());
-		        psmt.setString(4, dto.getFesname());
-		        psmt.setString(5, dto.getFeslocation());
-		        psmt.setString(6, dto.getFesstart());
-		        psmt.setString(7, dto.getFesend());
-		        psmt.setString(8, dto.getFescate());
-		        psmt.setBytes(9, dto.getMainimage()); // 이미지 데이터를 BLOB으로 저장
-		        psmt.setBytes(10, dto.getSecimage());
-		        psmt.setBytes(11, dto.getThiimage());
-		        
+			psmt = con.prepareStatement(query);
+			psmt.setString(1, dto.getTitle());
+			psmt.setString(2, dto.getContent());
+			psmt.setString(3, dto.getName());
+			psmt.setString(4, dto.getFesname());
+			psmt.setString(5, dto.getFeslocation());
+			psmt.setString(6, dto.getFesstart());
+			psmt.setString(7, dto.getFesend());
+			psmt.setString(8, dto.getFescate());
+			psmt.setBytes(9, dto.getMainimage()); // 이미지 데이터를 BLOB으로 저장
+			psmt.setBytes(10, dto.getSecimage());
+			psmt.setBytes(11, dto.getThiimage());
 
-		        result = psmt.executeUpdate();
+			result = psmt.executeUpdate();
 
-		    } catch (Exception e) {
-		        System.out.println("게시물 입력 중 예외 발생");
-		        e.printStackTrace();
-		    } finally {
-		        try {
-		            if (psmt != null) psmt.close();
-		            if (con != null) con.close();
-		        } catch (Exception e) {
-		            e.printStackTrace();
-		        }
-		    }
-
-		    return result;
+		} catch (Exception e) {
+			System.out.println("게시물 입력 중 예외 발생");
+			e.printStackTrace();
+		} finally {
+			try {
+				if (psmt != null)
+					psmt.close();
+				if (con != null)
+					con.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 		}
+
+		return result;
+	}
 
 	public BoardDTO selectView(String idx) {
 		BoardDTO dto = new BoardDTO();
@@ -227,30 +228,31 @@ public class BoardDAO extends DBConnPool {
 		}
 		return result;
 	}
-}
 
-//	public int updatePost(BoardDTO dto) {
-//		int result = 0;
-//		try {
-	// 쿼리문 템플릿 준비
-//			String query = "UPDATE board" + " SET title=?, name=?, content=?, ofile=?, sfile=? "
-//					+ " WHERE idx=? and pass=?";
 
-	// 쿼리문 준비
-//			psmt = con.prepareStatement(query);
-//			psmt.setString(1, dto.getTitle());
-//			psmt.setString(2, dto.getName());
-//			psmt.setString(3, dto.getContent());
 
-	// 쿼리문 실행
-//			result = psmt.executeUpdate();
-//		} catch (Exception e) {
-//			System.out.println("게시물 수정 중 예외 발생");
-//			e.printStackTrace();
-//		}
-//		return result;
-//	}
-	
+	public int updatePost(BoardDTO dto) {
+		int result = 0;
+		try {
+			// 쿼리문 템플릿 준비
+			String query = "UPDATE board" + " SET title=?, name=?, content=?, ofile=?, sfile=? "
+					+ " WHERE idx=? and pass=?";
+
+			// 쿼리문 준비
+			psmt = con.prepareStatement(query);
+			psmt.setString(1, dto.getTitle());
+			psmt.setString(2, dto.getName());
+			psmt.setString(3, dto.getContent());
+
+			// 쿼리문 실행
+			result = psmt.executeUpdate();
+		} catch (Exception e) {
+			System.out.println("게시물 수정 중 예외 발생");
+			e.printStackTrace();
+		}
+		return result;
+	}
+
 	// 예제: content 데이터를 출력할 때 줄바꿈을 유지
 
-
+}
