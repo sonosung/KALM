@@ -15,15 +15,15 @@ public class ViewController extends HttpServlet {
 
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		
+
 		BoardDAO dao = new BoardDAO();
 		String idx = req.getParameter("idx");
 		dao.updateVisitCount(idx);
 		BoardDTO dto = dao.selectView(idx);
 		dao.close();
-		
+
 //		dto.setContent(dto.getContent().replaceAll("\r\n", "<br>/"));
-		
+
 //		String ext = null, fileName = dto.getSfile();
 //		if (fileName!=null) {
 //			ext = fileName.substring(fileName.lastIndexOf(".")+1);
@@ -34,7 +34,7 @@ public class ViewController extends HttpServlet {
 //		if (mimeList.contains(ext)) {
 //			isImage = true;
 //		}
-		
+
 		req.setAttribute("dto", dto);
 //		req.setAttribute("isImage", isImage);
 		req.getRequestDispatcher("view.jsp").forward(req, resp);

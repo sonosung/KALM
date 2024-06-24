@@ -1,5 +1,6 @@
 package seoulmate.board;
 
+import java.sql.PreparedStatement;
 import java.util.List;
 import java.util.Map;
 import java.util.Vector;
@@ -123,11 +124,12 @@ public class BoardDAO extends DBConnPool {
 	public BoardDTO selectView(String idx) {
 		BoardDTO dto = new BoardDTO();
 		String query = "SELECT * FROM board WHERE idx=?";
+		
 		try {
 			psmt = con.prepareStatement(query);
 			psmt.setString(1, idx);
 			rs = psmt.executeQuery();
-
+			
 			if (rs.next()) {
 				dto.setIdx(rs.getString(1));
 				dto.setTitle(rs.getString(2));
@@ -192,27 +194,40 @@ public class BoardDAO extends DBConnPool {
 		}
 	}
 
-	// 입력한 비밀번호가 지정한 일련번호의 게시물의 비밀번호와 일치하는지 확인합니다.
-//	public boolean confirmPassword(String pass, String idx) {
-//		boolean isCorr = true;
-//		try {
-//			String sql = "SELECT COUNT(*) FROM board WHERE pass=? AND idx=?";
-//			psmt = con.prepareStatement(sql);
-//			psmt.setString(1, pass);
-//			psmt.setString(2, idx);
-//			rs = psmt.executeQuery();
-//			rs.next();
-//			if (rs.getInt(1) == 0) {
-//				isCorr = false;
-//			}
-//		} catch (Exception e) {
-//			isCorr = false;
-//			e.printStackTrace();
-//		}
+	// id 일치 확인
+	public boolean confirmUserId(String user_id, String idx) {
+		boolean isCorr = false;
+		try {
+			String sql = "SELECT COUNT(*) FROM board WHERE user_id=? AND idx=?";
+			psmt = con.prepareStatement(sql);
+			psmt.setString(1, user_id);
+			psmt.setString(2, idx);
+			rs = psmt.executeQuery();
+			rs.next();
+			if (rs.getInt(1) > 0) {
+				isCorr = true; // 일치하는 경우 true 반환
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close(); // 자원 해제
+		}
+		return isCorr;
+	}
 
-//		return isCorr;
-
-//	}
+	// 자원 해제
+	public void close() {
+		try {
+			if (rs != null)
+				rs.close();
+			if (psmt != null)
+				psmt.close();
+			if (con != null)
+				con.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 
 	public int deletePost(String idx) {
 		int result = 0;
@@ -229,30 +244,28 @@ public class BoardDAO extends DBConnPool {
 		return result;
 	}
 
-
-
 	public int updatePost(BoardDTO dto) {
 		int result = 0;
-		try {
-			// 쿼리문 템플릿 준비
-			String query = "UPDATE board" + " SET title=?, name=?, content=?, ofile=?, sfile=? "
-					+ " WHERE idx=? and pass=?";
+		String sql = "UPDATE board SET name=?, title=?, content=?, fescate=?, feslocation=?, fesname=?, fesstart=?, fesend=?, mainimage=?, secimage=?, thiimage=? WHERE idx=?";
+		try (PreparedStatement pstmt = con.prepareStatement(sql)) {
+			pstmt.setString(1, dto.getName()); // name 필드에 dto.getName() 설정
+			pstmt.setString(2, dto.getTitle());
+			pstmt.setString(3, dto.getContent());
+			pstmt.setString(4, dto.getFescate());
+			pstmt.setString(5, dto.getFeslocation());
+			pstmt.setString(6, dto.getFesname());
+			pstmt.setString(7, dto.getFesstart());
+			pstmt.setString(8, dto.getFesend());
+			pstmt.setBytes(9, dto.getMainimage());
+			pstmt.setBytes(10, dto.getSecimage());
+			pstmt.setBytes(11, dto.getThiimage());
+			pstmt.setString(12, dto.getIdx()); // idx 필드에 dto.getIdx() 설정
 
-			// 쿼리문 준비
-			psmt = con.prepareStatement(query);
-			psmt.setString(1, dto.getTitle());
-			psmt.setString(2, dto.getName());
-			psmt.setString(3, dto.getContent());
-
-			// 쿼리문 실행
-			result = psmt.executeUpdate();
+			result = pstmt.executeUpdate();
 		} catch (Exception e) {
-			System.out.println("게시물 수정 중 예외 발생");
 			e.printStackTrace();
 		}
 		return result;
 	}
-
-	// 예제: content 데이터를 출력할 때 줄바꿈을 유지
 
 }

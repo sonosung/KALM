@@ -124,8 +124,13 @@ public class BoardDTO {
     }
 
     public void setMainimage(byte[] mainimage) {
-        this.mainimage = mainimage;
-        this.base64MainImage = Base64.getEncoder().encodeToString(mainimage);
+        if (mainimage == null) {
+            this.mainimage = new byte[0];
+            this.base64MainImage = "";
+        } else {
+            this.mainimage = mainimage;
+            this.base64MainImage = Base64.getEncoder().encodeToString(mainimage);
+        }
     }
 
     public byte[] getSecimage() {
@@ -133,8 +138,13 @@ public class BoardDTO {
     }
 
     public void setSecimage(byte[] secimage) {
-        this.secimage = secimage;
-        this.base64SecImage = Base64.getEncoder().encodeToString(secimage);
+        if (secimage == null) {
+            this.secimage = new byte[0];
+            this.base64SecImage = "";
+        } else {
+            this.secimage = secimage;
+            this.base64SecImage = Base64.getEncoder().encodeToString(secimage);
+        }
     }
 
     public byte[] getThiimage() {
@@ -142,8 +152,13 @@ public class BoardDTO {
     }
 
     public void setThiimage(byte[] thiimage) {
-        this.thiimage = thiimage;
-        this.base64ThiImage = Base64.getEncoder().encodeToString(thiimage);
+        if (thiimage == null) {
+            this.thiimage = new byte[0];
+            this.base64ThiImage = "";
+        } else {
+            this.thiimage = thiimage;
+            this.base64ThiImage = Base64.getEncoder().encodeToString(thiimage);
+        }
     }
 
     public String getBase64MainImage() {

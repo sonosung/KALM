@@ -13,64 +13,79 @@ import utils.JSFunction;
 
 @WebServlet("/edit.do")
 public class EditController extends HttpServlet {
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
-            throws ServletException, IOException {
-        String idx = req.getParameter("idx");
-        BoardDAO dao = new BoardDAO();
-        BoardDTO dto = dao.selectView(idx);
-        req.setAttribute("dto", dto);
-        req.getRequestDispatcher("/Edit.jsp").forward(req, resp);
-    }
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		String idx = request.getParameter("idx");
+		BoardDAO dao = new BoardDAO();
+		BoardDTO dto = dao.selectView(idx);
+		dao.close();
+		request.setAttribute("dto", dto);
+		request.getRequestDispatcher("/Edit.jsp").forward(request, response);
+		
+	}
 
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        // 폼값을 DTO에 저장
-        BoardDTO dto = new BoardDTO();
-        dto.setIdx(req.getParameter("idx"));
-        dto.setName(req.getParameter("name"));
-        dto.setTitle(req.getParameter("title"));
-        dto.setContent(req.getParameter("content"));
-        dto.setFescate(req.getParameter("fescate"));
-        dto.setFeslocation(req.getParameter("feslocation"));
-        dto.setFesname(req.getParameter("fesname"));
-        dto.setFesstart(req.getParameter("fesstart"));
-        dto.setFesend(req.getParameter("fesend"));
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
+		
+		String idx = request.getParameter("idx");
+		String name = request.getParameter("name");
+		String title = request.getParameter("title");
+		String content = request.getParameter("content");
+		String fescate = request.getParameter("fescate");
+		String feslocation = request.getParameter("feslocation");
+		String fesname = request.getParameter("fesname");
+		String fesstart = request.getParameter("fesstart");
+		String fesend = request.getParameter("fesend");
+		
+		Part mainimagePart = request.getPart("mainimage");
+		byte[] mainimage = null;
+		if (mainimagePart != null && mainimagePart.getSize() > 0) {
+			try (InputStream mainimageInputStream = mainimagePart.getInputStream()) {
+				mainimage = mainimageInputStream.readAllBytes();
+			}
+		}
 
-        // 파일 업로드 처리
-        Part mainimagePart = req.getPart("mainimage");
-        if (mainimagePart != null && mainimagePart.getSize() > 0) {
-            InputStream mainimageInputStream = mainimagePart.getInputStream();
-            byte[] mainimage = mainimageInputStream.readAllBytes();
-            dto.setMainimage(mainimage);
-        }
+		Part secimagePart = request.getPart("secimage");
+		byte[] secimage = null;
+		if (secimagePart != null && secimagePart.getSize() > 0) {
+			try (InputStream secimageInputStream = secimagePart.getInputStream()) {
+				secimage = secimageInputStream.readAllBytes();
+			}
+		}
 
-        Part secimagePart = req.getPart("secimage");
-        if (secimagePart != null && secimagePart.getSize() > 0) {
-            InputStream secimageInputStream = secimagePart.getInputStream();
-            byte[] secimage = secimageInputStream.readAllBytes();
-            dto.setSecimage(secimage);
-        }
+		Part thiimagePart = request.getPart("thiimage");
+		byte[] thiimage = null;
+		if (thiimagePart != null && thiimagePart.getSize() > 0) {
+			try (InputStream thiimageInputStream = thiimagePart.getInputStream()) {
+				thiimage = thiimageInputStream.readAllBytes();
+			}
+		}
 
-        Part thiimagePart = req.getPart("thiimage");
-        if (thiimagePart != null && thiimagePart.getSize() > 0) {
-            InputStream thiimageInputStream = thiimagePart.getInputStream();
-            byte[] thiimage = thiimageInputStream.readAllBytes();
-            dto.setThiimage(thiimage);
-        }
+		BoardDTO dto = new BoardDTO();
+		dto.setIdx(idx);
+		dto.setName(name);
+		dto.setTitle(title);
+		dto.setContent(content);
+		dto.setFescate(fescate);
+		dto.setFeslocation(feslocation);
+		dto.setFesname(fesname);
+		dto.setFesstart(fesstart);
+		dto.setFesend(fesend);
+		dto.setMainimage(mainimage);
+		dto.setSecimage(secimage);
+		dto.setThiimage(thiimage);
 
-        // DAO를 통해 DB에 수정 내용 반영
-        BoardDAO dao = new BoardDAO();
-        int result = dao.updatePost(dto);
-        dao.close();
+		BoardDAO dao = new BoardDAO();
+		int result = dao.updatePost(dto);
+		dao.close();
 
-        // 성공 or 실패 처리
-        if (result == 1) { // 수정 성공
-            resp.sendRedirect("list.do");
-        } else { // 수정 실패
-            JSFunction.alertLocation(resp, "게시글 수정에 실패했습니다.", "edit.do?idx=" + dto.getIdx());
-        }
-    }
+		if (result == 1) {
+			response.sendRedirect("list.do");
+		} else {
+			JSFunction.alertLocation(response, "게시글 수정에 실패했습니다.", "edit.do?idx=" + idx);
+		}
+	}
 }

@@ -248,8 +248,9 @@ seoulmate.board.BoardDTO dto = (seoulmate.board.BoardDTO) request.getAttribute("
 				<td colspan="2" align="right">
 					<button type="button" class="btn btn-secondary" id="likeButton">추천</button>
 					<button type="button" class="btn btn-secondary"
-						onclick="location.href='/pass.do?mode=edit&idx=${ param.idx }';">수정하기</button>
-					<button type="button" class="btn btn-secondary">삭제</button>
+						onclick="location.href='seoulmatepass.do?mode=edit&idx=${ param.idx }';">수정하기</button>
+					<button type="button" class="btn btn-secondary"
+						onclick="location.href='seoulmatepass.do?mode=delete&idx=${ param.idx }';">삭제</button>
 					<button type="button" class="btn btn-secondary"
 						onclick="location.href='list.do';">목록 바로가기</button>
 				</td>

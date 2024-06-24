@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="utf-8" />
 <meta name="viewport"
@@ -53,6 +53,7 @@ th {
 }
 </style>
 </head>
+
 <body id="page-top">
 	<!-- Navigation-->
 	<nav
@@ -87,9 +88,9 @@ th {
 
 	<div class="masthead bg-white text-black">
 		<form name="editFrm" method="post" enctype="multipart/form-data"
-			action="edit.do">
+			action="edit.do" onsubmit="return validateForm(this);">
 			<input type="hidden" name="idx"
-				value="<%=request.getAttribute("dto").getIdx()%>">
+				value="<%=request.getAttribute("idx")%>">
 			<table>
 				<tr class="masthead bg-secondary text-white">
 					<td colspan="3" align="center">
@@ -101,65 +102,55 @@ th {
 					<td colspan="2"><select name="fescate"
 						class="btn btn-secondary">
 							<option value="sel">=== 선택 ===</option>
-							<option value="나들이"
-								<%=request.getAttribute("dto").getFescate().equals("나들이") ? "selected" : ""%>>나들이</option>
-							<option value="공연"
-								<%=request.getAttribute("dto").getFescate().equals("공연") ? "selected" : ""%>>공연</option>
-							<option value="먹거리"
-								<%=request.getAttribute("dto").getFescate().equals("먹거리") ? "selected" : ""%>>먹거리</option>
-							<option value="친구와 함께"
-								<%=request.getAttribute("dto").getFescate().equals("친구와 함께") ? "selected" : ""%>>친구와
-								함께</option>
-							<option value="전통"
-								<%=request.getAttribute("dto").getFescate().equals("전통") ? "selected" : ""%>>전통</option>
+							<option value="나들이">나들이</option>
+							<option value="공연">공연</option>
+							<option value="먹거리">먹거리</option>
+							<option value="친구와 함께">친구와 함께</option>
+							<option value="전통">전통</option>
 					</select></td>
 				</tr>
 				<tr>
 					<td align="center" class="bg-secondary text-white">제목</td>
 					<td colspan="2"><input type="text" name="title"
-						style="width: 90%;"
-						value="<%=request.getAttribute("dto").getTitle()%>" /><br></td>
+						style="width: 90%;" value="${dto.title}" /><br></td>
 				</tr>
 				<tr>
 					<td align="center" class="bg-secondary text-white">행사명</td>
 					<td colspan="2"><input type="text" name="fesname"
-						style="width: 90%;"
-						value="<%=request.getAttribute("dto").getFesname()%>" /><br></td>
+						style="width: 90%;" value="${dto.fesname}" /><br></td>
 				</tr>
 				<tr>
 					<td align="center" class="bg-secondary text-white">메인 이미지</td>
 					<td colspan="2"><input type="file" name="mainimage"
-						class="btn btn-secondary" /><br></td>
+						class="btn btn-secondary" /></td>
 				</tr>
 				<tr>
 					<td align="center" class="bg-secondary text-white">행사 내용</td>
 					<td colspan="2"><textarea name="content"
-							style="width: 90%; height: 500px;"><%=request.getAttribute("dto").getContent()%></textarea></td>
+							style="width: 90%; height: 500px;">${dto.content}</textarea></td>
 				</tr>
 				<tr>
 					<td align="center" class="bg-secondary text-white">이미지 1</td>
 					<td colspan="2"><input type="file" name="secimage"
-						class="btn btn-secondary" /><br></td>
+						class="btn btn-secondary" /></td>
 				</tr>
 				<tr>
 					<td align="center" class="bg-secondary text-white">이미지 2</td>
 					<td colspan="2"><input type="file" name="thiimage"
-						class="btn btn-secondary" /><br></td>
+						class="btn btn-secondary" /></td>
 				</tr>
 				<tr>
 					<td align="center" class="bg-secondary text-white">행사 주소</td>
 					<td colspan="2"><input type="text" name="feslocation"
-						style="width: 42%;"
-						value="<%=request.getAttribute("dto").getFeslocation()%>" /><br></td>
+						style="width: 42%;" value="${dto.feslocation}()" /></td>
 				</tr>
 				<tr>
 					<td align="center" class="bg-secondary text-white">행사 기간</td>
 					<td colspan="2"><input type="date" name="fesstart"
 						style="width: 20%;" class="btn btn-secondary"
-						value="<%=request.getAttribute("dto").getFesstart()%>" /> - <input
-						type="date" name="fesend" style="width: 20%;"
-						class="btn btn-secondary"
-						value="<%=request.getAttribute("dto").getFesend()%>" /></td>
+						value="${dto.fesstart}" /> - <input type="date" name="fesend"
+						style="width: 20%;" class="btn btn-secondary"
+						value="${dto.fesend}" /></td>
 				</tr>
 				<tr class="masthead bg-secondary">
 					<td colspan="3" align="right">
@@ -172,6 +163,6 @@ th {
 			</table>
 		</form>
 	</div>
-
 </body>
 </html>
+
