@@ -8,6 +8,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.Part;
+import seoulmate.membership.MemberDTO;
 import utils.JSFunction;
 
 /**
@@ -53,14 +54,21 @@ public class WriteController extends HttpServlet {
 		// 2. 파일 업로드 외 처리 ===========================================
 		// 폼값을 DTO에 저장
 		BoardDTO dto = new BoardDTO();
-		dto.setName(req.getParameter("name"));
-		dto.setTitle(req.getParameter("title"));
-		dto.setContent(req.getParameter("content"));
-		dto.setFescate(req.getParameter("fescate"));
-		dto.setFeslocation(req.getParameter("feslocation"));
-		dto.setFesname(req.getParameter("fesname"));
-		dto.setFesstart(req.getParameter("fesstart"));
-		dto.setFesend(req.getParameter("fesend"));
+		MemberDTO member = (MemberDTO) req.getSession().getAttribute("user");
+
+		
+		    String user_Id = member.getUser_id();
+		    
+		    dto.setName(user_Id); // 세션에 저장된 user_id를 name으로 설정
+		    dto.setTitle(req.getParameter("title"));
+		    dto.setContent(req.getParameter("content"));
+		    dto.setFescate(req.getParameter("fescate"));
+		    dto.setFeslocation(req.getParameter("feslocation"));
+		    dto.setFesname(req.getParameter("fesname"));
+		    dto.setFesstart(req.getParameter("fesstart"));
+		    dto.setFesend(req.getParameter("fesend"));
+		
+		
 		
 		
         Part mainimagePart = req.getPart("mainimage");
