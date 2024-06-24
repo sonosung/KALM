@@ -19,22 +19,27 @@ public class LikeController extends HttpServlet {
         boardDAO = new BoardDAO();
     }
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String idx = request.getParameter("idx");
 
-        if (idx != null && !idx.isEmpty()) {
-            // DAO를 이용하여 추천 수 업데이트
-            boardDAO.updateLikeCount(idx);
+        try {
+            if (idx != null && !idx.isEmpty()) {
+                // 유효한 idx 값이 있는 경우 처리 로직
+                boardDAO.updateLikeCount(idx);
 
-            // 클라이언트에게 성공적인 응답 전송
-            response.setContentType("text/plain");
-            PrintWriter out = response.getWriter();
-            out.print("success");
-            out.flush();
-        } else {
-            // 잘못된 요청 처리
-            response.sendError(HttpServletResponse.SC_BAD_REQUEST);
+                // 클라이언트에게 성공적인 응답 전송
+                response.setContentType("text/plain");
+                PrintWriter out = response.getWriter();
+                out.print("success");
+                out.flush();
+            } else {
+                // 잘못된 요청 처리
+                response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Missing or invalid 'idx' parameter");
+            }
+        } catch (Exception e) {
+            // 예외 처리
+            response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Error processing request: " + e.getMessage());
         }
     }
 
@@ -44,3 +49,5 @@ public class LikeController extends HttpServlet {
         boardDAO.close();
     }
 }
+
+
