@@ -110,15 +110,15 @@
                      <c:forEach items="${ boardLists }" var="row" varStatus="loop">
                         <tr align="center">
                            <td>${ map.totalCount - (((map.pageNum-1) * map.pageSize) + loop.index) }</td>
-                           <td align="left"><img src="./resources/assets/img/portfolio/koreabeauty.png"
+                           <td align="left"><img src="./resources/assets/img/portfolio/01koreabeauty.png"
                               alt="Thumbnail"
                               style="width: 50px; height: 50px; margin-right: 10px;" /> <a
                               href="../mvcboard/view.do?idx=${ row.idx }">${ row.title }제목입니다.</a>
                            </td>
-                           <td>${ row.name }</td>
-                           <td>${ row.visitcount }</td>
-                           <td>${ row.likecount }</td>
-                           <td>${ row.postdate }</td>
+                           <td>${ row.name }그린컴퓨터</td>
+                           <td>${ row.visitcount }10</td>
+                           <td>${ row.likecount }15</td>
+                           <td>${ row.postdate }2024-06-20</td>
                         </tr>
                      </c:forEach>
                   </c:otherwise>
