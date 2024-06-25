@@ -122,37 +122,39 @@ public class BoardDAO extends DBConnPool {
 	}
 
 	public BoardDTO selectView(String idx) {
-		BoardDTO dto = new BoardDTO();
-		String query = "SELECT * FROM board WHERE idx=?";
-		
-		try {
-			psmt = con.prepareStatement(query);
-			psmt.setString(1, idx);
-			rs = psmt.executeQuery();
-			
-			if (rs.next()) {
-				dto.setIdx(rs.getString(1));
-				dto.setTitle(rs.getString(2));
-				dto.setContent(rs.getString(3));
-				dto.setName(rs.getString(4));
-				dto.setPostdate(rs.getDate(5));
-				dto.setVisitcount(rs.getInt(6));
-				dto.setLikecount(rs.getInt(7));
-				dto.setFesname(rs.getString(8));
-				dto.setFeslocation(rs.getString(9));
-				dto.setFesstart(rs.getString(10));
-				dto.setFesend(rs.getString(11));
-				dto.setFescate(rs.getString(12));
-				dto.setMainimage(rs.getBytes("mainimage"));
-				dto.setSecimage(rs.getBytes("secimage"));
-				dto.setThiimage(rs.getBytes("thiimage"));
-			}
-		} catch (Exception e) {
-			System.out.println("게시물 상세보기 중 예외 발생");
-			e.printStackTrace();
-		}
-		return dto;
+	    BoardDTO dto = new BoardDTO();
+	    String query = "SELECT * FROM board WHERE idx=?";
+
+	    try {
+	        psmt = con.prepareStatement(query);
+	        psmt.setInt(1, Integer.parseInt(idx)); // idx를 정수로 변환
+	        rs = psmt.executeQuery();
+
+	        if (rs.next()) {
+	            dto.setIdx(rs.getString(1));
+	            dto.setTitle(rs.getString(2));
+	            dto.setContent(rs.getString(3));
+	            dto.setName(rs.getString(4));
+	            dto.setPostdate(rs.getDate(5));
+	            dto.setVisitcount(rs.getInt(6));
+	            dto.setLikecount(rs.getInt(7));
+	            dto.setFesname(rs.getString(8));
+	            dto.setFeslocation(rs.getString(9));
+	            dto.setFesstart(rs.getString(10));
+	            dto.setFesend(rs.getString(11));
+	            dto.setFescate(rs.getString(12));
+	            dto.setMainimage(rs.getBytes("mainimage"));
+	            dto.setSecimage(rs.getBytes("secimage"));
+	            dto.setThiimage(rs.getBytes("thiimage"));
+	        }
+	    } catch (Exception e) {
+	        System.out.println("게시물 상세보기 중 예외 발생");
+	        e.printStackTrace();
+	    }
+	    return dto;
 	}
+
+
 
 	// 추천수 증가
 	public void updateLikeCount(String idx) {

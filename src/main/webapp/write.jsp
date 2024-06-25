@@ -148,6 +148,7 @@ th {
 				</tr>
 				<tr class="masthead bg-secondary">
 					<td colspan="3" align="right">
+					
 						<button type="submit" class="btn btn-secondary">작성 완료</button>
 						<button type="reset" class="btn btn-secondary">RESET</button>
 						<button type="button" class="btn btn-secondary"

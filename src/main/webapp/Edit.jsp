@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ page import="seoulmate.board.BoardDTO"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -48,7 +51,7 @@ th {
 	padding-top: 12px;
 	padding-bottom: 12px;
 	text-align: center;
-	background-color: #4CAF50;
+	background-color: #4caf50;
 	color: white;
 }
 </style>
@@ -86,74 +89,72 @@ th {
 		</div>
 	</header>
 
-	<div class="masthead bg-white text-black">
+	<!-- Form Section -->
+	<div class="container mt-5">
 		<form name="editFrm" method="post" enctype="multipart/form-data"
 			action="edit.do" onsubmit="return validateForm(this);">
-			<input type="hidden" name="idx"
-				value="<%=request.getAttribute("idx")%>">
-			<table>
-				<tr class="masthead bg-secondary text-white">
-					<td colspan="3" align="center">
-						<h2></h2>
-					</td>
-				</tr>
+			<%-- Hidden input for idx --%>
+			<input type="hidden" name="idx" value="${dto.idx}">
+			<table class="table">
 				<tr>
-					<td align="center" class="bg-secondary text-white">카테고리</td>
-					<td colspan="2"><select name="fescate"
-						class="btn btn-secondary">
+					<td class="bg-secondary text-white" style="width: 20%;">카테고리</td>
+					<td style="width: 80%;"><select name="fescate"
+						class="form-control">
+
 							<option value="sel">=== 선택 ===</option>
-							<option value="나들이">나들이</option>
-							<option value="공연">공연</option>
-							<option value="먹거리">먹거리</option>
-							<option value="친구와 함께">친구와 함께</option>
-							<option value="전통">전통</option>
+							<option value="나들이" ${dto.fescate eq '나들이' ? 'selected' : ''}>나들이</option>
+							<option value="공연" ${dto.fescate eq '공연' ? 'selected' : ''}>공연</option>
+							<option value="먹거리" ${dto.fescate eq '먹거리' ? 'selected' : ''}>먹거리</option>
+							<option value="친구와 함께"
+								${dto.fescate eq '친구와 함께' ? 'selected' : ''}>친구와 함께</option>
+							<option value="전통" ${dto.fescate eq '전통' ? 'selected' : ''}>전통</option>
 					</select></td>
 				</tr>
 				<tr>
-					<td align="center" class="bg-secondary text-white">제목</td>
-					<td colspan="2"><input type="text" name="title"
-						style="width: 90%;" value="${dto.title}" /><br></td>
+					<h1>(디버깅용 임시 텍스트)dto.idx - ${ dto.idx }</h1>
+					<td class="bg-secondary text-white">제목</td>
+					<td><input type="text" name="title" class="form-control"
+						value="${dto.title}"></td>
 				</tr>
 				<tr>
-					<td align="center" class="bg-secondary text-white">행사명</td>
-					<td colspan="2"><input type="text" name="fesname"
-						style="width: 90%;" value="${dto.fesname}" /><br></td>
+					<td class="bg-secondary text-white">행사명</td>
+					<td><input type="text" name="fesname" class="form-control"
+						value="${dto.fesname}"></td>
 				</tr>
 				<tr>
-					<td align="center" class="bg-secondary text-white">메인 이미지</td>
-					<td colspan="2"><input type="file" name="mainimage"
-						class="btn btn-secondary" /></td>
+					<td class="bg-secondary text-white">메인 이미지</td>
+					<td><input type="file" name="mainimage"
+						class="form-control-file"></td>
 				</tr>
 				<tr>
-					<td align="center" class="bg-secondary text-white">행사 내용</td>
-					<td colspan="2"><textarea name="content"
-							style="width: 90%; height: 500px;">${dto.content}</textarea></td>
+					<td class="bg-secondary text-white">행사 내용</td>
+					<td><textarea name="content" class="form-control" rows="5">${dto.content}</textarea></td>
 				</tr>
 				<tr>
-					<td align="center" class="bg-secondary text-white">이미지 1</td>
-					<td colspan="2"><input type="file" name="secimage"
-						class="btn btn-secondary" /></td>
+					<td class="bg-secondary text-white">이미지 1</td>
+					<td><input type="file" name="secimage"
+						class="form-control-file"></td>
 				</tr>
 				<tr>
-					<td align="center" class="bg-secondary text-white">이미지 2</td>
-					<td colspan="2"><input type="file" name="thiimage"
-						class="btn btn-secondary" /></td>
+					<td class="bg-secondary text-white">이미지 2</td>
+					<td><input type="file" name="thiimage"
+						class="form-control-file"></td>
 				</tr>
 				<tr>
-					<td align="center" class="bg-secondary text-white">행사 주소</td>
-					<td colspan="2"><input type="text" name="feslocation"
-						style="width: 42%;" value="${dto.feslocation}()" /></td>
+					<td class="bg-secondary text-white">행사 주소</td>
+					<td><input type="text" name="feslocation" class="form-control"
+						value="${dto.feslocation}"></td>
 				</tr>
 				<tr>
-					<td align="center" class="bg-secondary text-white">행사 기간</td>
-					<td colspan="2"><input type="date" name="fesstart"
-						style="width: 20%;" class="btn btn-secondary"
-						value="${dto.fesstart}" /> - <input type="date" name="fesend"
-						style="width: 20%;" class="btn btn-secondary"
-						value="${dto.fesend}" /></td>
+					<td class="bg-secondary text-white">행사 기간</td>
+					<td><input type="date" name="fesstart" class="form-control"
+						value="${dto.fesstart}"> - <input type="date"
+						name="fesend" class="form-control" value="${dto.fesend}">
+					</td>
 				</tr>
-				<tr class="masthead bg-secondary">
-					<td colspan="3" align="right">
+				<tr class="bg-secondary text-white">
+					<td colspan="2" align="right">
+
 						<button type="submit" class="btn btn-secondary">수정 완료</button>
 						<button type="reset" class="btn btn-secondary">RESET</button>
 						<button type="button" class="btn btn-secondary"
@@ -163,6 +164,46 @@ th {
 			</table>
 		</form>
 	</div>
-</body>
-</html>
 
+	<!-- Footer -->
+	<footer class="footer text-center">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-4 mb-5 mb-lg-0">
+					<h4 class="text-uppercase mb-4">Location</h4>
+					<p class="lead mb-0">
+						2215 John Daniel Drive <br>Clark, MO 65243
+					</p>
+				</div>
+				<div class="col-lg-4 mb-5 mb-lg-0">
+					<h4 class="text-uppercase mb-4">Around the Web</h4>
+					<a class="btn btn-outline-light btn-social mx-1" href="#!"><i
+						class="fab fa-fw fa-facebook-f"></i></a> <a
+						class="btn btn-outline-light btn-social mx-1" href="#!"><i
+						class="fab fa-fw fa-twitter"></i></a> <a
+						class="btn btn-outline-light btn-social mx-1" href="#!"><i
+						class="fab fa-fw fa-linkedin-in"></i></a> <a
+						class="btn btn-outline-light btn-social mx-1" href="#!"><i
+						class="fab fa-fw fa-dribbble"></i></a>
+				</div>
+				<div class="col-lg-4">
+					<h4 class="text-uppercase mb-4">About Freelancer</h4>
+					<p class="lead mb-0">
+						Freelance is a free to use, MIT licensed Bootstrap theme created
+						by <a href="http://startbootstrap.com">Start Bootstrap</a>.
+					</p>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<!-- Bootstrap core JS - includes Popper -->
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+	<!-- Custom scripts for this template -->
+	<script src="./resources/js/scripts.js"></script>
+</body>
+
+</html>

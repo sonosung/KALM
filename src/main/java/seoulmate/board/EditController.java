@@ -13,24 +13,43 @@ import utils.JSFunction;
 
 @WebServlet("/edit.do")
 public class EditController extends HttpServlet {
-	private static final long serialVersionUID = 1L;
+	//private static final long serialVersionUID = 1L;
 
+	
+	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String idx = request.getParameter("idx");
+		
+
+		// 디버깅을 위한 로그 추가
+		System.out.println("Edit.do - Received idx in doGet: " + idx);
+		
+
+		if (idx == null || !idx.matches("\\d+")) {
+			// idx가 null이거나 숫자가 아닐 경우 예외 처리
+			
+			response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Invalid idx parameter");
+			return;
+		}
+
+		int idxInt = Integer.parseInt(idx);
+
 		BoardDAO dao = new BoardDAO();
-		BoardDTO dto = dao.selectView(idx);
+		BoardDTO dto = dao.selectView(String.valueOf(idxInt)); // 숫자를 문자열로 변환하여 전달
 		dao.close();
 		request.setAttribute("dto", dto);
 		request.getRequestDispatcher("/Edit.jsp").forward(request, response);
 		
 	}
 
+	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
-		
+
 		String idx = request.getParameter("idx");
+		System.out.println("Edit.do - Received idx in doPost: " + idx);
 		String name = request.getParameter("name");
 		String title = request.getParameter("title");
 		String content = request.getParameter("content");
@@ -39,7 +58,7 @@ public class EditController extends HttpServlet {
 		String fesname = request.getParameter("fesname");
 		String fesstart = request.getParameter("fesstart");
 		String fesend = request.getParameter("fesend");
-		
+
 		Part mainimagePart = request.getPart("mainimage");
 		byte[] mainimage = null;
 		if (mainimagePart != null && mainimagePart.getSize() > 0) {
@@ -65,7 +84,7 @@ public class EditController extends HttpServlet {
 		}
 
 		BoardDTO dto = new BoardDTO();
-		dto.setIdx(idx);
+		
 		dto.setName(name);
 		dto.setTitle(title);
 		dto.setContent(content);

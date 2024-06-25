@@ -225,6 +225,7 @@ seoulmate.board.BoardDTO dto = (seoulmate.board.BoardDTO) request.getAttribute("
 
 			<tr>
 				<td>
+					<h4>디버깅용 임시 텍스트 dto.idx = ${ dto.idx }</h4>
 					<h4 style="margin-left: 500px;">행사명 : ${ dto.fesname }</h4>
 					<h4 style="margin-left: 500px;">행사종류 : ${ dto.fescate }</h4>
 					<h4 style="margin-left: 500px;">주소 : ${ dto.feslocation }</h4>
@@ -248,9 +249,9 @@ seoulmate.board.BoardDTO dto = (seoulmate.board.BoardDTO) request.getAttribute("
 				<td colspan="2" align="right">
 					<button type="button" class="btn btn-secondary" id="likeButton">추천</button>
 					<button type="button" class="btn btn-secondary"
-						onclick="location.href='seoulmatepass.do?mode=edit&idx=${ param.idx }';">수정하기</button>
+						onclick="location.href='seoulmatepass.do?mode=edit&idx=${dto.idx}';">수정하기</button>
 					<button type="button" class="btn btn-secondary"
-						onclick="location.href='seoulmatepass.do?mode=delete&idx=${ param.idx }';">삭제</button>
+						onclick="location.href='seoulmatepass.do?mode=delete&idx=${dto.idx}';">삭제</button>
 					<button type="button" class="btn btn-secondary"
 						onclick="location.href='list.do';">목록 바로가기</button>
 				</td>
