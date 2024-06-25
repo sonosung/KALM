@@ -58,7 +58,7 @@ public class PassController extends HttpServlet {
 
         BoardDAO dao = new BoardDAO();
         boolean confirmed = dao.confirmUserId(userId, idx);
-
+        
         if (confirmed) {
             if ("edit".equals(mode)) {
                 String name = req.getParameter("name");

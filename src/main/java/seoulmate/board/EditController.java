@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.InputStream;
 
 import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.MultipartConfig;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -12,23 +13,23 @@ import jakarta.servlet.http.Part;
 import utils.JSFunction;
 
 @WebServlet("/edit.do")
-public class EditController extends HttpServlet {
-	//private static final long serialVersionUID = 1L;
 
-	
+@MultipartConfig(maxFileSize = 1024 * 1024 * 1, maxRequestSize = 1024 * 1024 * 10)
+
+public class EditController extends HttpServlet {
+	// private static final long serialVersionUID = 1L;
+
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String idx = request.getParameter("idx");
-		
 
 		// 디버깅을 위한 로그 추가
 		System.out.println("Edit.do - Received idx in doGet: " + idx);
-		
 
 		if (idx == null || !idx.matches("\\d+")) {
 			// idx가 null이거나 숫자가 아닐 경우 예외 처리
-			
+
 			response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Invalid idx parameter");
 			return;
 		}
@@ -40,7 +41,7 @@ public class EditController extends HttpServlet {
 		dao.close();
 		request.setAttribute("dto", dto);
 		request.getRequestDispatcher("/Edit.jsp").forward(request, response);
-		
+
 	}
 
 	@Override
@@ -50,7 +51,7 @@ public class EditController extends HttpServlet {
 
 		String idx = request.getParameter("idx");
 		System.out.println("Edit.do - Received idx in doPost: " + idx);
-		String name = request.getParameter("name");
+		
 		String title = request.getParameter("title");
 		String content = request.getParameter("content");
 		String fescate = request.getParameter("fescate");
@@ -85,7 +86,7 @@ public class EditController extends HttpServlet {
 
 		BoardDTO dto = new BoardDTO();
 		
-		dto.setName(name);
+		
 		dto.setTitle(title);
 		dto.setContent(content);
 		dto.setFescate(fescate);
@@ -96,15 +97,17 @@ public class EditController extends HttpServlet {
 		dto.setMainimage(mainimage);
 		dto.setSecimage(secimage);
 		dto.setThiimage(thiimage);
+		dto.setIdx(idx);
 
 		BoardDAO dao = new BoardDAO();
 		int result = dao.updatePost(dto);
 		dao.close();
 
 		if (result == 1) {
-			response.sendRedirect("list.do");
+			response.sendRedirect("list.do"); // Redirect to view post page
+			JSFunction.alertLocation(response, "게시글 수정에 성공했습니다.", "list.do");
 		} else {
-			JSFunction.alertLocation(response, "게시글 수정에 실패했습니다.", "edit.do?idx=" + idx);
+			JSFunction.alertLocation(response, "게시글 수정에 실패했습니다.", "Edit.jsp?idx=" + idx);
 		}
 	}
 }

@@ -115,6 +115,7 @@ import jakarta.servlet.http.HttpSession;
 import utils.JSFunction;
 
 @WebServlet("/mvcboard/edit.do")
+
 @MultipartConfig(
    maxFileSize = 1024 * 1024 * 1,
    maxRequestSize = 1024 * 1024 * 10

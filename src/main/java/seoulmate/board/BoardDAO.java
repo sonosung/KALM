@@ -248,20 +248,20 @@ public class BoardDAO extends DBConnPool {
 
 	public int updatePost(BoardDTO dto) {
 		int result = 0;
-		String sql = "UPDATE board SET name=?, title=?, content=?, fescate=?, feslocation=?, fesname=?, fesstart=?, fesend=?, mainimage=?, secimage=?, thiimage=? WHERE idx=?";
+		String sql = "UPDATE board SET title=?, content=?, fescate=?, feslocation=?, fesname=?, fesstart=?, fesend=?, mainimage=?, secimage=?, thiimage=? WHERE idx=?";
 		try (PreparedStatement pstmt = con.prepareStatement(sql)) {
-			pstmt.setString(1, dto.getName()); // name 필드에 dto.getName() 설정
-			pstmt.setString(2, dto.getTitle());
-			pstmt.setString(3, dto.getContent());
-			pstmt.setString(4, dto.getFescate());
-			pstmt.setString(5, dto.getFeslocation());
-			pstmt.setString(6, dto.getFesname());
-			pstmt.setString(7, dto.getFesstart());
-			pstmt.setString(8, dto.getFesend());
-			pstmt.setBytes(9, dto.getMainimage());
-			pstmt.setBytes(10, dto.getSecimage());
-			pstmt.setBytes(11, dto.getThiimage());
-			pstmt.setString(12, dto.getIdx()); // idx 필드에 dto.getIdx() 설정
+			
+			pstmt.setString(1, dto.getTitle());
+			pstmt.setString(2, dto.getContent());
+			pstmt.setString(3, dto.getFescate());
+			pstmt.setString(4, dto.getFeslocation());
+			pstmt.setString(5, dto.getFesname());
+			pstmt.setString(6, dto.getFesstart());
+			pstmt.setString(7, dto.getFesend());
+			pstmt.setBytes(8, dto.getMainimage());
+			pstmt.setBytes(9, dto.getSecimage());
+			pstmt.setBytes(10, dto.getThiimage());
+			pstmt.setString(11, dto.getIdx()); 
 
 			result = pstmt.executeUpdate();
 		} catch (Exception e) {
