@@ -30,13 +30,13 @@ public class ProfileEditController extends HttpServlet {
 		//수정 내용을 매개변수에서 얻어옴
 		String name = request.getParameter("name");
 		String email = request.getParameter("email");
-		int phone = Integer.parseInt(request.getParameter("phone"));
+		String phone = request.getParameter("phone");
 		
 		//DTO에 저장
 		MVCMemberDTO dto = new MVCMemberDTO();
-		dto.setName(name);
+		dto.setUsername(name);
 		dto.setEmail(email);
-		dto.setPhone(phone);
+		dto.setPhonenum(phone);
 		
 		MVCMemberDAO dao = new MVCMemberDAO();
 		int result = dao.updatePost(dto);

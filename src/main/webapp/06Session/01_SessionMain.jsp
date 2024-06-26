@@ -24,6 +24,7 @@ String lastTimeStr = dateFormat.format(new Date(lastTime));
 		<li>세션 아이디 : <%= session.getId() %></li>
 		<li>최초 요청 시각 : <%= creationTimeStr %></li>
 		<li>마지막 요청 시각 : <%= lastTimeStr %></li>
+		<li>접속 회원 : <%=session.getAttribute("UserName")%></li>
 	</ul>
 </body>
 </html>

@@ -96,7 +96,7 @@
                             </form>
                             <hr>
                             <div class="text-center">
-                                <a class="small" href="forgot-password.html">Forgot Password?</a>
+                                <a class="small" href="../admin/forgot-password.jsp">Forgot Password?</a>
                             </div>
                             <div class="text-center">
                                 <a class="small" href="userLogin.jsp">Already have an account? Login!</a>

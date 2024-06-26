@@ -39,18 +39,18 @@
   </context-param> -->
     <context-param>
     <param-name>OracleURL</param-name>
-    <param-value>jdbc:oracle:thin:@localhost:1521:xe</param-value>
+    <param-value>jdbc:oracle:thin:@14.42.124.21:1521:xe</param-value>
   </context-param>
   <context-param>
     <param-name>OracleId</param-name>
-    <param-value>C##musthave</param-value>
+    <param-value>C##KEAM</param-value>
   </context-param>
   <context-param>
     <param-name>OraclePwd</param-name>
     <param-value>1234</param-value>
   </context-param>
   <session-config>
-    <session-timeout>20</session-timeout>
+    <session-timeout>30</session-timeout> <!-- 세션 유지시간을 30분으로 설정 -->
   </session-config>
   <context-param>
     <param-name>POSTS_PER_PAGE</param-name>
@@ -78,15 +78,15 @@
   </servlet-mapping>
   <servlet>
     <servlet-name>MemberAuth</servlet-name>
-    <servlet-class>servlet.MemberAuth</servlet-class>
+	<servlet-class>servlet.MemberAuth</servlet-class>
     <init-param>
       <param-name>admin_id</param-name>
-      <param-value>seungjin</param-value>
+      <param-value>seungjin@admin.keam</param-value>
     </init-param>
   </servlet>
   <servlet-mapping>
     <servlet-name>MemberAuth</servlet-name>
-    <url-pattern>/12Servlet/MemberAuth.mvc</url-pattern>
+    <url-pattern>/12Servlet/MemberAuth.mvc</url-pattern> 
   </servlet-mapping>
   <servlet>
     <servlet-name>MVCBoardList</servlet-name>
@@ -141,5 +141,5 @@
       <servlet-name>BoardWrite</servlet-name>
       <url-pattern>/write.do</url-pattern>
    </servlet-mapping>
-  
+
 </web-app>

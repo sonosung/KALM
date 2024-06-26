@@ -7,15 +7,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content />
         <meta name="author" content />
-        <title>Modern Business - Start Bootstrap Template</title>
+        <title>문의 페이지</title>
+        
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="../resources/assets/img/user/seungho.jpg"" />
-        
-        
-         <!-- 원래 있던 폰트 Custom Google font-->
-       <!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet" /> -->
         
         <!-- 인덱스 페이지 폰트 Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
@@ -30,42 +25,8 @@
     </head>
     <body class="d-flex flex-column">
         <main class="flex-shrink-0">
-            <!--------------------------------------------------------- Navigation --------------------------------------------------------->
-          <!--   <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
-                <div class="container px-5">
-                    <a class="navbar-brand" href="../index.jsp"><span class="fw-bolder text-primary">SEOULMATE</span></a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
-                            <li class="nav-item"><a class="nav-link" href="../index.jsp#portfolio">행사정보</a></li>
-                            <li class="nav-item"><a class="nav-link" href="../mvcboard/list.do">관리자 생성 게시판</a></li>
-                            <li class="nav-item"><a class="nav-link" href="../mvcboard/list.do">유저 게시판</a></li>
-                            <li class="nav-item"><a class="nav-link" href="../index.jsp">Logout</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </nav> -->
-                <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
-            <div class="container">
-                <a class="navbar-brand" href="../index.jsp#page-top">SEOULMATE</a>
-                <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    Menu
-                    <i class="fas fa-bars"></i>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="../index.jsp#portfolio">행사정보</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="../index.jsp#about">게시판</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="../index.jsp#calendar">행사달력</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="./contact.jsp">Contact</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="../06Session/02_LoginForm.jsp">Login</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="../index.jsp#Signin">Signin</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="../06Session/04_Logout.jsp">Logout</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="./myPage.jsp">MyPage</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+        
+            <jsp:include page="../MainLayoutElements/header.jsp"></jsp:include>
         
         <div class="divider-custom"></div>
         <div class="divider-custom"></div>
@@ -122,10 +83,10 @@
                                     <!-- has successfully submitted-->
                                     <div class="d-none" id="submitSuccessMessage">
                                         <div class="text-center mb-3">
-                                            <div class="fw-bolder">Form submission successful!</div>
-                                            To activate this form, sign up at
+                                            <div class="fw-bolder">메시지가 성공적으로 전달되었습니다!</div>
+                                            
                                             <br />
-                                            <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
+                                            <a href="../boards/festivalList.jsp">서울에서 열리는 행사가 궁금하다면?</a>
                                         </div>
                                     </div>
                                     <!-- Submit error message-->
@@ -142,25 +103,11 @@
                 </div>
             </section>
         </main>
-        <!-- Footer-->
-        <footer class="bg-white py-4 mt-auto">
-            <div class="container px-5">
-                <div class="row align-items-center justify-content-between flex-column flex-sm-row">
-                    <div class="col-auto"><div class="small m-0">Copyright &copy; SEOULMATE 2024</div></div>
-                    <div class="col-auto">
-                        <a class="small" href="#!">Privacy</a>
-                        <span class="mx-1">&middot;</span>
-                        <a class="small" href="#!">Terms</a>
-                        <span class="mx-1">&middot;</span>
-                        <a class="small" href="#!">Contact</a>
-                    </div>
-                </div>
-            </div>
-        </footer>
-        <!-- Bootstrap core JS-->
+
+        <!-- Bootstrap core JS -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         
-	<!-- <script>
+	<script>
 		document.getElementsByTagName("BODY")[0].onpageshow = function() {
 			myFunction()
 		};
@@ -174,7 +121,56 @@
 		 document.getElementById("demo").innerHTML = "Welcome To My Homepage!";
 		 };
 		 */
-	</script> -->
+	</script>
+	
+	<!-- Footer -->
+	<footer class="footer text-center">
+		<div class="container">
+			<div class="row">
+				<!-- Footer Location-->
+				<div class="col-lg-4 mb-5 mb-lg-0">
+					<h4 class="text-uppercase mb-4">who made it?</h4>
+					<br>
+					<p class="lead mb-0">
+						문승호, 김별, 이진규, 안상환 <br /> <br /> Started from 2024.06.12<br>to
+						2024.07.11
+					</p>
+				</div>
+				<!-- Footer Social Icons-->
+				<div class="col-lg-4 mb-5 mb-lg-0">
+					<h4 class="text-uppercase mb-4">visit our github</h4>
+					<br> <a class="btn btn-outline-light btn-social mx-1"
+						href="https://github.com/byeol1286"><i
+						class="fab fa-fw fa-facebook-f"></i></a> <a
+						class="btn btn-outline-light btn-social mx-1"
+						href="https://github.com/GOTERCODE"><i
+						class="fab fa-fw fa-twitter"></i></a> <a
+						class="btn btn-outline-light btn-social mx-1"
+						href="https://github.com/poong1125"><i
+						class="fab fa-fw fa-linkedin-in"></i></a> <a
+						class="btn btn-outline-light btn-social mx-1"
+						href="https://github.com/sonosung"><i
+						class="fab fa-fw fa-dribbble"></i></a>
+				</div>
+				<!-- Footer About Text--->
+				<div class="col-lg-4">
+					<h4 class="text-uppercase mb-4">About Us</h4>
+					<p class="lead mb-0">
+						SEUOLMATE는<br>JSP & OracleDB 기반 팀 프로젝트입니다.<br> <br>
+						MIT licensed Bootstrap theme<br>created by <a
+							href="http://startbootstrap.com">Start Bootstrap</a> .
+					</p>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!-- Copyright Section-->
+	<div class="copyright py-4 text-center text-white">
+		<div class="container">
+			<small>Copyright &copy; Team_KEAM</small>
+		</div>
+	</div>
+	<!-- End Footer -->
 	
 	<!-- Core theme JS-->
        <script src="js/scripts.js"></script>

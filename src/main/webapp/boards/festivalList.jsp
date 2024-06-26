@@ -5,11 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SEOULMATE</title>
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+	<!-- Favicon-->
+	<link rel="icon" type="image/x-icon" href="./resources/assets/img/user/seungho.jpg" />
+    
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
-    <link href="./resources/css/styles.css" rel="stylesheet" />
+    <link href="../resources/css/styles.css" rel="stylesheet" />
     <!-- 디자인 관련 기능 구현 -->
     <style>
     .masthead {
@@ -65,46 +67,10 @@
 <!-- 상단 오른쪽 버튼 기능 구현 -->
 <body id="page-top">
     <!--------------------------------------------------------- Navigation --------------------------------------------------------->
-     <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
-            <div class="container">
-                <a class="navbar-brand" href="./index.jsp">SEOULMATE</a>
-                <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    Menu
-                    <i class="fas fa-bars"></i>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ms-auto">
-                        <!-- <li class="nav-item mx-5 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#portfolio">추천행사</a></li> -->
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="./mvcboard/list.do">유저 공유 게시판</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="./index.jsp#calendar">행사달력</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="./userPage/contact.jsp">Contact</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="./userPage/userLogin.jsp">Login</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#Signin">Signin</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="./06Session/04_Logout.jsp">Logout</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="./userPage/myPage.jsp">MyPage</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+        
+        <jsp:include page="../MainLayoutElements/header.jsp"></jsp:include>
+        
     <!--------------------------------------------------------- End Navigation --------------------------------------------------------->
-    
-    <!-- Masthead-->
-<!-- <header class="masthead bg-primary text-white text-center">
-    <div class="container d-flex align-items-center flex-column">
-        Masthead Avatar Image
-        <img class="masthead-avatar mb-5" src="./resources/assets/img/mainicon.png" alt="..." />
-        Masthead Heading
-        <h1 class="masthead-heading text-uppercase mb-0">SEOULMATE</h1>
-        Icon Divider
-        <div class="divider-custom divider-light">
-            <div class="divider-custom-line"></div>
-            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-            <div class="divider-custom-line"></div>
-        </div>
-        Masthead Subheading
-        <p class="masthead-subheading font-weight-light mb-0">너와 나의 SEOULMATE!</p>
-    </div>
-</header> -->
 
 <hr><hr><hr>
 
@@ -155,7 +121,7 @@
                 <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                     <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                 </div>
-                <img class="img-fluid" src="./resources/assets/img/portfolio/01koreabeauty.png" alt="..." />
+                <img class="img-fluid" src="../resources/assets/img/portfolio/01koreabeauty.png" alt="..." />
                 <h5 class="text-center">코리아뷰티페스티벌</h5>
                 <p class="text-center">기간 2024.06.01~2024.06.30</p>
                 <p class="text-center">서울특별시 중구</p>
@@ -167,7 +133,7 @@
                 <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                     <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                 </div>
-                <img class="img-fluid" src="./resources/assets/img/portfolio/02weeklyclassic.png" alt="..." />
+                <img class="img-fluid" src="../resources/assets/img/portfolio/02weeklyclassic.png" alt="..." />
                 <h5 class="text-center">위클리 클래식 페스티벌</h5>
                 <p class="text-center">기간 2024.03.01~2024.07.31</p>
                 <p class="text-center">서울특별시 동작구</p>
@@ -179,7 +145,7 @@
                 <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                     <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                 </div>
-                <img class="img-fluid" src="./resources/assets/img/portfolio/03kfood.png" alt="..." />
+                <img class="img-fluid" src="../resources/assets/img/portfolio/03kfood.png" alt="..." />
                 <h5 class="text-center">K-푸드 페스티벌 넉넉</h5>
                 <p class="text-center">기간 2024.05.29~2024.12.31</p>
                 <p class="text-center">서울특별시 종로구</p>
@@ -191,7 +157,7 @@
                 <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                     <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                 </div>
-                <img class="img-fluid" src="./resources/assets/img/portfolio/04hankang.png" alt="..." />
+                <img class="img-fluid" src="../resources/assets/img/portfolio/04hankang.png" alt="..." />
                 <h5 class="text-center">한강역사탐방</h5>
                 <p class="text-center">기간 2024.04.01~2024.11.30</p>
                 <p class="text-center">서울특별시 영등포구</p>
@@ -203,7 +169,7 @@
                 <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                     <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                 </div>
-                <img class="img-fluid" src="./resources/assets/img/portfolio/05pasuonday.png" alt="..." />
+                <img class="img-fluid" src="../resources/assets/img/portfolio/05pasuonday.png" alt="..." />
                 <h5 class="text-center">숭례문 파수의식 원데이! 파수군</h5>
                 <p class="text-center">기간 2024.04.01~2024.12.14</p>
                 <p class="text-center">서울특별시 중구</p>
@@ -215,7 +181,7 @@
                 <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                     <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                 </div>
-                <img class="img-fluid" src="./resources/assets/img/portfolio/06seoulrive.png" alt="..." />
+                <img class="img-fluid" src="../resources/assets/img/portfolio/06seoulrive.png" alt="..." />
                 <h5 class="text-center">서울거리공연 구석구석 라이브</h5>
                 <p class="text-center">기간 2024.04.01~2024.11.30</p>
                 <p class="text-center">서울특별시 용산구</p>
@@ -227,7 +193,7 @@
                 <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                     <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                 </div>
-                <img class="img-fluid" src="./resources/assets/img/portfolio/07familybook.png" alt="..." />
+                <img class="img-fluid" src="../resources/assets/img/portfolio/07familybook.png" alt="..." />
                 <h5 class="text-center">온 가족 책 잔치</h5>
                 <p class="text-center">기간 2024.09.26~2024.09.28</p>
                 <p class="text-center">서울특별시 종로구</p>
@@ -239,7 +205,7 @@
                 <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                     <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                 </div>
-                <img class="img-fluid" src="./resources/assets/img/portfolio/08bookang.png" alt="..." />
+                <img class="img-fluid" src="../resources/assets/img/portfolio/08bookang.png" alt="..." />
                 <h5 class="text-center">서초책있는거리 6월 미리 떠나는 북캉스</h5>
                 <p class="text-center">기간 2024.06.15~2024.06.15</p>
                 <p class="text-center">서울특별시 서초구</p>
@@ -251,7 +217,7 @@
                 <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                     <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                 </div>
-                <img class="img-fluid" src="./resources/assets/img/portfolio/09musical.png" alt="..." />
+                <img class="img-fluid" src="../resources/assets/img/portfolio/09musical.png" alt="..." />
                 <h5 class="text-center">2024 K-뮤지컬국제마켓</h5>
                 <p class="text-center">기간 2024.06.18~2024.06.22</p>
                 <p class="text-center">서울특별시 종로구</p>

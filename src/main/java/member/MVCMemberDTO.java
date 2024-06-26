@@ -1,83 +1,96 @@
 package member;
 
 public class MVCMemberDTO {
-	
-	private int userNum;
-	private String userId;
-	private String name;
-	private String password;
-	private int bDay;
-	private int phone;
+
+	private String user_num;
+	private String user_id;
+	private String username;
+	private String user_password;
+	private String birthday;
+	private String phonenum;
 	private String email;
-	private String pfile;
-	private String comment;
-	private String uPhoto;
-	private String fvr;
-	public int getUserNum() {
-		return userNum;
+	private String user_post;
+	private String user_comment;
+	private String user_photo;
+
+	public String getUser_num() {
+		return user_num;
 	}
-	public void setUserNum(int userNum) {
-		this.userNum = userNum;
+
+	public void setUser_num(String user_num) {
+		this.user_num = user_num;
 	}
-	public String getUserId() {
-		return userId;
+
+	public String getUser_id() {
+		return user_id;
 	}
-	public void setUserId(String userId) {
-		this.userId = userId;
+
+	public void setUser_id(String user_id) {
+		this.user_id = user_id;
 	}
-	public String getName() {
-		return name;
+
+	public String getUsername() {
+		return username;
 	}
-	public void setName(String name) {
-		this.name = name;
+
+	public void setUsername(String username) {
+		this.username = username;
 	}
-	public String getPassword() {
-		return password;
+
+	public String getUser_password() {
+		return user_password;
 	}
-	public void setPassword(String password) {
-		this.password = password;
+
+	public void setUser_password(String user_password) {
+		this.user_password = user_password;
 	}
-	public int getbDay() {
-		return bDay;
+
+	public String getBirthday() {
+		return birthday;
 	}
-	public void setbDay(int bDay) {
-		this.bDay = bDay;
+
+	public void setBirthday(String birthday) {
+		this.birthday = birthday;
 	}
-	public int getPhone() {
-		return phone;
+
+	public String getPhonenum() {
+		return phonenum;
 	}
-	public void setPhone(int phone) {
-		this.phone = phone;
+
+	public void setPhonenum(String phonenum) {
+		this.phonenum = phonenum;
 	}
+
 	public String getEmail() {
 		return email;
 	}
+
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public String getPfile() {
-		return pfile;
+
+	public String getUser_post() {
+		return user_post;
 	}
-	public void setPfile(String pfile) {
-		this.pfile = pfile;
+
+	public void setUser_post(String user_post) {
+		this.user_post = user_post;
 	}
-	public String getComment() {
-		return comment;
+
+	public String getUser_comment() {
+		return user_comment;
 	}
-	public void setComment(String comment) {
-		this.comment = comment;
+
+	public void setUser_comment(String user_comment) {
+		this.user_comment = user_comment;
 	}
-	public String getuPhoto() {
-		return uPhoto;
+
+	public String getUser_photo() {
+		return user_photo;
 	}
-	public void setuPhoto(String uPhoto) {
-		this.uPhoto = uPhoto;
+
+	public void setUser_photo(String user_photo) {
+		this.user_photo = user_photo;
 	}
-	public String getFvr() {
-		return fvr;
-	}
-	public void setFvr(String fvr) {
-		this.fvr = fvr;
-	}
-	
+
 }

@@ -1,6 +1,8 @@
+<%@ page import="member.MVCMemberDAO" %>
+<%@ page import="member.MVCMemberDTO" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="jakarta.tags.core" %>  
+<%@ taglib prefix="c" uri="jakarta.tags.core" %> 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,10 +13,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="../resources/assets/img/user/seungho.jpg" />
-<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
-	rel="stylesheet">
+<link rel="icon" type="image/x-icon" href="../resources/assets/img/user/seungho.jpg" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" rel="stylesheet">
+
 <style type="text/css">
 body {
 	margin-top: 20px;
@@ -76,7 +77,12 @@ body {
 	box-shadow: none !important;
 }
 </style>
+<%
+// request에서 dto 객체를 가져옵니다.
+seoulmate.membership.MemberDTO dto = (seoulmate.membership.MemberDTO) request.getAttribute("dto");
+%>
 </head>
+
 <body>
 
 	<!---------------------------------------- 전체 컨테이너 ---------------------------------------->
@@ -98,11 +104,12 @@ body {
 						<div class="card-body">
 							<div class="d-flex flex-column align-items-center text-center">
 								<img src="../resources/assets/img/user/seungho.jpg" alt="Admin"
-									class="rounded-circle" width="150" height="217">
+									class="rounded-circle" width="150" height="200">
 								<div class="mt-3">
-									<h4>문승호</h4>
+									${ dto.username }
+									<li><%=session.getAttribute("UserName")%> 님 환영합니다.</li>
 									<p class="text-secondary mb-1">Full Stack Developer</p>
-									<p class="text-muted font-size-sm">그린컴퓨터</p>
+									<p class="text-muted font-size-sm"><%-- <%= dto.getName() %> --%></p>
 									<button class="btn btn-info">Follow</button>
 									<a class="btn btn-info bs-link-color" target="__blank"
 										href="./contact.jsp">문의하기</a>
@@ -119,28 +126,33 @@ body {
 						<div class="card-body">
 							<div class="row">
 								<div class="col-sm-3">
-									<h6 class="mb-0">이름</h6>
-								</div>
-								<div class="col-sm-9 text-secondary">문승호</div>
-							</div>
-							<hr>
-							<div class="row">
-								<div class="col-sm-3">
-									<h6 class="mb-0">Email</h6>
+									<h6 class="mb-0">아이디</h6>
 								</div>
 								<div class="col-sm-9 text-secondary">
-									<!-- <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="791f100939130c12140c11571815">[email&#160;protected]</a> -->
-									msh071@naver.com
+								<%= session.getAttribute("UserId") %>
 								</div>
 							</div>
 							<hr>
 							<div class="row">
 								<div class="col-sm-3">
-									<h6 class="mb-0">생년월일</h6>
+									<h6 class="mb-0">이름</h6>
 								</div>
-								<div class="col-sm-9 text-secondary">1997-07-07</div>
+								<div class="col-sm-9 text-secondary">
+								문승호
+								<%= session.getAttribute("UserId") %>
+								</div>
 							</div>
 							<hr>
+							<div class="row">
+								<div class="col-sm-3">
+									<h6 class="mb-0">이메일</h6>
+								</div>
+								<div class="col-sm-9 text-secondary">
+									${ dto.USER_NUM }
+								</div>
+							</div>
+							<hr>
+							
 							<div class="row">
 								<div class="col-sm-3">
 									<h6 class="mb-0">핸드폰</h6>
@@ -154,8 +166,8 @@ body {
 								</div>
 								<div class="col-sm-9 text-secondary">경기도 의정부시 가능동</div>
 							</div>
-							<hr>
-							<div class="row">
+							<%-- <hr>
+							 <div class="row">
 								<div class="col-sm-3">
 									<h6 class="mb-0">찜한 축제</h6>
 								</div>
@@ -165,13 +177,12 @@ body {
 										<td>${ dto.content }</td>
 									</tr>
 								</div>
-							</div>
+							</div> --%>
 							<hr>
 							<div class="row">
 								<div class="col-sm-12">
-									<a class="btn btn-info " target="__blank"
-										href="./profileEdit.jsp">Edit</a> <a class="btn btn-info "
-										target="__blank" href="../mvcboard/list.do">게시판으로 이동</a>
+									<a class="btn btn-info " target="__blank" href="./profileEdit.jsp">Edit</a>
+									<a class="btn btn-info " target="__blank" href="../mvcboard/list.do">게시판으로 이동</a>
 								</div>
 							</div>
 						</div>

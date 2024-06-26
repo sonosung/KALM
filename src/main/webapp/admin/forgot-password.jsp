@@ -48,19 +48,21 @@
                                     <form class="user">
                                         <div class="form-group">
                                             <input type="email" class="form-control form-control-user"
-                                                id="exampleInputEmail" aria-describedby="emailHelp"
-                                                placeholder="Enter Email Address...">
+                                             id="exampleInputEmail" aria-describedby="emailHelp"
+                                             placeholder="Enter Email Address..." data-sb-validations="required,email" />
+                                            <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
+                                        	<div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
                                         </div>
-                                        <a href="login.html" class="btn btn-primary btn-user btn-block">
+                                        <a class="btn btn-primary btn-user btn-block">
                                             Reset Password
                                         </a>
                                     </form>
                                     <hr>
                                     <div class="text-center">
-                                        <a class="small" href="./register.jsp">Create an Account!</a>
+                                        <a class="small" href="../userPage/register.jsp">Create an Account!</a>
                                     </div>
                                     <div class="text-center">
-                                        <a class="small" href="./login.jsp">Already have an account? Login!</a>
+                                        <a class="small" href="../userPage/userLogin.jsp">Already have an account? Login!</a>
                                     </div>
                                 </div>
                             </div>

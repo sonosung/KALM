@@ -23,7 +23,7 @@ public class JDBConnect {
 
 			// DB연결. 하드코딩 되어있다고 함. 좋은 방법은 아님. 사용자 정보가 바뀌면 다시 컴파일 해야되기 때문에 비효율적임.
 			// 외부파일(ex.xml파일)을 이용해서 정보를 따로 입력하면 더 효율적.
-			String url = "jdbc:oracle:thin:@localhost:1521:xe";
+			String url = "jdbc:oracle:thin:@14.42.124.21:1521:xe";
 			String id = "C##KEAM";
 			String pwd = "1234";
 			con = DriverManager.getConnection(url, id, pwd);
@@ -59,8 +59,8 @@ public class JDBConnect {
 			 * String url = "jdbc:oracle:thin:@14.42.124.21:1521:xe"; String id = "C##KEAM";
 			 */
 			
-			String url = "jdbc:oracle:thin:@localhost:1521:xe";
-			String id = "C##musthave";
+			String url = "jdbc:oracle:thin:@14.42.124.21:1521:xe";
+			String id = "C##KEAM";
 			String pwd = "1234";
 			con = DriverManager.getConnection(url, id, pwd);
 

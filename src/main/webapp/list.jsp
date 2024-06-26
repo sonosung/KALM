@@ -22,31 +22,62 @@
 <link href="./resources/css/styles.css" rel="stylesheet" />
 </head>
 <body id="page-top">
-	<!-- Navigation -->
-	<nav
-		class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top"
-		id="mainNav">
+	
+	<%-- <jsp:forward page="../MainLayoutElements/header.jsp"></jsp:include> --%>
+	
+	<nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
 		<div class="container">
-			<a class="navbar-brand" href="./index.jsp">SEOULMATE</a>
-			<button
-				class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded"
-				type="button" data-bs-toggle="collapse"
-				data-bs-target="#navbarResponsive" aria-controls="navbarResponsive"
-				aria-expanded="false" aria-label="Toggle navigation">
-				Menu <i class="fas fa-bars"></i>
+			<a class="navbar-brand" href="../index.jsp#page-top">SEOULMATE</a>
+			
+			<button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded"
+				type="button" 
+				data-bs-toggle="collapse"
+				data-bs-target="#navbarResponsive" 
+				aria-controls="navbarResponsive"
+				aria-expanded="false" 
+				aria-label="Toggle navigation">
+				Menu 
+				<i class="fas fa-bars">
+				</i>
 			</button>
+			
 			<div class="collapse navbar-collapse" id="navbarResponsive">
+			<form id="user" action ="../index.jsp">
 				<ul class="navbar-nav ms-auto">
-					<li class="nav-item mx-0 mx-lg-1"><a
-						class="nav-link py-3 px-0 px-lg-3 rounded" href="#portfolio">Portfolio</a>
+					<li class="nav-item mx-0 mx-lg-1">
+					<a class="nav-link py-3 px-0 px-lg-3 rounded" href="./index.jsp#portfolio">추천행사</a>
 					</li>
-					<li class="nav-item mx-0 mx-lg-1"><a
-						class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">About</a>
+					
+					<li class="nav-item mx-0 mx-lg-1">
+					<a class="nav-link py-3 px-0 px-lg-3 rounded" href="./index.jsp#festival">게시판</a>
 					</li>
-					<li class="nav-item mx-0 mx-lg-1"><a
-						class="nav-link py-3 px-0 px-lg-3 rounded" href="#contact">Contact</a>
+					
+					<li class="nav-item mx-0 mx-lg-1">
+					<a class="nav-link py-3 px-0 px-lg-3 rounded" href="./index.jsp#calendar">행사달력</a>
+					</li>
+					
+					<li class="nav-item mx-0 mx-lg-1">
+					<a class="nav-link py-3 px-0 px-lg-3 rounded" href="./userPage/contact.jsp">Contact</a>
+					</li>
+					
+					<li class="nav-item mx-0 mx-lg-1">
+					<a class="nav-link py-3 px-0 px-lg-3 rounded" href="./userPage/userLogin.jsp" id="Login">Login</a>
+					</li>
+					
+					<li class="nav-item mx-0 mx-lg-1">
+					<a class="nav-link py-3 px-0 px-lg-3 rounded" href="./userPage/register.jsp" id="SignIn">SignIn</a>
+					</li>
+					
+					<li class="nav-item mx-0 mx-lg-1">
+					<a class="nav-link py-3 px-0 px-lg-3 rounded" href="./06Session/04_Logout.jsp" >Logout</a>
+					</li>
+					
+					<li class="nav-item mx-0 mx-lg-1">
+					<a class="nav-link py-3 px-0 px-lg-3 rounded" href="./userPage/myPage.jsp" type="submit"
+					onclick="document.getElementById('user').sumbit();">MyPage</a>
 					</li>
 				</ul>
+				</form>
 			</div>
 		</div>
 	</nav>
