@@ -37,7 +37,7 @@ public class MemberDAO extends JDBConnect {
                 dto.setUser_comment(rs.getString("user_comment"));
                 dto.setEmail(rs.getString("email"));
                 dto.setPhonenum(rs.getString("phonenum"));
-                dto.setBirthday(rs.getString("birthday"));
+                
             }
         } catch (Exception e) {
             e.printStackTrace();

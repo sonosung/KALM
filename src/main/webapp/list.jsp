@@ -62,7 +62,7 @@
 				</div>
 				<div class="divider-custom-line"></div>
 			</div>
-			<p class="masthead-subheading font-weight-light mb-0">Board -
+			<p class="masthead-subheading font-weight-light mb-0">UserBoard -
 				View</p>
 		</div>
 	</header>
@@ -70,7 +70,7 @@
 	<!-- 게시판 목록 -->
 	<section class="page-section">
 		<div class="container">
-			<h2 class="text-center text-uppercase text-secondary mb-0">축제 공유
+			<h2 class="text-center text-uppercase text-secondary mb-0">[유저] 축제 공유
 				게시글 리스트</h2>
 			<!-- 검색 폼 -->
 			<form method="get">
@@ -109,7 +109,7 @@
 							<!-- 게시물이 있을 때 -->
 							<c:forEach items="${boardLists}" var="row" varStatus="loop">
 								<tr align="center">
-									<td>${pageDTO.totalCount - (((pageDTO.pageNum - 1) * pageDTO.pageSize) + loop.index)}</td>
+									<td>${row.idx}</td>
 									<td align="left"><a href="view.do?idx=${row.idx}">${row.title}</a></td>
 									<td>${row.name}</td>
 									<td>${row.visitcount}</td>

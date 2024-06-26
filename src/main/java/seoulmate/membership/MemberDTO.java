@@ -11,8 +11,14 @@ public class MemberDTO {
 	private String user_comment;
 	private String email;
 	private String phonenum;
-	private String birthday;
+	
 
+	
+	
+	
+	
+	
+	
 	public String getUsername() {
 		return username;
 	}
@@ -85,12 +91,6 @@ public class MemberDTO {
 		this.phonenum = phonenum;
 	}
 
-	public String getBirthday() {
-		return birthday;
-	}
-
-	public void setBirthday(String birthday) {
-		this.birthday = birthday;
-	}
+	
 
 }
