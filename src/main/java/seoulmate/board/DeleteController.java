@@ -29,18 +29,26 @@ public class DeleteController extends HttpServlet {
         // 3. BoardDAO를 이용하여 게시물 삭제 수행
         BoardDAO dao = new BoardDAO();
         int result = dao.deletePost(idx); // deletePost 메서드 호출
-
+        
+        response.setContentType("text/html; charset=UTF-8");
+        PrintWriter out = response.getWriter();
         // 4. DAO 작업 결과에 따라 응답 처리
         if (result == 1) {
             // 삭제 성공 시
-            response.sendRedirect("list.do"); // 삭제 후 목록 페이지로 redirect
+        	out.println("<html><body>");
+            out.println("<script>");
+            out.println("alert('삭제가 완료되었습니다.');");
+            out.println("location.href='list.do';");
+            out.println("</script>");
+            out.println("</body></html>");	
             
         } else {
             // 삭제 실패 시
-            response.setContentType("text/html; charset=UTF-8");
-            PrintWriter out = response.getWriter();
-            out.println("<html><body>");
-            out.println("<script>alert('게시물 삭제에 실패했습니다.'); history.go(-1);</script>");
+        	out.println("<html><body>");
+            out.println("<script>");
+            out.println("alert('게시물 삭제에 실패했습니다.');");
+            out.println("history.go(-1);");
+            out.println("</script>");
             out.println("</body></html>");
         }
 

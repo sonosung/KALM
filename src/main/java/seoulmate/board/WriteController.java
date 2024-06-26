@@ -24,6 +24,8 @@ public class WriteController extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		
+		
 		// TODO Auto-generated method stub
 		request.getRequestDispatcher("/write.jsp").forward(request, response);
 //		response.getWriter().append("Served at: ").append(request.getContextPath());
@@ -52,10 +54,18 @@ public class WriteController extends HttpServlet {
 //		}
 
 		// 2. 파일 업로드 외 처리 ===========================================
+		
+		
+		
+		
+		
+		
+		
 		// 폼값을 DTO에 저장
 		BoardDTO dto = new BoardDTO();
 		MemberDTO member = (MemberDTO) req.getSession().getAttribute("user");
 
+		
 		
 		    String user_Id = member.getUser_id();
 		    
@@ -68,6 +78,8 @@ public class WriteController extends HttpServlet {
 		    dto.setFesstart(req.getParameter("fesstart"));
 		    dto.setFesend(req.getParameter("fesend"));
 		
+		    
+		    
 		
 		
 		

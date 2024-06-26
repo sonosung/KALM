@@ -10,6 +10,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.Part;
+import seoulmate.membership.MemberDTO;
 import utils.JSFunction;
 
 @WebServlet("/edit.do")
@@ -47,11 +48,14 @@ public class EditController extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+
+		
+
 		request.setCharacterEncoding("UTF-8");
 
 		String idx = request.getParameter("idx");
 		System.out.println("Edit.do - Received idx in doPost: " + idx);
-		
+
 		String title = request.getParameter("title");
 		String content = request.getParameter("content");
 		String fescate = request.getParameter("fescate");
@@ -85,8 +89,7 @@ public class EditController extends HttpServlet {
 		}
 
 		BoardDTO dto = new BoardDTO();
-		
-		
+
 		dto.setTitle(title);
 		dto.setContent(content);
 		dto.setFescate(fescate);
@@ -102,6 +105,9 @@ public class EditController extends HttpServlet {
 		BoardDAO dao = new BoardDAO();
 		int result = dao.updatePost(dto);
 		dao.close();
+		
+		
+		
 
 		if (result == 1) {
 			response.sendRedirect("list.do"); // Redirect to view post page

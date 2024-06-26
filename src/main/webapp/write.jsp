@@ -84,9 +84,9 @@ th {
 		</div>
 	</header>
 
-	<div class="masthead bg-white text-black">
+		<div class="masthead bg-white text-black">
 		<form name="writeFrm" method="post" enctype="multipart/form-data"
-			action="write.do" onsubmit="return validateForm(this);">
+			action="write.do" onsubmit="return validateForm();">
 			<table>
 				<tr class="masthead bg-secondary text-white">
 					<td colspan="3" align="center">
@@ -204,5 +204,22 @@ th {
 	<!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
 	<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
 	<script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+	<script>
+		function validateForm() {
+			const form = document.forms['writeFrm'];
+			const title = form['title'].value.trim();
+			const fesname = form['fesname'].value.trim();
+			const content = form['content'].value.trim();
+			const feslocation = form['feslocation'].value.trim();
+			const fesstart = form['fesstart'].value;
+			const fesend = form['fesend'].value;
+
+			if (title === '' || fesname === '' || content === '' || feslocation === '' || fesstart === '' || fesend === '') {
+				alert('제목, 행사명, 행사 내용, 행사 주소, 행사 기간을 모두 입력해주세요.');
+				return false;
+			}
+			return true;
+		}
+	</script>
 </body>
 </html>
