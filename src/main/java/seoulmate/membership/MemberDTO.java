@@ -19,10 +19,14 @@ public class MemberDTO {
 	private String USER_ZIP;
 	private String USER_EMAIL_ERROR;
 	private String USER_ID_ERROR;
+	private String CANCEL;
 	
-	
-	
-	
+	public String getCANCEL() {
+		return CANCEL;
+	}
+	public void setCANCEL(String uCANCEL) {
+		CANCEL = uCANCEL;
+	}
 	public int getUSER_NUM() {
 		return USER_NUM;
 	}

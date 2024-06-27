@@ -69,8 +69,16 @@ body {
 		}
 	}
 </script>
+<link href="../resources/css/styles.css" rel="stylesheet" />
 </head>
-<body>
+<body style="background-color:#EEF7FF;">
+<!-- 헤더와 콘텐트 페이지 분리용 디바이더 -->
+<div class="divider-custom"></div>
+<div class="divider-custom"></div>
+<div class="divider-custom"></div>
+<div class="divider-custom"></div>
+<div class="divider-custom"></div>
+<div class="divider-custom"></div>
 
 	<!---------------------------------------- 전체 컨테이너 ---------------------------------------->
 
@@ -79,13 +87,14 @@ body {
 
 	<!---------------------------------------- 헤드 네비게이터 ---------------------------------------->
 
-			<nav aria-label="breadcrumb" class="main-breadcrumb">
+			<!-- <nav aria-label="breadcrumb" class="main-breadcrumb">
 				<ol class="breadcrumb">
 					<li class="breadcrumb-item"><a href="../index.jsp">Home</a></li>
 					<li class="breadcrumb-item"><a href="./myPage.jsp">User Profile</a></li>
 					<li class="breadcrumb-item active" aria-current="page">Edit Profile</li>
 				</ol>
-			</nav>
+			</nav> -->
+			<jsp:include page="../MainLayoutElements/header.jsp"></jsp:include>
 
 	<!---------------------------------------- 헤드 네비게이터 끝 ---------------------------------------->
 
@@ -181,6 +190,8 @@ body {
 			</div>
 		</div>
 	</div>
+	
+	<jsp:include page="../MainLayoutElements/footer.jsp"></jsp:include>
 	
 	<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
 	<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.bundle.min.js"></script> -->

@@ -84,7 +84,7 @@
 <!--------------------------------------------------------- End Navigation --------------------------------------------------------->
 
 	<!--------------------------------------------------------- 헤드 영역 --------------------------------------------------------->
-	<header class="masthead bg-primary text-white text-center">
+	<header class="masthead text-white text-center" style="background-color:#D4F1F4;">
 
 	<!--------------------------------------------------------- 메인 상단 --------------------------------------------------------->
 
@@ -112,7 +112,7 @@
 
 	<!---------------------------------------------------- 메인 상단 대표행사 위치 ----------------------------------------------------->
 
-	<section class="page-section portfolio" id="portfolio">
+	<section class="page-section portfolio" id="portfolio" style="background-color:#EEF7FF;">
 		<div class="container">
 		
 	<!--------------------------------------------------------- 행사 섹션 --------------------------------------------------------->
@@ -178,7 +178,7 @@
 
 	<!------------------------------------------------------ 게시판 섹션 ------------------------------------------------->
 
-	<section class="page-section bg-primary text-white mb-0" id="festival">
+	<section class="page-section text-white mb-0" id="festival" style="background-color:#05445E;">
 		<div class="container">
 			<!-- About Section Heading-->
 			<h2 class="page-section-heading text-center text-uppercase text-white">행사 게시판</h2>

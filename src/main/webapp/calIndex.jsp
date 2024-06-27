@@ -23,7 +23,7 @@
   </head>
   <body>
 
-	<div class="content">
+	<div class="content" style="background-color:#EEF7FF;">
 		<div id='calendar'></div>
 	</div>
 

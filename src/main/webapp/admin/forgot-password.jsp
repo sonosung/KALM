@@ -42,27 +42,36 @@
                                 <div class="p-5">
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-2">Forgot Your Password?</h1>
-                                        <p class="mb-4">We get it, stuff happens. Just enter your email address below
-                                            and we'll send you a link to reset your password!</p>
+                                        <p class="mb-4">Enter your Email address, Name, and Phone Number and I will tell you your password</p>
                                     </div>
-                                    <form class="user">
+                                    <form class="user" action="forgot-password.do" method="post">
                                         <div class="form-group">
                                             <input type="email" class="form-control form-control-user"
-                                             id="exampleInputEmail" aria-describedby="emailHelp"
-                                             placeholder="Enter Email Address..." data-sb-validations="required,email" />
-                                            <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
-                                        	<div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
+                                                id="exampleInputEmail" aria-describedby="emailHelp" name="EMAIL" required
+                                                placeholder="Enter Email Address...">
+                                                <div id="emailHelp">Please enter your email address.</div>
+                                                 <div style="margin-bottom: 10px;"></div>
+                                                 
+                                            <input type="text" class="form-control form-control-user"
+                                                 aria-describedby="NameHelp" name="NAME" required
+                                                placeholder="Enter Name Address...">
+                                                <div id="NameHelp">Please enter your Name address.</div>
+                                                <div style="margin-bottom: 10px;"></div>
+                                                 
+                                            <input type="text" class="form-control form-control-user"
+                                                 aria-describedby="PhoneNumHelp" name="PHONENUM" required
+                                                placeholder="Enter PhoneNumber Address..."> 
+                                                <div id="PhoneNumHelp">Please enter your PhoneNumber address.</div>   
+                                                 <hr>
                                         </div>
-                                        <a class="btn btn-primary btn-user btn-block">
-                                            Reset Password
-                                        </a>
+                                         <button type="submit" class="btn btn-primary btn-user btn-block" onclick="/admin/forgot-password.do" > Password Search</button>
                                     </form>
                                     <hr>
                                     <div class="text-center">
-                                        <a class="small" href="../userPage/register.jsp">Create an Account!</a>
+                                        <a class="small" href="./register.jsp">Create an Account!</a>
                                     </div>
                                     <div class="text-center">
-                                        <a class="small" href="../userPage/userLogin.jsp">Already have an account? Login!</a>
+                                        <a class="small" href="./login.jsp">Already have an account? Login!</a>
                                     </div>
                                 </div>
                             </div>

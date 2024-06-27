@@ -29,6 +29,10 @@ public class MemberDAO extends JDBConnect {
             if (rs.next()) {
                 dto.setUSER_NUM(rs.getInt("USER_NUM"));
                 dto.setUSER_ID(rs.getString("USER_ID"));
+                dto.setEMAIL(rs.getString("EMAIL"));
+                dto.setPHONENUM(rs.getString("PHONENUM"));
+                dto.setUSERNAME(rs.getString("USERNAME"));
+                dto.setUSER_STREET(rs.getString("USER_STREET"));
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -36,10 +40,32 @@ public class MemberDAO extends JDBConnect {
         return dto;
     }
     
+    //비밀번호 찾기 
+    public MemberDTO getMemberDTO(String uemail, String uname, String uphone) {
+        MemberDTO dto = new MemberDTO(); // 회원 정보 DTO 객체 생성
+        String query = "SELECT USER_PASSWORD FROM users WHERE EMAIL=? AND USERNAME=? AND PHONENUM=? ";
+        System.out.println("맴버 DAO 값 들어오는지 확인" + uemail + uname + uphone);
+        try {
+            psmt = con.prepareStatement(query);
+            psmt.setString(1, uemail);
+            psmt.setString(2, uname);
+            psmt.setString(3, uphone);
+            rs = psmt.executeQuery();
+
+            if (rs.next()) {
+                dto.setUSER_PASSWORD(rs.getString("USER_PASSWORD"));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return dto;
+    }
+    
+    
+    //회원 가입
     public MemberDTO getMemberDTO(String USERNAME, String EMAIL, String USER_ID,String PHONENUM, String USER_PASSWORD,String USER_STREET, String USER_ZIP) {
         MemberDTO dto = new MemberDTO(); // 회원 정보 DTO 객체 생성
-        String query = "SELECT EMAIL FROM users WHERE EMAIL=? ";
-        System.out.println("로그인 맴버 DAO 값 들어오는지 확인" + USERNAME + EMAIL + USER_ID + PHONENUM + USER_PASSWORD + USER_STREET + USER_ZIP);
+        String query = "SELECT EMAIL FROM user_save WHERE EMAIL=? ";
         try {
             psmt = con.prepareStatement(query);
             psmt.setString(1, EMAIL);
@@ -62,9 +88,10 @@ public class MemberDAO extends JDBConnect {
                     }
                     
                     if(dto.getUSER_ID() == null) {
+                    	System.out.println("닉네임 중복 없음");
                     	try {
                     		query = "INSERT INTO users(USER_NUM,USERNAME,EMAIL,USER_ID,PHONENUM,USER_PASSWORD,USER_ZIP,USER_STREET) "
-                    				+ "VALUES (LOGINNUMBER2.NEXTVAL , ?, ?, ?, ?, ?, ?, ? ) ";
+                    				+ "VALUES (LOGINNUMBER3.NEXTVAL , ?, ?, ?, ?, ?, ?, ? ) ";
                             psmt = con.prepareStatement(query);
                             psmt.setString(1, USERNAME);
                             psmt.setString(2, EMAIL);
@@ -74,6 +101,7 @@ public class MemberDAO extends JDBConnect {
                             psmt.setString(6, USER_ZIP);
                             psmt.setString(7, USER_STREET);
                             rs = psmt.executeQuery();
+                            
                             
                     	} catch (Exception e) {
                             e.printStackTrace();
@@ -93,34 +121,37 @@ public class MemberDAO extends JDBConnect {
             	dto.setUSER_EMAIL_ERROR("이메일이 중복되었습니다.");
             	System.out.println("이메일 중복 됨");
             }
-
+            rs.close();
+            psmt.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
         return dto;
     }
-
-
     
-    public MemberDTO userInfo(String email) {
-		MemberDTO dto = new MemberDTO();
-		String query = "SELECT * FROM users WHERE USER_EMAIL=?";
-		try {
-			psmt = con.prepareStatement(query);
-			psmt.setString(1, email);
-			rs = psmt.executeQuery();
-
-			if (rs.next()) {
-				dto.setUSER_ID(rs.getString(1));
-				dto.setUSERNAME(rs.getString(2));
-				dto.setEMAIL(rs.getString(3));
-				dto.setPHONENUM(rs.getString(4));
-				dto.setUSER_STREET(rs.getString(5));
-			}
-		} catch (Exception e) {
-			System.out.println("회원정보 조회 중 예외 발생");
-			e.printStackTrace();
-		}
-		return dto;
-	}
+    //계삭빵
+    public MemberDTO getMemberDTO_Cancel(String USER_PASSWORD , String EMAIL) {
+        MemberDTO dto = new MemberDTO(); // 회원 정보 DTO 객체 생성
+        String query = " DELETE FROM USERS WHERE USER_PASSWORD = ? AND EMAIL= ? ";
+        System.out.println("계삭빵 맴버 DAO 값 들어오는지 확인" + USER_PASSWORD + EMAIL);
+        try {
+            psmt = con.prepareStatement(query);
+            psmt.setString(1, USER_PASSWORD);
+            psmt.setString(2, EMAIL);
+            rs = psmt.executeQuery();
+            
+            if (rs.next()) {
+                dto.setCANCEL("uCancel");
+            }
+            
+            query = " DELETE FROM user_save WHERE EMAIL= ? ";
+            psmt = con.prepareStatement(query);
+            psmt.setString(1, EMAIL);
+            rs = psmt.executeQuery();
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return dto;
+    }
 }

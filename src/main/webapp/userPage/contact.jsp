@@ -33,7 +33,7 @@
         <div class="divider-custom"></div>
             
             <!-- Page content-->
-            <section class="py-5">
+            <section class="py-5" style="background-color:#D4F1F4;">
                 <div class="container px-5">
                     <!-- Contact form-->
                     <div class="bg-light rounded-4 py-5 px-4 px-md-5">
@@ -44,20 +44,15 @@
                         </div>
                         <div class="row gx-5 justify-content-center">
                             <div class="col-lg-8 col-xl-6">
-                                <!-- * * * * * * * * * * * * * * *-->
-                                <!-- * * SB Forms Contact Form * *-->
-                                <!-- * * * * * * * * * * * * * * *-->
-                                <!-- This form is pre-integrated with SB Forms.-->
-                                <!-- To make this form functional, sign up at-->
-                                <!-- https://startbootstrap.com/solution/contact-forms-->
-                                <!-- to get an API token!-->
                                 <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+                                
                                     <!-- Name input-->
                                     <div class="form-floating mb-3">
                                         <input class="form-control" id="name" type="text" placeholder="Enter your name..." data-sb-validations="required" />
                                         <label for="name">Full name</label>
                                         <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
                                     </div>
+                                    
                                     <!-- Email address input-->
                                     <div class="form-floating mb-3">
                                         <input class="form-control" id="email" type="email" placeholder="name@example.com" data-sb-validations="required,email" />
@@ -65,37 +60,45 @@
                                         <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
                                         <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
                                     </div>
+                                    
                                     <!-- Phone number input-->
                                     <div class="form-floating mb-3">
                                         <input class="form-control" id="phone" type="tel" placeholder="(123) 456-7890" data-sb-validations="required" />
                                         <label for="phone">Phone number</label>
                                         <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
                                     </div>
+                                    
                                     <!-- Message input-->
                                     <div class="form-floating mb-3">
                                         <textarea class="form-control" id="message" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required"></textarea>
                                         <label for="message">Message</label>
                                         <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
                                     </div>
+                                    
                                     <!-- Submit success message-->
-                                    <!---->
-                                    <!-- This is what your users will see when the form-->
-                                    <!-- has successfully submitted-->
+                                    <!-- This is what your users will see when the form has successfully submitted -->
                                     <div class="d-none" id="submitSuccessMessage">
                                         <div class="text-center mb-3">
                                             <div class="fw-bolder">메시지가 성공적으로 전달되었습니다!</div>
-                                            
                                             <br />
                                             <a href="../boards/festivalList.jsp">서울에서 열리는 행사가 궁금하다면?</a>
                                         </div>
                                     </div>
+                                    
                                     <!-- Submit error message-->
-                                    <!---->
-                                    <!-- This is what your users will see when there is-->
-                                    <!-- an error submitting the form-->
-                                    <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
+                                    <!-- This is what your users will see when there is an error submitting the form-->
+                                    <div class="d-none" id="submitErrorMessage">
+                                    	<div class="text-center text-danger mb-3">
+                                    		Error sending message!
+                                    	</div>
+                                    </div>
+                                    
                                     <!-- Submit Button-->
-                                    <div class="d-grid"><button class="btn btn-primary btn-lg disabled" id="submitButton" type="submit">Submit</button></div>
+                                    <div class="d-grid">
+                                    	<button class="btn btn-primary btn-lg disabled" id="submitButton" type="submit">
+                                    		Submit
+                                    	</button>
+                                    </div>
                                 </form>
                             </div>
                         </div>
@@ -124,60 +127,13 @@
 	</script>
 	
 	<!-- Footer -->
-	<footer class="footer text-center">
-		<div class="container">
-			<div class="row">
-				<!-- Footer Location-->
-				<div class="col-lg-4 mb-5 mb-lg-0">
-					<h4 class="text-uppercase mb-4">who made it?</h4>
-					<br>
-					<p class="lead mb-0">
-						문승호, 김별, 이진규, 안상환 <br /> <br /> Started from 2024.06.12<br>to
-						2024.07.11
-					</p>
-				</div>
-				<!-- Footer Social Icons-->
-				<div class="col-lg-4 mb-5 mb-lg-0">
-					<h4 class="text-uppercase mb-4">visit our github</h4>
-					<br> <a class="btn btn-outline-light btn-social mx-1"
-						href="https://github.com/byeol1286"><i
-						class="fab fa-fw fa-facebook-f"></i></a> <a
-						class="btn btn-outline-light btn-social mx-1"
-						href="https://github.com/GOTERCODE"><i
-						class="fab fa-fw fa-twitter"></i></a> <a
-						class="btn btn-outline-light btn-social mx-1"
-						href="https://github.com/poong1125"><i
-						class="fab fa-fw fa-linkedin-in"></i></a> <a
-						class="btn btn-outline-light btn-social mx-1"
-						href="https://github.com/sonosung"><i
-						class="fab fa-fw fa-dribbble"></i></a>
-				</div>
-				<!-- Footer About Text--->
-				<div class="col-lg-4">
-					<h4 class="text-uppercase mb-4">About Us</h4>
-					<p class="lead mb-0">
-						SEUOLMATE는<br>JSP & OracleDB 기반 팀 프로젝트입니다.<br> <br>
-						MIT licensed Bootstrap theme<br>created by <a
-							href="http://startbootstrap.com">Start Bootstrap</a> .
-					</p>
-				</div>
-			</div>
-		</div>
-	</footer>
-	<!-- Copyright Section-->
-	<div class="copyright py-4 text-center text-white">
-		<div class="container">
-			<small>Copyright &copy; Team_KEAM</small>
-		</div>
-	</div>
+	
+	<jsp:include page="../MainLayoutElements/footer.jsp"></jsp:include>
+	
 	<!-- End Footer -->
 	
 	<!-- Core theme JS-->
        <script src="js/scripts.js"></script>
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <!-- * *                               SB Forms JS                               * *-->
-        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
     </body>
 </html>

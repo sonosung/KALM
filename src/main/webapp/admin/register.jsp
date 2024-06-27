@@ -1,19 +1,19 @@
-<%-- <%@ page language="java" contentType="text/html; charset=UTF-8"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-   <style>
-   button {
-      width : 100px;
-      height : 35px;
-      border : 0px;
-      color:white;
-      background:#282A35;
-      margin : 5px;
-   }
-   </style>
+	<style>
+	button {
+		width : 100px;
+		height : 35px;
+		border : 0px;
+		color:white;
+		background:#282A35;
+		margin : 5px;
+	}
+	</style>
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -48,57 +48,55 @@
                             <div class="text-center">
                                 <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
                             </div>
-                            <form class="user">
+                            <form class="user" action="register.do" method="post">
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input type="text" class="form-control form-control-user" id="exampleFirstName"
-                                            placeholder="성명 / Full Name">
+                                        <input type="text" class="form-control form-control-user" id="exampleFirstName" name="USERNAME"
+                                            placeholder="성명 / Full Name" required>
                                     </div>
                                     <div class="col-sm-6 mb-3 mb-sm-0">
-                                       <input type="email" class="form-control form-control-user" id="exampleInputEmail"
-                                        placeholder="이메일 / Email">
+                                  	  <input type="email" class="form-control form-control-user" id="exampleInputEmail" name="EMAIL" 
+                                        placeholder="이메일 / Email" required>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                 <div class="col-sm-6 mb-3 mb-sm-0">
-                                    <input type="text" class="form-control form-control-user" id="exampleID"
-                                        placeholder="닉네임 / User Name">
-                        </div>
-                        <div class="col-sm-6 mb-3 mb-sm-0">
-                                    <input type="email" class="form-control form-control-user" id="examplebirthday"
-                                        placeholder="전화번호 / Phone">
-                        </div>
+                                    <input type="text" class="form-control form-control-user" id="exampleID" name="USER_ID" 
+                                        placeholder="닉네임 / User Name" required>
+								</div>
+								<div class="col-sm-6 mb-3 mb-sm-0">
+                                    <input type="text" class="form-control form-control-user" id="examplebirthday" name="PHONENUM" 
+                                        placeholder="전화번호 / Phone" required>
+								</div>
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
                                         <input type="password" class="form-control form-control-user"
-                                            id="exampleInputPassword" placeholder="비밀번호 / Password">
+                                            id="exampleInputPassword" name="USER_PASSWORD" placeholder="비밀번호 / Password" required onkeyup="checkPasswordMatch();">
                                     </div>
                                     <div class="col-sm-6 mb-3 mb-sm-0">
                                         <input type="password" class="form-control form-control-user"
-                                            id="exampleRepeatPassword" placeholder="비밀번호 확인 / Confirm Password ">
-                                    </div>
+                                            id="exampleRepeatPassword2" name="pass2" placeholder="비밀번호 확인 / Confirm Password " required onkeyup="checkPasswordMatch();">
+                                    </div>                               
                                 </div>
-                                <div class="form-group row">         
-                        <div class="col-sm-2-An mb-3 mb-sm-0">
-                           <input type="text" name="address" class="form-control form-control-user postcodify_postcode5"
-                              placeholder="Zip">
-                        </div>
-                        <div class="col-sm-8 mb-3 mb-sm-0">
-                           <input type="text" name="address" class="form-control form-control-user postcodify_address"
-                              placeholder="도로명 주소 / Street">
-                        </div>
-                        <!-- <button type="button" class="btn btn-primary btn-user-An-search btn-block" id="postcodify_search_button">검색</button> -->
-                        <button type="button" class="btn btn-primary btn-user-An-search btn-block" id="postcodify_search_button">검색</button>
+                                 <div class="col-sm-12">
+      								  <div id="passwordMatchMessage"></div>
+      								  <hr>
+ 								    </div>
+                                <div class="form-group row">			
+								<div class="col-sm-2-An mb-3 mb-sm-0">
+									<input type="text" class="form-control form-control-user postcodify_postcode5" name="USER_ZIP" 
+										placeholder="Zip" required>
+								</div>
+								<div class="col-sm-8 mb-3 mb-sm-0">
+									<input type="text"  class="form-control form-control-user postcodify_address" name="USER_STREET" 
+										placeholder="도로명 주소 / Street" required>
+								</div>
+								<button type="button" class="btn btn-primary btn-user-An-search btn-block" id="postcodify_search_button">검색</button>
                                 </div>
-                                <a href="./login.jsp" class="btn btn-primary btn-user-An-Register-Account btn-block">
-                                    Register Account
-                                </a>
+                                <button type="submit" class="btn btn-primary btn-user-An-Register-Account btn-block" onclick="/admin/register.do">Register Account</button>
                             </form>
                             <hr>
-                            <div class="text-center">
-                                <a class="small" href="forgot-password.html">Forgot Password?</a>
-                            </div>
                             <div class="text-center">
                                 <a class="small" href="login.jsp">Already have an account? Login!</a>
                             </div>
@@ -120,13 +118,29 @@
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
     
-       <!-- 주소 API 스크립트 -->
-   <!-- jQuery와 Postcodify를 로딩한다 -->
-   <script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-   <script src="//d1p7wdleee1q2z.cloudfront.net/post/search.min.js"></script>
-   
-   <!-- "검색" 단추를 누르면 팝업 레이어가 열리도록 설정한다 -->
-   <script> $(function() { $("#postcodify_search_button").postcodifyPopUp(); }); </script>
+    	<!-- 주소 API 스크립트 -->
+	<!-- jQuery와 Postcodify를 로딩한다 -->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+	<script src="//d1p7wdleee1q2z.cloudfront.net/post/search.min.js"></script>
+	
+	<!-- "검색" 단추를 누르면 팝업 레이어가 열리도록 설정한다 -->
+	<script> $(function() { $("#postcodify_search_button").postcodifyPopUp(); }); </script>
+	
+	<script>
+        function checkPasswordMatch() {
+            var password = document.getElementById("exampleInputPassword").value;
+            var repeatPassword = document.getElementById("exampleRepeatPassword2").value;
+            var message = document.getElementById("passwordMatchMessage");
+
+            if (password === repeatPassword) {
+                message.innerHTML = "비밀번호가 일치합니다.";
+                message.style.color = "green";
+            } else {
+                message.innerHTML = "비밀번호가 일치하지 않습니다.";
+                message.style.color = "red";
+            }
+        }
+    </script>
 
 </body>
-</html> --%>
+</html>
