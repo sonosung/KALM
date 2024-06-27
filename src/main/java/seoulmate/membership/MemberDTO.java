@@ -11,14 +11,30 @@ public class MemberDTO {
 	private String user_comment;
 	private String email;
 	private String phonenum;
+	private String user_street;
+	private String user_zip;
 	
+	
+	
+	
+	
+	
+	public String getUser_street() {
+		return user_street;
+	}
 
-	
-	
-	
-	
-	
-	
+	public void setUser_street(String user_street) {
+		this.user_street = user_street;
+	}
+
+	public String getUser_zip() {
+		return user_zip;
+	}
+
+	public void setUser_zip(String user_zip) {
+		this.user_zip = user_zip;
+	}
+
 	public String getUsername() {
 		return username;
 	}

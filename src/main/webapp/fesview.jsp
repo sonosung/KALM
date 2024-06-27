@@ -44,7 +44,7 @@
 
 			$.ajax({
 				type : "POST", // POST 메소드 사용
-				url : "userlike.do",
+				url : "like.do",
 				data : {
 					idx : idx
 				},
@@ -77,7 +77,7 @@
 
 <%
 // request에서 dto 객체를 가져옵니다.
-seoulmate.board.UserBoardDTO dto = (seoulmate.board.UserBoardDTO) request.getAttribute("dto");
+seoulmate.board.BoardDTO dto = (seoulmate.board.BoardDTO) request.getAttribute("dto");
 %>
 
 </head>
@@ -249,9 +249,9 @@ seoulmate.board.UserBoardDTO dto = (seoulmate.board.UserBoardDTO) request.getAtt
 				<td colspan="2" align="right">
 					<button type="button" class="btn btn-secondary" id="likeButton">추천</button>
 					<button type="button" class="btn btn-secondary"
-						onclick="location.href='useredit.do?idx=${dto.idx}';">수정하기</button>
+						onclick="location.href='fesedit.do?idx=${dto.idx}';">수정하기</button>
 					<button type="button" class="btn btn-secondary"
-						onclick="location.href='userdelete.do?idx=${dto.idx}';">삭제</button>
+						onclick="location.href='fesdelete.do?idx=${dto.idx}';">삭제</button>
 					<button type="button" class="btn btn-secondary"
 						onclick="location.href='list.do';">목록 바로가기</button>
 				</td>

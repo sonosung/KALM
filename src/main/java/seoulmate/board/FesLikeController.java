@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 @WebServlet("/like.do")
-public class LikeController extends HttpServlet {
+public class FesLikeController extends HttpServlet {
     private static final long serialVersionUID = 1L;
     private BoardDAO boardDAO; // DAO 객체
 

@@ -10,8 +10,8 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-@WebServlet("/view.do")
-public class ViewController extends HttpServlet {
+@WebServlet("/fesview.do")
+public class FesViewController extends HttpServlet {
 
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -37,7 +37,7 @@ public class ViewController extends HttpServlet {
 
 		req.setAttribute("dto", dto);
 //		req.setAttribute("isImage", isImage);
-		req.getRequestDispatcher("view.jsp").forward(req, resp);
+		req.getRequestDispatcher("fesview.jsp").forward(req, resp);
 	}
 
 }

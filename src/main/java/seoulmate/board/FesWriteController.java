@@ -56,45 +56,40 @@ public class FesWriteController extends HttpServlet {
 		BoardDTO dto = new BoardDTO();
 		MemberDTO member = (MemberDTO) req.getSession().getAttribute("user");
 
-		
-		    String user_Id = member.getUser_id();
-		    
-		    dto.setName(user_Id); // 세션에 저장된 user_id를 name으로 설정
-		    dto.setTitle(req.getParameter("title"));
-		    dto.setContent(req.getParameter("content"));
-		    dto.setFescate(req.getParameter("fescate"));
-		    dto.setFeslocation(req.getParameter("feslocation"));
-		    dto.setFesname(req.getParameter("fesname"));
-		    dto.setFesstart(req.getParameter("fesstart"));
-		    dto.setFesend(req.getParameter("fesend"));
-		
-		
-		
-		
-        Part mainimagePart = req.getPart("mainimage");
-        if (mainimagePart != null && mainimagePart.getSize() > 0) {
-            InputStream mainimageInputStream = mainimagePart.getInputStream();
-            byte[] mainimage = mainimageInputStream.readAllBytes();
-            dto.setMainimage(mainimage);
-        }
+		String user_Id = member.getUser_id();
 
-        // secimage 업로드 처리
-        Part secimagePart = req.getPart("secimage");
-        if (secimagePart != null && secimagePart.getSize() > 0) {
-            InputStream secimageInputStream = secimagePart.getInputStream();
-            byte[] secimage = secimageInputStream.readAllBytes();
-            dto.setSecimage(secimage);
-        }
-        
-        // thiimage 업로드 처리
-        Part thiimagePart = req.getPart("thiimage");
-        if (thiimagePart != null && thiimagePart.getSize() > 0) {
-            InputStream thiimageInputStream = thiimagePart.getInputStream();
-            byte[] thiimage = thiimageInputStream.readAllBytes();
-            dto.setThiimage(thiimage);
-        }
-        
-        
+		dto.setName(user_Id); // 세션에 저장된 user_id를 name으로 설정
+		dto.setTitle(req.getParameter("title"));
+		dto.setContent(req.getParameter("content"));
+		dto.setFescate(req.getParameter("fescate"));
+		dto.setFeslocation(req.getParameter("feslocation"));
+		dto.setFesname(req.getParameter("fesname"));
+		dto.setFesstart(req.getParameter("fesstart"));
+		dto.setFesend(req.getParameter("fesend"));
+
+		Part mainimagePart = req.getPart("mainimage");
+		if (mainimagePart != null && mainimagePart.getSize() > 0) {
+			InputStream mainimageInputStream = mainimagePart.getInputStream();
+			byte[] mainimage = mainimageInputStream.readAllBytes();
+			dto.setMainimage(mainimage);
+		}
+
+		// secimage 업로드 처리
+		Part secimagePart = req.getPart("secimage");
+		if (secimagePart != null && secimagePart.getSize() > 0) {
+			InputStream secimageInputStream = secimagePart.getInputStream();
+			byte[] secimage = secimageInputStream.readAllBytes();
+			dto.setSecimage(secimage);
+		}
+
+		// thiimage 업로드 처리
+		Part thiimagePart = req.getPart("thiimage");
+		if (thiimagePart != null && thiimagePart.getSize() > 0) {
+			InputStream thiimageInputStream = thiimagePart.getInputStream();
+			byte[] thiimage = thiimageInputStream.readAllBytes();
+			dto.setThiimage(thiimage);
+		}
+
 		// 원본 파일명과 저장된 파일 이름 설정
 //		if (originalFileName != "") {
 		// 첨부 파일이 있을 경우 파일명 변경
@@ -114,7 +109,7 @@ public class FesWriteController extends HttpServlet {
 			resp.sendRedirect("feslist.do");
 
 		} else {// 글쓰기 실패
-			JSFunction.alertLocation(resp, "글쓰기에 실패했습니다", "feswrite.do");
+			JSFunction.alertLocation(resp, "글쓰기에 실패했습니다", "fes_write.do");
 		}
 
 //		request.getRequestDispatcher("/14MVCBoard/Write.jsp").forward(request, response);

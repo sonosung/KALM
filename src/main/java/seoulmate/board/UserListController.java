@@ -15,14 +15,14 @@ import utils.BoardPage;
 /**
  * Servlet implementation class ListController
  */
-public class ListController extends HttpServlet {
+public class UserListController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
-		BoardDAO dao = new BoardDAO();
+		UserBoardDAO dao = new UserBoardDAO();
 		
 		Map<String, Object> map = new HashMap<String, Object>();
 		
@@ -53,7 +53,7 @@ public class ListController extends HttpServlet {
 		map.put("end", end);
 		/*페이지 처리 끝*/
 		
-		List<BoardDTO> boardLists = dao.selectListPage(map);
+		List<UserBoardDTO> boardLists = dao.selectListPage(map);
 		//게시물 목록 받기
 		dao.close(); //DB연결 닫기
 		

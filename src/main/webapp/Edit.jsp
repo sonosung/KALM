@@ -92,7 +92,7 @@ th {
 	<!-- Form Section -->
 	<div class="container mt-5">
 		<form name="editFrm" method="post" enctype="multipart/form-data"
-			action="edit.do" onsubmit="return validateForm(this);">
+			action="useredit.do" onsubmit="return validateForm(this);">
 			<%-- Hidden input for idx --%>
 			<input type="hidden" name="idx" value="${dto.idx}">
 			<table class="table">

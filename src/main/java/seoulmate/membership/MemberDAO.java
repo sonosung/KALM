@@ -37,11 +37,13 @@ public class MemberDAO extends JDBConnect {
                 dto.setUser_comment(rs.getString("user_comment"));
                 dto.setEmail(rs.getString("email"));
                 dto.setPhonenum(rs.getString("phonenum"));
+                dto.setUser_street(rs.getString("user_street"));
+                dto.setUser_zip(rs.getString("user_zip"));
                 
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
         return dto;
-    }
+	}
 }

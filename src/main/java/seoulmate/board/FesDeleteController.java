@@ -9,8 +9,8 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-@WebServlet("/delete.do")
-public class DeleteController extends HttpServlet {
+@WebServlet("/fesdelete.do")
+public class FesDeleteController extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -38,7 +38,7 @@ public class DeleteController extends HttpServlet {
         	out.println("<html><body>");
             out.println("<script>");
             out.println("alert('삭제가 완료되었습니다.');");
-            out.println("location.href='list.do';");
+            out.println("location.href='feslist.do';");
             out.println("</script>");
             out.println("</body></html>");	
             

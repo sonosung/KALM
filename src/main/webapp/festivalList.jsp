@@ -137,7 +137,7 @@
                 String imgBase64 = java.util.Base64.getEncoder().encodeToString(imgBytes);
     %>
     <div class="col-md-6 col-lg-4 mb-5 portfolio-item" data-bs-toggle="modal" data-bs-target="#portfolioModal<%=idx%>" data-start-date="<%=fesstart%>" data-end-date="<%=fesend%>" data-month="<%=fesstart.substring(5, 7)%>" data-category="<%=fescate%>">
-        <a href="view.do?idx=<%=idx%>">
+        <a href="fesview.do?idx=<%=idx%>">
             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                 <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
             </div>
@@ -169,8 +169,8 @@
     <a class="btn btn-primary small-button" href="list.do">
         <i class="fas fa-download me-2"></i>유저 공유 게시판
     </a>
-    <a class="btn btn-primary small-button" href="feswrite.do">
-        <i class="fas fa-download me-2"></i>관리자 글쓰기 게시판
+    <a class="btn btn-primary small-button" href="fes_write.jsp">
+        <i class="fas fa-download me-2"></i>관리자 글쓰기
     </a>
 </div>
 

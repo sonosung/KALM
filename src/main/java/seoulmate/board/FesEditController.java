@@ -13,11 +13,11 @@ import jakarta.servlet.http.Part;
 import seoulmate.membership.MemberDTO;
 import utils.JSFunction;
 
-@WebServlet("/edit.do")
+@WebServlet("/fesedit.do")
 
 @MultipartConfig(maxFileSize = 1024 * 1024 * 1, maxRequestSize = 1024 * 1024 * 10)
 
-public class EditController extends HttpServlet {
+public class FesEditController extends HttpServlet {
 	// private static final long serialVersionUID = 1L;
 
 	@Override

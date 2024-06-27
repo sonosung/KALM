@@ -9,8 +9,8 @@
 </head>
 <body>
     <h2>게시판</h2>
-    <a href="list.do">게시판 목록 바로가기</a>
-
+    <a href="list.do">USER 게시판 목록 바로가기</a>
+	<a href="feslist.do">Admin 게시판 목록 바로가기</a>
     <h1>환영합니다!</h1>
     <%
     // 세션에서 사용자 정보를 가져옵니다.

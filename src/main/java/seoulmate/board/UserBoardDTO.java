@@ -1,10 +1,8 @@
-//관리자 게시판
-
 package seoulmate.board;
 
 import java.util.Base64;
 
-public class BoardDTO {
+public class UserBoardDTO {
 
 	private String idx;
 	private String board_type;

@@ -1,5 +1,3 @@
-
-//관리자 게시판
 package seoulmate.board;
 
 import java.sql.PreparedStatement;
@@ -9,20 +7,19 @@ import java.util.Vector;
 
 import common.DBConnPool;
 
-public class BoardDAO extends DBConnPool {
+public class UserBoardDAO extends DBConnPool {
 
-	public BoardDAO() {
+	public UserBoardDAO() {
 		super();
 	}
 
 	public int selectCount(Map<String, Object> map) {
 		int totalCount = 0;
 
-		String query = "SELECT COUNT(*) FROM board";
+		String query = "SELECT COUNT(*) FROM userboard";
 
 		if (map.get("searchWord") != null) {
-			query += " WHERE " + map.get("searchField") + " " + " LIKE '%" + map.get("searchWord") + "%'";
-
+			query += " WHERE " + map.get("searchField") + " LIKE '%" + map.get("searchWord") + "%'";
 		}
 
 		try {
@@ -39,16 +36,20 @@ public class BoardDAO extends DBConnPool {
 		return totalCount;
 	}
 
-	public List<BoardDTO> selectListPage(Map<String, Object> map) {
-		List<BoardDTO> board = new Vector<BoardDTO>();
+	public List<UserBoardDTO> selectListPage(Map<String, Object> map) {
+		List<UserBoardDTO> board = new Vector<UserBoardDTO>();
 
-		String query = " " + "SELECT * FROM (" + "	SELECT Tb.*, ROWNUM rNum FROM ( " + "		SELECT * FROM board ";
+		String query = "SELECT * FROM (" + 
+					   " SELECT Tb.*, ROWNUM rNum FROM (" + 
+					   " SELECT * FROM userboard";
 
 		if (map.get("searchWord") != null) {
-			query += " WHERE " + map.get("searchField") + " LIKE '%" + map.get("searchWord") + "%' ";
+			query += " WHERE " + map.get("searchField") + " LIKE '%" + map.get("searchWord") + "%'";
 		}
 
-		query += " 		ORDER BY idx DESC " + " 	) Tb " + " ) " + " WHERE rNum BETWEEN ? AND ?";
+		query += " ORDER BY idx DESC" + 
+				 " ) Tb" + 
+				 " ) WHERE rNum BETWEEN ? AND ?";
 
 		try {
 			psmt = con.prepareStatement(query);
@@ -57,7 +58,7 @@ public class BoardDAO extends DBConnPool {
 			rs = psmt.executeQuery();
 
 			while (rs.next()) {
-				BoardDTO dto = new BoardDTO();
+				UserBoardDTO dto = new UserBoardDTO();
 
 				dto.setIdx(rs.getString(1));
 				dto.setTitle(rs.getString(2));
@@ -83,13 +84,13 @@ public class BoardDAO extends DBConnPool {
 	}
 
 	// 게시글 데이터를 받아 DB에 추가합니다.
-	public int insertWrite(BoardDTO dto) {
+	public int insertWrite(UserBoardDTO dto) {
 		int result = 0;
 
 		try {
-			String query = "INSERT INTO board ( "
-					+ " idx, title, content, name, fesname, feslocation, fesstart, fesend, fescate, postdate, mainimage, secimage, thiimage) "
-					+ " VALUES ( " + " seq_board_num.NEXTVAL, ?, ?, ?, ?, ?, ?, ?, ?, SYSDATE, ?, ?, ?)";
+			String query = "INSERT INTO userboard ( " +
+						   "idx, title, content, name, fesname, feslocation, fesstart, fesend, fescate, postdate, mainimage, secimage, thiimage) " +
+						   "VALUES ( seq_board_num.NEXTVAL, ?, ?, ?, ?, ?, ?, ?, ?, SYSDATE, ?, ?, ?)";
 
 			psmt = con.prepareStatement(query);
 			psmt.setString(1, dto.getTitle());
@@ -111,10 +112,8 @@ public class BoardDAO extends DBConnPool {
 			e.printStackTrace();
 		} finally {
 			try {
-				if (psmt != null)
-					psmt.close();
-				if (con != null)
-					con.close();
+				if (psmt != null) psmt.close();
+				if (con != null) con.close();
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -123,9 +122,9 @@ public class BoardDAO extends DBConnPool {
 		return result;
 	}
 
-	public BoardDTO selectView(String idx) {
-		BoardDTO dto = new BoardDTO();
-		String query = "SELECT * FROM board WHERE idx=?";
+	public UserBoardDTO selectView(String idx) {
+		UserBoardDTO dto = new UserBoardDTO();
+		String query = "SELECT * FROM userboard WHERE idx=?";
 
 		try {
 			psmt = con.prepareStatement(query);
@@ -158,7 +157,7 @@ public class BoardDAO extends DBConnPool {
 
 	// 추천수 증가
 	public void updateLikeCount(String idx) {
-		String query = "UPDATE board SET likecount = likecount + 1 WHERE idx = ?";
+		String query = "UPDATE userboard SET likecount = likecount + 1 WHERE idx = ?";
 
 		try {
 			psmt = con.prepareStatement(query);
@@ -172,7 +171,7 @@ public class BoardDAO extends DBConnPool {
 
 	// 조회수를 1 증가시킵니다.
 	public void updateVisitCount(String idx) {
-		String query = "UPDATE board SET " + " visitcount=visitcount+1 " + " WHERE idx=?";
+		String query = "UPDATE userboard SET visitcount=visitcount+1 WHERE idx=?";
 
 		try {
 			psmt = con.prepareStatement(query);
@@ -182,17 +181,17 @@ public class BoardDAO extends DBConnPool {
 			System.out.println("게시물 조회수 증가 중 예외 발생");
 			e.printStackTrace();
 		}
-
 	}
 
 	// 다운로드 횟수를 1 증가시킵니다.
 	public void downCountPlus(String idx) {
-		String sql = "UPDATE board SET " + " downcount=downcount+1 " + " WHERE idx=? ";
+		String sql = "UPDATE userboard SET downcount=downcount+1 WHERE idx=?";
 		try {
 			psmt = con.prepareStatement(sql);
 			psmt.setString(1, idx);
 			psmt.executeUpdate();
 		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 
@@ -200,7 +199,7 @@ public class BoardDAO extends DBConnPool {
 	public boolean confirmUserId(String user_id, String idx) {
 		boolean isCorr = false;
 		try {
-			String sql = "SELECT COUNT(*) FROM board WHERE user_id=? AND idx=?";
+			String sql = "SELECT COUNT(*) FROM userboard WHERE user_id=? AND idx=?";
 			psmt = con.prepareStatement(sql);
 			psmt.setString(1, user_id);
 			psmt.setString(2, idx);
@@ -220,12 +219,9 @@ public class BoardDAO extends DBConnPool {
 	// 자원 해제
 	public void close() {
 		try {
-			if (rs != null)
-				rs.close();
-			if (psmt != null)
-				psmt.close();
-			if (con != null)
-				con.close();
+			if (rs != null) rs.close();
+			if (psmt != null) psmt.close();
+			if (con != null) con.close();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -235,7 +231,7 @@ public class BoardDAO extends DBConnPool {
 		int result = 0;
 
 		try {
-			String query = "DELETE FROM board WHERE idx=?";
+			String query = "DELETE FROM userboard WHERE idx=?";
 			psmt = con.prepareStatement(query);
 			psmt.setString(1, idx);
 			result = psmt.executeUpdate();
@@ -246,11 +242,10 @@ public class BoardDAO extends DBConnPool {
 		return result;
 	}
 
-	public int updatePost(BoardDTO dto) {
+	public int updatePost(UserBoardDTO dto) {
 		int result = 0;
-		String sql = "UPDATE board SET title=?, content=?, fescate=?, feslocation=?, fesname=?, fesstart=?, fesend=?, mainimage=?, secimage=?, thiimage=? WHERE idx=?";
+		String sql = "UPDATE userboard SET title=?, content=?, fescate=?, feslocation=?, fesname=?, fesstart=?, fesend=?, mainimage=?, secimage=?, thiimage=? WHERE idx=?";
 		try (PreparedStatement pstmt = con.prepareStatement(sql)) {
-
 			pstmt.setString(1, dto.getTitle());
 			pstmt.setString(2, dto.getContent());
 			pstmt.setString(3, dto.getFescate());
@@ -269,5 +264,4 @@ public class BoardDAO extends DBConnPool {
 		}
 		return result;
 	}
-
 }

@@ -62,7 +62,7 @@ public class WriteController extends HttpServlet {
 		
 		
 		// 폼값을 DTO에 저장
-		BoardDTO dto = new BoardDTO();
+		UserBoardDTO dto = new UserBoardDTO();
 		MemberDTO member = (MemberDTO) req.getSession().getAttribute("user");
 
 		
@@ -117,7 +117,7 @@ public class WriteController extends HttpServlet {
 //		}
 
 		// DAO를 통해 DB에 게시 내용 저장
-		BoardDAO dao = new BoardDAO();
+		UserBoardDAO dao = new UserBoardDAO();
 		int result = dao.insertWrite(dto);
 		dao.close();
 
