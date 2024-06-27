@@ -41,7 +41,7 @@ public class FesEditController extends HttpServlet {
 		BoardDTO dto = dao.selectView(String.valueOf(idxInt)); // 숫자를 문자열로 변환하여 전달
 		dao.close();
 		request.setAttribute("dto", dto);
-		request.getRequestDispatcher("/Edit.jsp").forward(request, response);
+		request.getRequestDispatcher("/FesEdit.jsp").forward(request, response);
 
 	}
 
@@ -110,10 +110,10 @@ public class FesEditController extends HttpServlet {
 		
 
 		if (result == 1) {
-			response.sendRedirect("list.do"); // Redirect to view post page
-			JSFunction.alertLocation(response, "게시글 수정에 성공했습니다.", "list.do");
+			response.sendRedirect("feslist.do"); // Redirect to view post page
+			JSFunction.alertLocation(response, "게시글 수정에 성공했습니다.", "feslist.do");
 		} else {
-			JSFunction.alertLocation(response, "게시글 수정에 실패했습니다.", "Edit.jsp?idx=" + idx);
+			JSFunction.alertLocation(response, "게시글 수정에 실패했습니다.", "festivalList.jsp?idx=" + idx);
 		}
 	}
 }
