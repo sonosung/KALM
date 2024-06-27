@@ -9,7 +9,7 @@
 </head>
 <body>
     <h2>게시판</h2>
-    <a href="list.do">USER 게시판 목록 바로가기</a>
+    <a href="userlist.do">USER 게시판 목록 바로가기</a>
 	<a href="feslist.do">Admin 게시판 목록 바로가기</a>
     <h1>환영합니다!</h1>
     <%

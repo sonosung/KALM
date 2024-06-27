@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ page import="seoulmate.boardcomment.CommentDTO"%>
+<%@ page import="java.util.List"%>
+<%@ page import="java.util.Iterator"%>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -66,7 +70,53 @@
 	});
 </script>
 
+<script>
+	$(document).ready(function() {
+		// Function to handle comment submission
+		$("#commentForm").submit(function(event) {
+			event.preventDefault(); // Prevent default form submission
+			var formData = $(this).serialize(); // Serialize form data
 
+			// AJAX request to submit the comment
+			$.ajax({
+				type : "POST",
+				url : "commentwrite.do",
+				data : formData,
+				success : function(response) {
+					if (response.trim() === 'success') {
+						alert('Comment submitted successfully.');
+						$("#commentForm")[0].reset(); // Clear form fields
+						loadComments(); // Reload comments
+					} else {
+						alert('Failed to submit comment.');
+					}
+				},
+				error : function(xhr, status, error) {
+					alert('Error submitting comment.');
+					console.error(xhr);
+				}
+			});
+		});
+
+		// Function to load comments initially
+		function loadComments() {
+			$.ajax({
+				type : "GET",
+				url : "commentlist.do",
+				success : function(response) {
+					$("#commentList").html(response); // Populate comments
+				},
+				error : function(xhr, status, error) {
+					alert('Failed to load comments.');
+					console.error(xhr);
+				}
+			});
+		}
+
+		// Load comments when the document is ready
+		loadComments();
+	});
+</script>
 
 
 
@@ -311,89 +361,60 @@ seoulmate.board.UserBoardDTO dto = (seoulmate.board.UserBoardDTO) request.getAtt
 		</section>
 
 		<!-- Contact Section-->
-		<section class="page-section" id="contact">
+		<section class="page-section bg-white text-black mb-0" id="comments">
 			<div class="container">
-				<!-- Contact Section Heading-->
-				<h2
-					class="page-section-heading text-center text-uppercase text-secondary mb-0">댓글</h2>
-				<!-- Icon Divider-->
-				<div class="divider-custom">
-					<div class="divider-custom-line"></div>
-					<div class="divider-custom-icon">
-						<i class="fas fa-star"></i>
-					</div>
-					<div class="divider-custom-line"></div>
+				<div class="text-center">
+					<h2 class="section-heading text-uppercase">댓글 목록</h2>
+					<h3 class="section-subheading text-muted">게시글에 작성된 모든 댓글입니다.</h3>
 				</div>
-				<!-- Contact Section Form-->
-				<div class="row justify-content-center">
-					<div class="col-lg-8 col-xl-7">
-						<!-- * * * * * * * * * * * * * * *-->
-						<!-- * * SB Forms Contact Form * *-->
-						<!-- * * * * * * * * * * * * * * *-->
-						<!-- This form is pre-integrated with SB Forms.-->
-						<!-- To make this form functional, sign up at-->
-						<!-- https://startbootstrap.com/solution/contact-forms-->
-						<!-- to get an API token!-->
-						<form id="contactForm" data-sb-form-api-token="API_TOKEN">
-							<!-- Name input-->
-							<div class="form-floating mb-3">
-								<input class="form-control" id="name" type="text"
-									placeholder="Enter your name..." data-sb-validations="required" />
-								<label for="name">Full name</label>
-								<div class="invalid-feedback" data-sb-feedback="name:required">A
-									name is required.</div>
+				<div id="commentList" class="row">
+					<%
+					List<CommentDTO> commentList = (List<CommentDTO>) request.getAttribute("commentlist");
+					if (commentList != null && !commentList.isEmpty()) {
+						Iterator<CommentDTO> iterator = commentList.iterator();
+						while (iterator.hasNext()) {
+							CommentDTO comment = iterator.next();
+					%>
+					<div class="col-lg-12">
+						<div class="media mb-4">
+							<div class="media-body">
+								<h5 class="mt-0">${comment.getWriter()}</h5>
+								<p>${comment.getContent()}</p>
+								<p>${comment.getCreatedAt()}</p>
 							</div>
-							<!-- Email address input-->
-							<div class="form-floating mb-3">
-								<input class="form-control" id="email" type="email"
-									placeholder="name@example.com"
-									data-sb-validations="required,email" /> <label for="email">Email
-									address</label>
-								<div class="invalid-feedback" data-sb-feedback="email:required">An
-									email is required.</div>
-								<div class="invalid-feedback" data-sb-feedback="email:email">Email
-									is not valid.</div>
+						</div>
+					</div>
+					<%
+					}
+					} else {
+					%>
+					<div class="col-lg-12">
+						<p>댓글이 없습니다.</p>
+					</div>
+					<%
+					}
+					%>
+				</div>
+			</div>
+		</section>
+
+		<!-- 댓글 작성 폼 -->
+		<section class="page-section bg-white text-black mb-0"
+			id="writeComment">
+			<div class="container">
+				<div class="text-center">
+					<h2 class="section-heading text-uppercase">댓글 작성</h2>
+				</div>
+				<div class="row">
+					<div class="col-lg-8 mx-auto">
+						<form id="commentForm" action="commentwrite.do" method="post">
+							<input type="hidden" name="idx" value="${dto.getIdx()}">
+							<div class="form-group">
+								<textarea class="form-control" id="content" name="content"
+									rows="5" placeholder="댓글을 입력하세요..." required></textarea>
 							</div>
-							<!-- Phone number input-->
-							<div class="form-floating mb-3">
-								<input class="form-control" id="phone" type="tel"
-									placeholder="(123) 456-7890" data-sb-validations="required" />
-								<label for="phone">Phone number</label>
-								<div class="invalid-feedback" data-sb-feedback="phone:required">A
-									phone number is required.</div>
-							</div>
-							<!-- Message input-->
-							<div class="form-floating mb-3">
-								<textarea class="form-control" id="message" type="text"
-									placeholder="Enter your message here..." style="height: 10rem"
-									data-sb-validations="required"></textarea>
-								<label for="message">Message</label>
-								<div class="invalid-feedback"
-									data-sb-feedback="message:required">A message is
-									required.</div>
-							</div>
-							<!-- Submit success message-->
-							<!---->
-							<!-- This is what your users will see when the form-->
-							<!-- has successfully submitted-->
-							<div class="d-none" id="submitSuccessMessage">
-								<div class="text-center mb-3">
-									<div class="fw-bolder">Form submission successful!</div>
-									To activate this form, sign up at <br /> <a
-										href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
-								</div>
-							</div>
-							<!-- Submit error message-->
-							<!---->
-							<!-- This is what your users will see when there is-->
-							<!-- an error submitting the form-->
-							<div class="d-none" id="submitErrorMessage">
-								<div class="text-center text-danger mb-3">Error sending
-									message!</div>
-							</div>
-							<!-- Submit Button-->
-							<button class="btn btn-primary btn-xl disabled" id="submitButton"
-								type="submit">Send</button>
+							<button class="btn btn-primary btn-xl text-uppercase"
+								type="submit">댓글 작성</button>
 						</form>
 					</div>
 				</div>

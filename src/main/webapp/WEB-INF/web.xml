@@ -85,11 +85,11 @@
    </servlet-mapping>
    <servlet>
    <servlet-name>BoardList</servlet-name>
-      <servlet-class>seoulmate.board.ListController</servlet-class>
+      <servlet-class>seoulmate.board.UserListController</servlet-class>
    </servlet>
    <servlet-mapping>
       <servlet-name>BoardList</servlet-name>
-      <url-pattern>/list.do</url-pattern>
+      <url-pattern>/userlist.do</url-pattern>
    </servlet-mapping>
      <servlet>
       <servlet-name>BoardWrite</servlet-name>
