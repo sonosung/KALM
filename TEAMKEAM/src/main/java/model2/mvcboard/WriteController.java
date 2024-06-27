@@ -1,14 +1,13 @@
 package model2.mvcboard;
 
+import java.io.IOException;
+
+import fileupload.FileUtil;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import utils.JSFunction;
-
-import java.io.IOException;
-
-import fileupload.FileUtil;
 
 public class WriteController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
