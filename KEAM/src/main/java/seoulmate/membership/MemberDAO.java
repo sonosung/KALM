@@ -40,6 +40,26 @@ public class MemberDAO extends JDBConnect {
         return dto;
     }
     
+    public MemberDTO getMemberDTO(String uemail, String uname, String uphone) {
+        MemberDTO dto = new MemberDTO(); // 회원 정보 DTO 객체 생성
+        String query = "SELECT USER_PASSWORD FROM users WHERE EMAIL=? AND USERNAME=? AND PHONENUM=? ";
+        System.out.println("맴버 DAO 값 들어오는지 확인" + uemail + uname + uphone);
+        try {
+            psmt = con.prepareStatement(query);
+            psmt.setString(1, uemail);
+            psmt.setString(2, uname);
+            psmt.setString(3, uphone);
+            rs = psmt.executeQuery();
+
+            if (rs.next()) {
+                dto.setUSER_PASSWORD(rs.getString("USER_PASSWORD"));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return dto;
+    }
+    
     public MemberDTO getMemberDTO(String USERNAME, String EMAIL, String USER_ID,String PHONENUM, String USER_PASSWORD,String USER_STREET, String USER_ZIP) {
         MemberDTO dto = new MemberDTO(); // 회원 정보 DTO 객체 생성
         String query = "SELECT EMAIL FROM user_save WHERE EMAIL=? ";

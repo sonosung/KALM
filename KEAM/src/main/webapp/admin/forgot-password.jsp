@@ -42,18 +42,29 @@
                                 <div class="p-5">
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-2">Forgot Your Password?</h1>
-                                        <p class="mb-4">We get it, stuff happens. Just enter your email address below
-                                            and we'll send you a link to reset your password!</p>
+                                        <p class="mb-4">Enter your Email address, Name, and Phone Number and I will tell you your password</p>
                                     </div>
-                                    <form class="user">
+                                    <form class="user" action="forgot-password.do" method="post">
                                         <div class="form-group">
                                             <input type="email" class="form-control form-control-user"
-                                                id="exampleInputEmail" aria-describedby="emailHelp"
+                                                id="exampleInputEmail" aria-describedby="emailHelp" name="EMAIL" required
                                                 placeholder="Enter Email Address...">
+                                                <div id="emailHelp">Please enter your email address.</div>
+                                                 <div style="margin-bottom: 10px;"></div>
+                                                 
+                                            <input type="text" class="form-control form-control-user"
+                                                 aria-describedby="NameHelp" name="NAME" required
+                                                placeholder="Enter Name Address...">
+                                                <div id="NameHelp">Please enter your Name address.</div>
+                                                <div style="margin-bottom: 10px;"></div>
+                                                 
+                                            <input type="text" class="form-control form-control-user"
+                                                 aria-describedby="PhoneNumHelp" name="PHONENUM" required
+                                                placeholder="Enter PhoneNumber Address..."> 
+                                                <div id="PhoneNumHelp">Please enter your PhoneNumber address.</div>   
+                                                 <hr>
                                         </div>
-                                        <a href="login.html" class="btn btn-primary btn-user btn-block">
-                                            Reset Password
-                                        </a>
+                                         <button type="submit" class="btn btn-primary btn-user btn-block" onclick="/admin/forgot-password.do" > Password Search</button>
                                     </form>
                                     <hr>
                                     <div class="text-center">
