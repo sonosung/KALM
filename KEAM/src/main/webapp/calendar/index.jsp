@@ -26,95 +26,6 @@
     <title>Calendar #9</title>
   </head>
   <body>
-
-
-	<!-- <div class="content">
-		<div id='calendar'></div>
-	</div>
-
-
-
-	<script src="js/jquery-3.3.1.min.js"></script>
-	<script src="js/popper.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-
-	<script src='fullcalendar/packages/core/main.js'></script>
-	<script src='fullcalendar/packages/interaction/main.js'></script>
-	<script src='fullcalendar/packages/daygrid/main.js'></script>
-
-	<script>
-      document.addEventListener('DOMContentLoaded', function() {
-    var calendarEl = document.getElementById('calendar');
-
-    var calendar = new FullCalendar.Calendar(calendarEl, {
-      plugins: [ 'interaction', 'dayGrid' ],
-      defaultDate: '2024-06-12',
-      editable: true,
-      eventLimit: true, // allow "more" link when too many events
-      events: [
-        {
-          title: 'All Day Event',
-          start: '2024-06-18'
-        },
-        {
-          title: 'Long Event',
-          start: '2024-06-17',
-          end: '2024-06-20'
-        },
-        {
-          groupId: 999,
-          title: 'Repeating Event',
-          start: '2024-06-03T16:00:00'
-        },
-        {
-          groupId: 999,
-          title: 'Repeating Event',
-          start: '2024-06-03T16:00:00'
-        },
-        {
-          title: 'Conference',
-          start: '2024-06-11',
-          end: '2024-06-13'
-        },
-        {
-          title: 'Meeting',
-          start: '2024-06-12T10:30:00',
-          end: '2024-06-12T12:30:00'
-        },
-        {
-          title: 'Lunch',
-          start: '2024-06-22T12:00:00'
-        },
-        {
-          title: 'Meeting',
-          start: '2020-02-12T14:30:00'
-        },
-        {
-          title: 'Happy Hour',
-          start: '2020-02-12T17:30:00'
-        },
-        {
-          title: 'Dinner',
-          start: '2020-02-12T20:00:00'
-        },
-        {
-          title: 'Birthday Party',
-          start: '2020-02-13T07:00:00'
-        },
-        {
-          title: 'Click for Google',
-          url: 'http://google.com/',
-          start: '2020-02-28'
-        }
-      ]
-    });
-
-    calendar.render();
-  });
-
-    </script>
-
-	<script src="js/main.js"></script> -->
 	
 	<div class="content">
 		<div id='calendar'></div>
@@ -122,13 +33,13 @@
 
 
 
-	<script src="./calendar/js/jquery-3.3.1.min.js"></script>
-	<script src="./calendar/js/popper.min.js"></script>
-	<script src="./calendar/js/bootstrap.min.js"></script>
+	<script src="./js/jquery-3.3.1.min.js"></script>
+	<script src="./js/popper.min.js"></script>
+	<script src="./js/bootstrap.min.js"></script>
 
-	<script src='./calendar/fullcalendar/packages/core/main.js'></script>
-	<script src='./calendar/fullcalendar/packages/interaction/main.js'></script>
-	<script src='./calendar/fullcalendar/packages/daygrid/main.js'></script>
+	<script src='./fullcalendar/packages/core/main.js'></script>
+	<script src='./fullcalendar/packages/interaction/main.js'></script>
+	<script src='./fullcalendar/packages/daygrid/main.js'></script>
 
 	<script>
       document.addEventListener('DOMContentLoaded', function() {
