@@ -84,13 +84,13 @@
       <url-pattern>/12Servlet/MemberAuth.mvc</url-pattern>
    </servlet-mapping>
    <servlet>
-   <servlet-name>BoardList</servlet-name>
-      <servlet-class>seoulmate.board.UserListController</servlet-class>
-   </servlet>
-   <servlet-mapping>
-      <servlet-name>BoardList</servlet-name>
-      <url-pattern>/list.do</url-pattern>
-   </servlet-mapping>
+    <servlet-name>BoardList</servlet-name>
+    <servlet-class>seoulmate.board.UserListController</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>BoardList</servlet-name>
+    <url-pattern>/userlist.do</url-pattern>
+</servlet-mapping>
      <servlet>
       <servlet-name>BoardWrite</servlet-name>
       <servlet-class>seoulmate.board.WriteController</servlet-class>

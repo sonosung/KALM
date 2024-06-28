@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ page import="java.sql.*, java.io.InputStream" %> <!-- SQL 및 InputStream 클래스 임포트 -->
+<%@ page import="java.sql.*, java.io.InputStream, java.util.Base64" %> <!-- 필요한 클래스 임포트 -->
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -12,6 +12,7 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
     <link href="./resources/css/styles.css" rel="stylesheet" />
     <style>
+
         /* 내장 스타일 정의 */
         .masthead { padding-top: 6rem; padding-bottom: 6rem; }
         @media (min-width: 768px) {
@@ -38,6 +39,24 @@
     }
     .small-button:last-child {
         margin-right: 0; /* 마지막 버튼 오른쪽 여백 제거 */
+    }
+
+    /* 링크 스타일 변경 */
+    a {
+        text-decoration: none;
+        color: black;
+    }
+
+    /* 링크 호버 스타일 */
+    a:hover {
+        text-decoration: none;
+        color: black;
+    }
+
+    /* 텍스트 스타일 */
+    .portfolio-item h5, .portfolio-item p {
+        color: black;
+        text-decoration: none;
     }
     
     </style>
@@ -137,17 +156,17 @@
                 String imgBase64 = java.util.Base64.getEncoder().encodeToString(imgBytes);
     %>
     <div class="col-md-6 col-lg-4 mb-5 portfolio-item" data-bs-toggle="modal" data-bs-target="#portfolioModal<%=idx%>" data-start-date="<%=fesstart%>" data-end-date="<%=fesend%>" data-month="<%=fesstart.substring(5, 7)%>" data-category="<%=fescate%>">
-    <a href="fesview.do?idx=<%=idx%>" style="text-decoration: none; color: black;">
-        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-            <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-        </div>
-        <img class="img-fluid" src="data:image/png;base64,<%=imgBase64%>" alt="..." />
-        <h5 class="text-center" style="text-decoration: none; color: black;"><%=fesname%></h5>
-        <p class="text-center" style="text-decoration: none; color: black;">기간 <%=fesstart%>~<%=fesend%></p>
-        <p class="text-center" style="text-decoration: none; color: black;"><%=feslocation%></p>
-        <p class="text-center festival-status" style="text-decoration: none;"></p>
-    </a>
-</div>
+        <a href="fesview.do?idx=<%=idx%>">
+            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+            </div>
+            <img class="img-fluid" src="data:image/png;base64,<%=imgBase64%>" alt="..." />
+            <h5 class="text-center" style="color: black; text-decoration: none;"><%=fesname%></h5>
+            <p class="text-center" style="color: black; text-decoration: none;">기간 <%=fesstart%>~<%=fesend%></p>
+            <p class="text-center" style="color: black; text-decoration: none;"><%=feslocation%></p>
+            <p class="text-center festival-status"></p>
+        </a>
+    </div>
     <% 
             }
         } catch (Exception e) {
