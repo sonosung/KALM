@@ -123,7 +123,7 @@ public class WriteController extends HttpServlet {
 
 		// 성공 or 실패?
 		if (result == 1) { // 글쓰기 성공
-			resp.sendRedirect("list.do");
+			resp.sendRedirect("userlist.do");
 
 		} else {// 글쓰기 실패
 			JSFunction.alertLocation(resp, "글쓰기에 실패했습니다", "write.do");
