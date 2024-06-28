@@ -31,7 +31,8 @@ public class LoginController extends HttpServlet {
         if (member != null && member.getUSER_ID() != null) {
             HttpSession session = request.getSession();
             session.setAttribute("user", member);
-            System.out.println("유저번호 : " + member.getUSER_NUM() + " 유저 닉네임 : " +  member.getUSER_ID() +" 유저 이메일 : " + member.getEMAIL());
+            System.out.println("유저번호 : " + member.getUSER_NUM() + " 유저 닉네임 : " +  member.getUSER_ID() +" 유저 이메일 : " + member.getEMAIL() + "유저 사진 : " + member.getUSER_PHOTO()
+            + " 유저 포스트 : " + member.getUSER_POST() + "유저 코멘트 : " + member.getUSER_COMMENT());
             response.sendRedirect("../index.jsp"); // 로그인 성공 후 리디렉션
         } else {
        //     response.sendRedirect("login.jsp?error=1"); // 로그인 실패 시 리디렉션

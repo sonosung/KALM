@@ -33,6 +33,10 @@ public class MemberDAO extends JDBConnect {
                 dto.setPHONENUM(rs.getString("PHONENUM"));
                 dto.setUSERNAME(rs.getString("USERNAME"));
                 dto.setUSER_STREET(rs.getString("USER_STREET"));
+                dto.setUSER_ZIP(rs.getString("USER_ZIP"));
+                dto.setUSER_PHOTO(rs.getString("USER_PHOTO"));
+                dto.setUSER_POST(rs.getString("USER_POST"));
+                dto.setUSER_COMMENT(rs.getString("USER_COMMENT"));
             }
         } catch (Exception e) {
             e.printStackTrace();
