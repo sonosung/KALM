@@ -27,7 +27,7 @@
 	
 	<nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
 		<div class="container">
-			<a class="navbar-brand" href="../index.jsp#page-top">SEOULMATE</a>
+			<a class="navbar-brand" href="./index.jsp#page-top">SEOULMATE</a>
 			
 			<button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded"
 				type="button" 

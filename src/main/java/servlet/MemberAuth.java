@@ -36,7 +36,7 @@ public class MemberAuth extends HttpServlet {
 		
 		MemberDTO memberDTO = dao.getMemberDTO(id,  pass);
 		
-		String memberName = memberDTO.getName();
+		String memberName = memberDTO.getUSER_NAME();
 		if (memberName != null) {
 			req.setAttribute("authMessage", memberName + "회원님 반갑습니다.");
 		} else {

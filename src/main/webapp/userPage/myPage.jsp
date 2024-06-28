@@ -13,6 +13,7 @@
 
 <!-- Favicon-->
 <link rel="icon" type="image/x-icon" href="../resources/assets/img/user/seungho.jpg" />
+
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" rel="stylesheet">
 
 <style type="text/css">
@@ -89,12 +90,10 @@ body {
 MemberDTO user = (MemberDTO) session.getAttribute("user");
 		  if (user != null) {		  
 %>
-		   
-
 
 </head>
 
-<body style="background-color:#EEF7FF;">
+<body style="background-color:#D4F1F4;">
 <!-- 헤더와 콘텐트 페이지 분리용 디바이더 -->
 <div class="divider-custom"></div>
 <div class="divider-custom"></div>
@@ -102,32 +101,29 @@ MemberDTO user = (MemberDTO) session.getAttribute("user");
 <div class="divider-custom"></div>
 <div class="divider-custom"></div>
 <div class="divider-custom"></div>
+
 	<!---------------------------------------- 전체 컨테이너 ---------------------------------------->
 
 	<div class="container">
 		<div class="main-body">
-			<!-- <nav aria-label="breadcrumb" class="main-breadcrumb">
-				<ol class="breadcrumb">
-					<li class="breadcrumb-item"><a href="../index.jsp">Home</a>
-					</li>
-					<li class="breadcrumb-item active" aria-current="page">User Profile</li>
-				</ol>
-			</nav> -->
+			
+	<!---------------------------------------- 헤드 네비게이터 ---------------------------------------->
+				
 			<jsp:include page="../MainLayoutElements/header.jsp"></jsp:include>
-
-		<div style="height: 350px; width: 1260px;"> 
+	
+	<!---------------------------------------- 전체 컨테이너 ---------------------------------------->
+		<div style="height: 375px; width: 1260px;"> 
 			<div class="row gutters-sm">
 				<div class="col-md-4 mb-3">
 					<div class="card" style="height:350px;">
 						<div class="card-body">
 							<div class="d-flex flex-column align-items-center text-center">
-							
-								<img src="../resources/assets/img/blankProfile.png" 
-								alt="Admin"
+								<img src="../resources/assets/img/blankProfile.png" alt="Admin"
 									class="rounded-circle" width="200" height="200">
 								<div class="mt-3">
-								<br>
-									 <% out.println(user.getUSER_ID() + "님 환영합니다!"); %>
+									<br>
+								<h4><% out.println(user.getUSER_ID()); %></h4>
+									 <% out.println(user.getUSERNAME() + "님 환영합니다!"); %>
 									<!-- <p class="text-secondary mb-1">Full Stack Developer</p> -->
 									<p class="text-muted font-size-sm"><%-- <%= dto.getName() %> --%></p>
 									<!-- <button class="btn btn-info">Follow</button> -->
@@ -137,8 +133,6 @@ MemberDTO user = (MemberDTO) session.getAttribute("user");
 					</div>
 				</div>
 		
-		
-
 				<!---------------------------------------- 회원 정보 칸 시작 ---------------------------------------->
 				
 				<div class="col-md-8">
@@ -180,7 +174,7 @@ MemberDTO user = (MemberDTO) session.getAttribute("user");
 									<h6 class="mb-0">주소</h6>
 								</div>
 								<div class="col-sm-9 text-secondary">
-								<% out.println(user.getUSER_STREET()); %>
+								<% out.println("(" + user.getUSER_ZIP() + ")  " + user.getUSER_STREET()); %>
 								</div>
 							</div>
 							<%-- <hr>
@@ -214,7 +208,7 @@ MemberDTO user = (MemberDTO) session.getAttribute("user");
 
 
 
-			 <div class="card">
+			 <!-- <div class="card">
 				<div class="main-body">
 					<h5 class="d-flex align-items-center mb-3">내글 보기</h5>
 					<p>게시글 수</p>
@@ -248,8 +242,9 @@ MemberDTO user = (MemberDTO) session.getAttribute("user");
 							aria-valuemax="100"></div>
 					</div>
 				</div>
-			</div>
-<div class="divider-custom"></div>
+			</div> -->
+<div class="divider-custom"></div> 
+
 			<!---------------------------------------- 나의 링크 ---------------------------------------->
 <%-- 
 			<div class="card mt-3">
@@ -412,12 +407,10 @@ MemberDTO user = (MemberDTO) session.getAttribute("user");
 
 		<!---------------------------------------- 뭐에다가 쓸까 ---------------------------------------->
 
-
 <%
  }
 %>
 	<jsp:include page="../MainLayoutElements/footer.jsp"></jsp:include>
-
 
 	<!-- <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script> -->
 	<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>

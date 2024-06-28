@@ -26,7 +26,8 @@
 
 <body id="page-top">
 
-	<!--------------------------------------------------------- Navigation --------------------------------------------------------->
+	<!--------------------------------------------------------- 헤더 --------------------------------------------------------->
+	
 	<nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
 		<div class="container">
 			<a class="navbar-brand" href="#page-top">SEOULMATE</a>
@@ -63,7 +64,6 @@
 					
 					<li class="nav-item mx-0 mx-lg-1">
 					<a class="nav-link py-3 px-0 px-lg-3 rounded" href="./admin/login.jsp">Login</a>
-					<!-- <a class="nav-link py-3 px-0 px-lg-3 rounded" href="../userLogin.jsp">Login</a> -->
 					</li>
 					
 					<li class="nav-item mx-0 mx-lg-1">
@@ -79,47 +79,26 @@
 					</li>
 				</ul>
 			</div>
-		</div>
+		</div> 
 	</nav>
-<!--------------------------------------------------------- End Navigation --------------------------------------------------------->
+	
+	<%-- <jsp:include page="./MainLayoutElements/header.jsp"></jsp:include> --%>
 
-	<!--------------------------------------------------------- 헤드 영역 --------------------------------------------------------->
-	<header class="masthead text-white text-center" style="background-color:#D4F1F4;">
+	<!------------------------------------------------------ 로고 페이지 -------------------------------------------------------->
+	
+	<jsp:include page="./MainLayoutElements/seoulmate.jsp"></jsp:include>
 
-	<!--------------------------------------------------------- 메인 상단 --------------------------------------------------------->
-
-		<div class="container d-flex align-items-center flex-column">
-			<!-- Masthead Avatar Image -->
-			<img class="masthead-avatar mb-5" src="./resources/img/Logo.png" alt="..." />
-
-			<!-- Masthead Heading -->
-			<h1 class="masthead-heading text-uppercase mb-0">SEOULMATE</h1>
-
-			<!-- Icon Divider -->
-			<div class="divider-custom divider-light">
-				<div class="divider-custom-line"></div>
-					<div class="divider-custom-icon">
-						<i class="fas fa-star"> </i>
-					</div>
-				<div class="divider-custom-line"></div>
-			</div>
-
-			<!-- Masthead Subheading -->
-			<p class="masthead-subheading text-uppercase mb-0">너와 나의 SEOULMATE!</p>
-		</div>
-	</header>
-	<!--------------------------------------------------------- 헤드 영역끝 --------------------------------------------------------->
-
-	<!---------------------------------------------------- 메인 상단 대표행사 위치 ----------------------------------------------------->
+	<!------------------------------------------------------ 대표행사 영역 ------------------------------------------------------->
 
 	<section class="page-section portfolio" id="portfolio" style="background-color:#EEF7FF;">
 		<div class="container">
 		
-	<!--------------------------------------------------------- 행사 섹션 --------------------------------------------------------->
-		<h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">추천 행사정보</h2>
+	<!------------------------------------------------------- 행사 섹션 --------------------------------------------------------->
+		<h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">
+		추천 행사정보</h2>
 			<!-- Icon Divider-->
 			<div class="divider-custom">
-				<div class="divider-custom-line"></div>
+				<div class="divider-custom-line"> </div>
 					<div class="divider-custom-icon">
 						<i class="fas fa-star"></i>
 					</div>
@@ -143,7 +122,7 @@
 						</div>
 					</div>
 
-	<!--------------------------------------------------- 메인 중앙 두번째 이미지 ------------------------------------------------------->
+	<!--------------------------------------------------- 메인 중앙 두번째 이미지 ------------------------------------------------------>
 
 					<div class="col-md-6 col-lg-4 mb-5">
 						<div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal2">
@@ -156,7 +135,7 @@
 						</div>
 					</div>
 
-	<!---------------------------------------------------- 메인 중앙 세번째 이미지 ------------------------------------------------------>
+	<!---------------------------------------------------- 메인 중앙 세번째 이미지 ----------------------------------------------------->
 
 					<div class="col-md-6 col-lg-4 mb-5">
 						<div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal3">
@@ -174,13 +153,10 @@
 
 	</section>
 
-	<!--------------------------------------------------- 중앙이미지 세션 끝 ----------------------------------------------->
-
 	<!------------------------------------------------------ 게시판 섹션 ------------------------------------------------->
 
 	<section class="page-section text-white mb-0" id="festival" style="background-color:#05445E;">
 		<div class="container">
-			<!-- About Section Heading-->
 			<h2 class="page-section-heading text-center text-uppercase text-white">행사 게시판</h2>
 				<!-- Icon Divider-->
 				<div class="divider-custom divider-light">
@@ -190,6 +166,7 @@
 						</div>
 					<div class="divider-custom-line"></div>
 				</div>
+				
 			<div class="row">
 				<a class="btn btn-xl btn-outline-light" href="./boards/festivalList.jsp">
 					<i class="fas fa-download me-2"></i> 관리자 생성 행사 게시판</a>
@@ -201,30 +178,19 @@
 			</div>
 		</div>
 	</section>
-	
-	<!-------------------------------------------------- 게시판 섹션  끝----------------------------------------------->
 
-
-	<!---------------------------------------------------- 행사 달력  ------------------------------------------------>
+	<!------------------------------------------------------ 달력 ------------------------------------------------->
 	
 	<jsp:include page="calIndex.jsp"></jsp:include>
-	
-	<!-------------------------------------------------- 행사 달력 끝 ------------------------------------------------>
 
-	<!---------------------------------------------------- Footer-------------------------------------------------->
+	<!---------------------------------------------------- Footer ------------------------------------------------>
 	
 	<jsp:include page="./MainLayoutElements/footer.jsp"></jsp:include>
-	
-	<!----------------------------------------------------End Footer----------------------------------------------->
 
 	<!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="./resources/js/scripts.js"></script>
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <!-- * *                               SB Forms JS                               * *-->
-        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
 </body>
 </html>

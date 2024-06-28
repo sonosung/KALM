@@ -33,6 +33,10 @@ public class MemberDAO extends JDBConnect {
                 dto.setPHONENUM(rs.getString("PHONENUM"));
                 dto.setUSERNAME(rs.getString("USERNAME"));
                 dto.setUSER_STREET(rs.getString("USER_STREET"));
+                dto.setUSER_ZIP(rs.getString("USER_ZIP"));
+                dto.setUSER_PHOTO(rs.getString("USER_PHOTO"));
+                dto.setUSER_POST(rs.getString("USER_POST"));
+                dto.setUSER_COMMENT(rs.getString("USER_COMMENT"));
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -76,9 +80,9 @@ public class MemberDAO extends JDBConnect {
             }
             
             if(dto.getEMAIL() == null) {
-            	System.out.println("이메일 중복 없음");
-            	try {
-            		query = "SELECT USER_ID FROM users WHERE USER_ID=? ";
+               System.out.println("이메일 중복 없음");
+               try {
+                  query = "SELECT USER_ID FROM users WHERE USER_ID=? ";
                     psmt = con.prepareStatement(query);
                     psmt.setString(1, USER_ID);
                     rs = psmt.executeQuery();
@@ -88,10 +92,10 @@ public class MemberDAO extends JDBConnect {
                     }
                     
                     if(dto.getUSER_ID() == null) {
-                    	System.out.println("닉네임 중복 없음");
-                    	try {
-                    		query = "INSERT INTO users(USER_NUM,USERNAME,EMAIL,USER_ID,PHONENUM,USER_PASSWORD,USER_ZIP,USER_STREET) "
-                    				+ "VALUES (LOGINNUMBER3.NEXTVAL , ?, ?, ?, ?, ?, ?, ? ) ";
+                       System.out.println("닉네임 중복 없음");
+                       try {
+                          query = "INSERT INTO users(USER_NUM,USERNAME,EMAIL,USER_ID,PHONENUM,USER_PASSWORD,USER_ZIP,USER_STREET) "
+                                + "VALUES (LOGINNUMBER3.NEXTVAL , ?, ?, ?, ?, ?, ?, ? ) ";
                             psmt = con.prepareStatement(query);
                             psmt.setString(1, USERNAME);
                             psmt.setString(2, EMAIL);
@@ -103,23 +107,23 @@ public class MemberDAO extends JDBConnect {
                             rs = psmt.executeQuery();
                             
                             
-                    	} catch (Exception e) {
+                       } catch (Exception e) {
                             e.printStackTrace();
                         }
                         return dto;
                         
                     }else {
-                    	dto.setUSER_ID_ERROR("닉네임중복");
-                    	System.out.println("닉네임이 중복 됨");
+                       dto.setUSER_ID_ERROR("닉네임중복");
+                       System.out.println("닉네임이 중복 됨");
                     }
-            	}catch (Exception e) {
+               }catch (Exception e) {
                         e.printStackTrace();
                     }
                     return dto;
 
             }else {
-            	dto.setUSER_EMAIL_ERROR("이메일이 중복되었습니다.");
-            	System.out.println("이메일 중복 됨");
+               dto.setUSER_EMAIL_ERROR("이메일이 중복되었습니다.");
+               System.out.println("이메일 중복 됨");
             }
             rs.close();
             psmt.close();
