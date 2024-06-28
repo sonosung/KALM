@@ -1,6 +1,7 @@
 package seoulmate.boardcomment;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.List;
 
 import jakarta.servlet.ServletException;
@@ -11,41 +12,53 @@ import jakarta.servlet.http.HttpServletResponse;
 
 @WebServlet("/commentlist.do")
 public class CommentListController extends HttpServlet {
-    private static final long serialVersionUID = 1L;
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        // 게시글 번호를 파라미터에서 가져옵니다.
-        String idxStr = request.getParameter("idx");
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
-        if (idxStr == null || idxStr.isEmpty()) {
-            // idxStr이 null이거나 비어 있을 경우 예외 처리 또는 기본값 설정
-            response.sendError(HttpServletResponse.SC_BAD_REQUEST, "idx parameter is missing or empty");
-            return;
-        }
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		response.setContentType("application/json");
+		PrintWriter out = response.getWriter();
 
-        Long idx = null;
-        try {
-            idx = Long.parseLong(idxStr);
-        } catch (NumberFormatException e) {
-            // 숫자로 변환할 수 없는 경우 예외 처리
-            response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Invalid idx parameter: " + idxStr);
-            return;
-        }
+		try {
+			// 게시글의 idx를 파라미터에서 가져옴
+			int idx = Integer.parseInt(request.getParameter("idx"));
 
-        // CommentDAO를 사용하여 해당 게시글의 모든 댓글을 조회합니다.
-        CommentDAO commentDAO = new CommentDAO();
-        List<CommentDTO> commentList = commentDAO.getAllCommentsByPostId(idx);
+			// DAO를 통해 댓글 목록을 가져옴
+			CommentDAO commentDAO = new CommentDAO();
+			List<CommentDTO> commentList = commentDAO.getCommentsByBoardIdx(idx);
 
-        // 조회된 댓글 목록을 request 속성에 저장합니다.
-        request.setAttribute("commentList", commentList);
+			// 가져온 댓글 목록을 JSON 형식으로 변환하여 응답
+			out.print(buildJsonResponse(commentList));
+		} catch (NumberFormatException e) {
+			// idx 파라미터가 없거나 잘못된 경우
+			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+			out.println("Invalid idx parameter");
+			e.printStackTrace();
+		} finally {
+			out.close();
+		}
+	}
 
-        // 댓글 목록 페이지(comment_list.jsp)로 포워딩합니다.
-        request.getRequestDispatcher("/view.jsp").forward(request, response);
-    }
-
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        doGet(request, response);
-    }
+	private String buildJsonResponse(List<CommentDTO> commentList) {
+		StringBuilder sb = new StringBuilder();
+		sb.append("[");
+		for (int i = 0; i < commentList.size(); i++) {
+			CommentDTO comment = commentList.get(i);
+			sb.append("{");
+			sb.append("\"id\":").append(comment.getCommentId()).append(",");
+			sb.append("\"writer\":\"").append(comment.getWriter()).append("\",");
+			sb.append("\"content\":\"").append(comment.getContent()).append("\",");
+			sb.append("\"createdat\":\"").append(comment.getCreatedAt()).append("\"");
+			sb.append("}");
+			if (i < commentList.size() - 1) {
+				sb.append(",");
+			}
+		}
+		sb.append("]");
+		return sb.toString();
+	}
 }

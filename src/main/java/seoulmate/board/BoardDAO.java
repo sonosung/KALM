@@ -235,6 +235,12 @@ public class BoardDAO extends DBConnPool {
 		int result = 0;
 
 		try {
+
+			String deleteCommentsQuery = "DELETE FROM comments WHERE idx=?";
+			psmt = con.prepareStatement(deleteCommentsQuery);
+			psmt.setString(1, idx); // 게시글의 idx를 사용하여 해당 게시글의 댓글을 모두 삭제
+			psmt.executeUpdate();
+
 			String query = "DELETE FROM board WHERE idx=?";
 			psmt = con.prepareStatement(query);
 			psmt.setString(1, idx);
