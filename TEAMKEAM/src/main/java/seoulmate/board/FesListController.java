@@ -1,3 +1,4 @@
+//축제게시판 리스트 서블릿입니다.
 package seoulmate.board;
 
 import java.io.IOException;

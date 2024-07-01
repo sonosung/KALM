@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="java.sql.*, java.io.InputStream, java.util.Base64" %> <!-- 필요한 클래스 임포트 -->
 <!DOCTYPE html>
+<%-- 축제정보게시판 리스트입니다.--%>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">

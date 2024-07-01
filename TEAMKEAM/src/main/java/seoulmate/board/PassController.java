@@ -1,3 +1,4 @@
+// 게시물의 작성자 확인, 게시물 정보 조회, 수정, 삭제 기능
 package seoulmate.board;
 
 import java.io.IOException;

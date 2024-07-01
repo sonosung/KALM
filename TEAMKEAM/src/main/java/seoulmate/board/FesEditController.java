@@ -1,3 +1,4 @@
+//축제정보게시판 글쓰기 수정 서블릿 입니다.
 package seoulmate.board;
 
 import java.io.IOException;

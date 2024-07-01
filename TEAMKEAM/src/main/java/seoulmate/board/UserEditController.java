@@ -1,3 +1,4 @@
+//유저게시판 글쓰기 수정 서블릿입니다.
 package seoulmate.board;
 
 import java.io.IOException;
@@ -10,16 +11,20 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.Part;
-import seoulmate.membership.MemberDTO;
 import utils.JSFunction;
 
 @WebServlet("/useredit.do")
 @MultipartConfig(maxFileSize = 1024 * 1024 * 1, maxRequestSize = 1024 * 1024 * 10)
 public class UserEditController extends HttpServlet {
+    private static final long serialVersionUID = 1L;
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String idx = request.getParameter("idx");
+
+        // 디버깅을 위한 로그 추가
+        System.out.println("Edit.do - Received idx in doGet: " + idx);
 
         if (idx == null || !idx.matches("\\d+")) {
             response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Invalid idx parameter");
@@ -38,6 +43,10 @@ public class UserEditController extends HttpServlet {
             throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
         String idx = request.getParameter("idx");
+
+        // 디버깅을 위한 로그 추가
+        System.out.println("Edit.do - Received idx in doPost: " + idx);
+
         String title = request.getParameter("title");
         String content = request.getParameter("content");
         String fescate = request.getParameter("fescate");
@@ -88,7 +97,6 @@ public class UserEditController extends HttpServlet {
         dao.close();
 
         if (result == 1) {
-            response.sendRedirect("list.do"); // Redirect to view post page
             JSFunction.alertLocation(response, "게시글 수정에 성공했습니다.", "list.do");
         } else {
             JSFunction.alertLocation(response, "게시글 수정에 실패했습니다.", "Edit.jsp?idx=" + idx);

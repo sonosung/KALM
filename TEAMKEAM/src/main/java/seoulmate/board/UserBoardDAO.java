@@ -1,3 +1,4 @@
+//유저게시판 DAO입니다.
 package seoulmate.board;
 
 import java.sql.Connection;
@@ -119,13 +120,26 @@ public class UserBoardDAO extends DBConnPool {
         return dto;
     }
 
-    // 게시물 삭제
-    public int deletePost(String idx) {
+    // 게시물 작성
+    public int insertWrite(UserBoardDTO dto) {
         int result = 0;
-        String query = "DELETE FROM userboard WHERE idx=?";
+        String query = "INSERT INTO userboard (idx, name, title, content, fescate, feslocation, "
+                     + "fesname, fesstart, fesend, mainimage, secimage, thiimage, visitcount, "
+                     + "likecount, postdate) "
+                     + "VALUES (userboard_seq.NEXTVAL, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 0, 0, SYSDATE)";
         
         try (PreparedStatement psmt = con.prepareStatement(query)) {
-            psmt.setString(1, idx);
+            psmt.setString(1, dto.getName());
+            psmt.setString(2, dto.getTitle());
+            psmt.setString(3, dto.getContent());
+            psmt.setString(4, dto.getFescate());
+            psmt.setString(5, dto.getFeslocation());
+            psmt.setString(6, dto.getFesname());
+            psmt.setString(7, dto.getFesstart());
+            psmt.setString(8, dto.getFesend());
+            psmt.setBytes(9, dto.getMainimage());
+            psmt.setBytes(10, dto.getSecimage());
+            psmt.setBytes(11, dto.getThiimage());
             result = psmt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -161,26 +175,13 @@ public class UserBoardDAO extends DBConnPool {
         return result;
     }
 
-    // 게시물 작성
-    public int insertWrite(UserBoardDTO dto) {
+    // 게시물 삭제
+    public int deletePost(String idx) {
         int result = 0;
-        String query = "INSERT INTO userboard (idx, name, title, content, fescate, feslocation, "
-                     + "fesname, fesstart, fesend, mainimage, secimage, thiimage, visitcount, "
-                     + "likecount, postdate) "
-                     + "VALUES (userboard_seq.NEXTVAL, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 0, 0, SYSDATE)";
+        String query = "DELETE FROM userboard WHERE idx=?";
         
         try (PreparedStatement psmt = con.prepareStatement(query)) {
-            psmt.setString(1, dto.getName());
-            psmt.setString(2, dto.getTitle());
-            psmt.setString(3, dto.getContent());
-            psmt.setString(4, dto.getFescate());
-            psmt.setString(5, dto.getFeslocation());
-            psmt.setString(6, dto.getFesname());
-            psmt.setString(7, dto.getFesstart());
-            psmt.setString(8, dto.getFesend());
-            psmt.setBytes(9, dto.getMainimage());
-            psmt.setBytes(10, dto.getSecimage());
-            psmt.setBytes(11, dto.getThiimage());
+            psmt.setString(1, idx);
             result = psmt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -204,6 +205,38 @@ public class UserBoardDAO extends DBConnPool {
     // 추천수 증가
     public void updateLikeCount(String idx) {
         String query = "UPDATE userboard SET likecount = likecount + 1 WHERE idx=?";
+        
+        try (PreparedStatement psmt = con.prepareStatement(query)) {
+            psmt.setString(1, idx);
+            psmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    // id 일치 확인
+    public boolean confirmUserId(String user_id, String idx) {
+        boolean isCorr = false;
+        String query = "SELECT COUNT(*) FROM userboard WHERE user_id=? AND idx=?";
+        
+        try (PreparedStatement psmt = con.prepareStatement(query)) {
+            psmt.setString(1, user_id);
+            psmt.setString(2, idx);
+            try (ResultSet rs = psmt.executeQuery()) {
+                if (rs.next() && rs.getInt(1) > 0) {
+                    isCorr = true;
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        
+        return isCorr;
+    }
+
+    // 다운로드 횟수 증가
+    public void downCountPlus(String idx) {
+        String query = "UPDATE userboard SET downcount=downcount+1 WHERE idx=?";
         
         try (PreparedStatement psmt = con.prepareStatement(query)) {
             psmt.setString(1, idx);

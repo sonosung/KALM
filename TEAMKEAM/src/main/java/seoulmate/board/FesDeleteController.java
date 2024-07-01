@@ -1,3 +1,4 @@
+//축제정보게시판 게시물 지우기 서블릿 입니다.
 package seoulmate.board;
 
 import java.io.IOException;

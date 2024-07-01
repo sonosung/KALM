@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ page import="seoulmate.board.BoardDTO"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-
+<%-- 축제정보게시판 수정하기 글쓰기 코드입니다--%>
 <!DOCTYPE html>
 <html lang="en">
 

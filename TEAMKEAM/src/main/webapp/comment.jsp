@@ -3,6 +3,8 @@
 <%@ page import="seoulmate.boardcomment.CommentDTO"%>
 <%@ page import="java.util.List"%>
 
+<%-- 축제정보게시판 view에 들어갈 댓글 코드입니다.--%>
+
 <%
 List<CommentDTO> commentList = (List<CommentDTO>) request.getAttribute("commentList");
 %>

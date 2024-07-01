@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@ page import="seoulmate.membership.MemberDTO" %>
+    
+    <%--login.jsp가 이쪽으로 옵니다. 여기서 유저공유게시판, 축제정보게시판으로 이동 가능--%>
 <!DOCTYPE html>
 <html>
 <head>

@@ -1,3 +1,4 @@
+//게시판 글쓰기 서블릿입니다, 데이터베이스 저장, 이미지 업로드 담당
 package seoulmate.board;
 
 import java.io.IOException;
@@ -41,6 +42,7 @@ public class WriteController extends HttpServlet {
         dto.setFesstart(req.getParameter("fesstart"));
         dto.setFesend(req.getParameter("fesend"));
 
+        // mainimage 업로드 처리
         Part mainimagePart = req.getPart("mainimage");
         if (mainimagePart != null && mainimagePart.getSize() > 0) {
             try (InputStream mainimageInputStream = mainimagePart.getInputStream()) {
@@ -48,6 +50,7 @@ public class WriteController extends HttpServlet {
             }
         }
 
+        // secimage 업로드 처리
         Part secimagePart = req.getPart("secimage");
         if (secimagePart != null && secimagePart.getSize() > 0) {
             try (InputStream secimageInputStream = secimagePart.getInputStream()) {
@@ -55,6 +58,7 @@ public class WriteController extends HttpServlet {
             }
         }
 
+        // thiimage 업로드 처리
         Part thiimagePart = req.getPart("thiimage");
         if (thiimagePart != null && thiimagePart.getSize() > 0) {
             try (InputStream thiimageInputStream = thiimagePart.getInputStream()) {
@@ -62,13 +66,15 @@ public class WriteController extends HttpServlet {
             }
         }
 
+        // DAO를 통해 DB에 게시 내용 저장
         UserBoardDAO dao = new UserBoardDAO();
         int result = dao.insertWrite(dto);
         dao.close();
 
-        if (result == 1) {
+        // 성공 or 실패?
+        if (result == 1) { // 글쓰기 성공
             resp.sendRedirect("userlist.do");
-        } else {
+        } else { // 글쓰기 실패
             JSFunction.alertLocation(resp, "글쓰기에 실패했습니다.", "write.do");
         }
     }

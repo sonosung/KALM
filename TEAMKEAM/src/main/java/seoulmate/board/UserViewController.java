@@ -1,6 +1,9 @@
+//유저게시판 상세보기 서블릿입니다.
 package seoulmate.board;
 
 import java.io.IOException;
+import java.util.Arrays;
+import java.util.List;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -10,6 +13,8 @@ import jakarta.servlet.http.HttpServletResponse;
 
 @WebServlet("/view.do")
 public class UserViewController extends HttpServlet {
+    private static final long serialVersionUID = 1L;
+
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         UserBoardDAO dao = new UserBoardDAO();
@@ -18,22 +23,21 @@ public class UserViewController extends HttpServlet {
         UserBoardDTO dto = dao.selectView(idx);
         dao.close();
 
-//		dto.setContent(dto.getContent().replaceAll("\r\n", "<br>/"));
+        // dto.setContent(dto.getContent().replaceAll("\r\n", "<br>/"));
 
-//		String ext = null, fileName = dto.getSfile();
-//		if (fileName!=null) {
-//			ext = fileName.substring(fileName.lastIndexOf(".")+1);
-//		}
-//		String[] mimeStr = {"png", "jpg", "gif"};
-//		List<String> mimeList = Arrays.asList(mimeStr);
-//		boolean isImage = false;
-//		if (mimeList.contains(ext)) {
-//			isImage = true;
-//		}
+        // String ext = null, fileName = dto.getSfile();
+        // if (fileName != null) {
+        //     ext = fileName.substring(fileName.lastIndexOf(".") + 1);
+        // }
+        // String[] mimeStr = { "png", "jpg", "gif" };
+        // List<String> mimeList = Arrays.asList(mimeStr);
+        // boolean isImage = false;
+        // if (mimeList.contains(ext)) {
+        //     isImage = true;
+        // }
 
-		req.setAttribute("dto", dto);
-//		req.setAttribute("isImage", isImage);
-		req.getRequestDispatcher("view.jsp").forward(req, resp);
-	}
-
+        req.setAttribute("dto", dto);
+        // req.setAttribute("isImage", isImage);
+        req.getRequestDispatcher("view.jsp").forward(req, resp);
+    }
 }

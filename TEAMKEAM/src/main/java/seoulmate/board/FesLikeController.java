@@ -1,3 +1,4 @@
+//축제정보 추천수 기능 서블릿입니다.
 package seoulmate.board;
 
 import jakarta.servlet.ServletException;

@@ -1,5 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"%>
 <%@ taglib prefix="c" uri="jakarta.tags.core"%>
+<%-- 유저정보게시판 리스트 입니다--%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,19 +19,22 @@
     <style>
     .search-bar {
         margin-top: 20px;
-        margin-bottom: 20px;
+        margin-bottom: 15px;
     }
     .filter-select {
-        margin-bottom: 20px;
+        margin-top: 20px;
+        margin-bottom: 15px;
     }
-    /* 추가된 스타일 */
     .filter-select select {
-        width: 100%; /* 선택 상자의 전체 너비 지정 */
+        width: 50%; /* 선택 상자의 전체 너비 지정 */
+    }
+    .filter-search-bar {
+        width: 30%; /* 검색창의 전체 너비 지정 */
+        margin-left: -4cm; /* 필터와 검색창 사이의 간격 조정 */
     }
     .search-bar .form-control {
-        width: 100%; /* 검색 입력 필드의 전체 너비 지정 */
+        width: 100px; /* 검색 입력 필드의 가로 길이 조정 */
     }
-    /* 제목 링크를 이미지와 함께 표시할 수 있도록 조정 */
     .title-link {
         color: inherit; /* 기본 색상 유지 */
         text-decoration: none; /* 밑줄 제거 */
@@ -41,7 +45,14 @@
         margin-right: 10px; /* 이미지 오른쪽 여백 조정 */
         max-width: 70px; /* 이미지 최대 너비 제한 */
     }
-</style>
+    .search-bar-container {
+        display: flex;
+        align-items: center;
+    }
+    .input-group .btn {
+        margin-left: 5px; /* 검색 버튼과 입력 필드 사이의 간격 조정 */
+    }
+    </style>
 </head>
 <body id="page-top">
     <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
@@ -77,7 +88,7 @@
     <section class="page-section">
         <div class="container">
             <h1 class="text-center text-uppercase text-secondary mb-0 section-space">[유저] 축제 공유 게시글 리스트</h1>
-            <div class="row justify-content-center">
+            <div class="row justify-content-center search-bar-container">
                 <div class="col-md-3 filter-select">
                     <select class="form-select" name="searchField">
                         <option value="title">제목</option>
@@ -85,7 +96,7 @@
                         <option value="name">작성자</option>
                     </select>
                 </div>
-                <div class="col-md-6 search-bar">
+                <div class="col-md-6 filter-search-bar">
                     <form method="get">
                         <div class="input-group">
                             <input type="text" class="form-control" name="searchWord" placeholder="검색어를 입력하세요" aria-label="검색어를 입력하세요" aria-describedby="button-addon2">

@@ -1,4 +1,4 @@
-
+//축제 정보 게시판 DAO입니다.
 //관리자 게시판
 package seoulmate.board;
 

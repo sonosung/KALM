@@ -1,3 +1,4 @@
+//유저게시물 추천수 서블릿입니다.
 package seoulmate.board;
 
 import jakarta.servlet.ServletException;

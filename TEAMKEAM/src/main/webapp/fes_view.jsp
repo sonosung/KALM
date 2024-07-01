@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	
+	<%-- 축제정보게시판 상세보기 view인데 2개가 있어서 이건지 모름--%>
 <!DOCTYPE html>
 <html lang="en">
 <head>

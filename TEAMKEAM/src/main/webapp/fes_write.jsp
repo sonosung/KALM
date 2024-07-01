@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%-- 축제정보게시판 글쓰기 코드 입니다--%>
 <!DOCTYPE html>
 <html lang="en">
 <head>

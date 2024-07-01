@@ -3,6 +3,8 @@
 <%@ page import="seoulmate.board.BoardDTO"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
+<%--유저공유게시판 수정 글쓰기용 코드입니다--%>
+
 <!DOCTYPE html>
 <html lang="en">
 

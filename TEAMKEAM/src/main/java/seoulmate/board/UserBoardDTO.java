@@ -1,10 +1,11 @@
+//유저게시판 DTO입니다.
 package seoulmate.board;
 
 import java.util.Base64;
 
 public class UserBoardDTO {
     private String idx;
-    private String fescate;
+    private String board_type;
     private String name;
     private String title;
     private String content;
@@ -15,6 +16,7 @@ public class UserBoardDTO {
     private String feslocation;
     private String fesstart;
     private String fesend;
+    private String fescate;
     private byte[] mainimage;
     private byte[] secimage;
     private byte[] thiimage;
@@ -32,12 +34,12 @@ public class UserBoardDTO {
         this.idx = idx;
     }
 
-    public String getFescate() {
-        return fescate;
+    public String getBoard_type() {
+        return board_type;
     }
 
-    public void setFescate(String fescate) {
-        this.fescate = fescate;
+    public void setBoard_type(String board_type) {
+        this.board_type = board_type;
     }
 
     public String getName() {
@@ -118,6 +120,14 @@ public class UserBoardDTO {
 
     public void setFesend(String fesend) {
         this.fesend = fesend;
+    }
+
+    public String getFescate() {
+        return fescate;
+    }
+
+    public void setFescate(String fescate) {
+        this.fescate = fescate;
     }
 
     public byte[] getMainimage() {
