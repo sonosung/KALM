@@ -43,7 +43,8 @@
     }
     .title-link img {
         margin-right: 10px; /* 이미지 오른쪽 여백 조정 */
-        max-width: 70px; /* 이미지 최대 너비 제한 */
+        max-width: 60px; /* 이미지 최대 너비 제한 */
+        max-height: 40px; /* 이미지 최대 높이 제한 추가 */
     }
     .search-bar-container {
         display: flex;
@@ -51,6 +52,18 @@
     }
     .input-group .btn {
         margin-left: 5px; /* 검색 버튼과 입력 필드 사이의 간격 조정 */
+    }
+    /* 글씨 크기를 17px로 조정 */
+    .table {
+        font-size: 17px;
+    }
+    /* 이미지와 텍스트 수직 정렬 맞추기 */
+    .title-link img {
+        vertical-align: middle;
+    }
+    .title-link span {
+        display: inline-block;
+        vertical-align: middle;
     }
     </style>
 </head>
@@ -109,9 +122,9 @@
                 <thead>
                     <tr>
                         <th class="text-center" width="5%">번호</th>
-                        <th class="text-center" width="10%">작성자</th>
                         <th class="text-center" width="10%">카테고리</th>
                         <th class="text-center" width="*">제목</th>
+                        <th class="text-center" width="10%">작성자</th>
                         <th class="text-center" width="10%">조회수</th>
                         <th class="text-center" width="10%">추천수</th>
                         <th class="text-center" width="10%">작성일</th>
@@ -128,16 +141,16 @@
                             <c:forEach items="${boardLists}" var="row" varStatus="loop">
     <tr>
         <td class="text-center">${row.idx}</td>
-        <td class="text-center">${row.name}</td>
         <td class="text-center">${row.fescate}</td>
         <td align="left">
             <a href="view.do?idx=${row.idx}" class="title-link">
                 <c:if test="${not empty row.base64MainImage}">
                     <img src="data:image/jpeg;base64,${row.base64MainImage}" alt="메인 이미지" />
                 </c:if>
-                ${row.title}
+                <span>${row.title}</span>
             </a>
         </td>
+        <td class="text-center">${row.name}</td>
         <td class="text-center">${row.visitcount}</td>
         <td class="text-center">${row.likecount}</td>
         <td class="text-center">${row.postdate}</td>
