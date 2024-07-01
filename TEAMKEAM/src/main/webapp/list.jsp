@@ -23,14 +23,18 @@
     }
     .filter-select {
         margin-top: 20px;
-        margin-bottom: 15px;
+        margin-bottom: 17px;
     }
     .filter-select select {
         width: 50%; /* 선택 상자의 전체 너비 지정 */
+        text-align: center; /* 텍스트 가운데 정렬 */
+    }
+    .filter-select option {
+        text-align: center; /* 옵션 텍스트 가운데 정렬 */
     }
     .filter-search-bar {
         width: 30%; /* 검색창의 전체 너비 지정 */
-        margin-left: -4cm; /* 필터와 검색창 사이의 간격 조정 */
+        margin-left: -4.5cm; /* 필터와 검색창 사이의 간격 조정 */
     }
     .search-bar .form-control {
         width: 100px; /* 검색 입력 필드의 가로 길이 조정 */
@@ -139,23 +143,23 @@
                         </c:when>
                         <c:otherwise>
                             <c:forEach items="${boardLists}" var="row" varStatus="loop">
-    <tr>
-        <td class="text-center">${row.idx}</td>
-        <td class="text-center">${row.fescate}</td>
-        <td align="left">
-            <a href="view.do?idx=${row.idx}" class="title-link">
-                <c:if test="${not empty row.base64MainImage}">
-                    <img src="data:image/jpeg;base64,${row.base64MainImage}" alt="메인 이미지" />
-                </c:if>
-                <span>${row.title}</span>
-            </a>
-        </td>
-        <td class="text-center">${row.name}</td>
-        <td class="text-center">${row.visitcount}</td>
-        <td class="text-center">${row.likecount}</td>
-        <td class="text-center">${row.postdate}</td>
-    </tr>
-</c:forEach>
+                                <tr>
+                                    <td class="text-center">${row.idx}</td>
+                                    <td class="text-center">${row.fescate}</td>
+                                    <td align="left">
+                                        <a href="view.do?idx=${row.idx}" class="title-link">
+                                            <c:if test="${not empty row.base64MainImage}">
+                                                <img src="data:image/jpeg;base64,${row.base64MainImage}" alt="메인 이미지" />
+                                            </c:if>
+                                            <span>${row.title}</span>
+                                        </a>
+                                    </td>
+                                    <td class="text-center">${row.name}</td>
+                                    <td class="text-center">${row.visitcount}</td>
+                                    <td class="text-center">${row.likecount}</td>
+                                    <td class="text-center">${row.postdate}</td>
+                                </tr>
+                            </c:forEach>
                         </c:otherwise>
                     </c:choose>
                 </tbody>
